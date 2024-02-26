@@ -171,6 +171,8 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
         Aaran\Common\Providers\CommonServiceProvider::class,
+        Aaran\Master\Providers\MasterServiceProvider::class,
+
 
     ])->toArray(),
 
