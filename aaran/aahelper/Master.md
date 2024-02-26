@@ -17,3 +17,13 @@
 - Country_id
 - Pincode_id
 - Contact_type_id
+
+
+## Product
+
+- id
+
+
+## Companies details
+
+- id
