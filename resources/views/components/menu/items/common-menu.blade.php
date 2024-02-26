@@ -6,5 +6,5 @@
 {{--<x-menu.base.li-menuitem :routes="'colours'" :label="'Colours'"/>--}}
 {{--<x-menu.base.li-menuitem :routes="'sizes'" :label="'Size'"/>--}}
 {{--<x-menu.base.li-menuitem :routes="'departments'" :label="'Department'"/>--}}
-{{--<x-menu.base.li-menuitem :routes="'transports'" :label="'Transport'"/>--}}
+<x-menu.base.li-menuitem :routes="'transports'" :label="'Transport'"/>
 
