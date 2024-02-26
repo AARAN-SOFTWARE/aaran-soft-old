@@ -4,4 +4,3 @@
 <x-menu.base.li-menuitem :routes="'hsncodes'" :label="'Hsn codes'"/>
 <x-menu.base.li-menuitem :routes="'departments'" :label="'Department'"/>
 <x-menu.base.li-menuitem :routes="'ledgers'" :label="'Ledger'"/>
-

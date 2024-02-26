@@ -19,5 +19,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('hsncodes', App\Livewire\Common\HsncodeList::class)->name('hsncodes');
     Route::get('departments', App\Livewire\Common\DepartmentList::class)->name('departments');
     Route::get('ledgers', App\Livewire\Common\LedgerList::class)->name('ledgers');
-
+    Route::get('/transports', App\Livewire\Common\TransportList::class)->name('transports');
 });
