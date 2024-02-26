@@ -4,7 +4,7 @@
                                focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150
                                focus:ring-green-500 bg-green-600 hover:bg-green-500 active:bg-green-500 border-green-600  print:hidden
                                ']) }}>
-        <x-aaranUi::icons.plus/>
+        <x-icons.plus/>
         NEW
 </button>
 

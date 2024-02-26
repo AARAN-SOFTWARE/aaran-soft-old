@@ -6,7 +6,7 @@
     <div class="flex justify-between px-5 py-6">
         <a href="{{route('dashboard')}}" class="flex gap-2">
 {{--            <span class="p-1 rounded bg-white">--}}
-{{--            <x-aaranUi::assets.logo.aaran class="h-7 w-auto block"/>--}}
+{{--            <x-assets.logo.aaran class="h-7 w-auto block"/>--}}
 {{--            </span>--}}
             <span class="font-bold text-2xl sm:text-3xl tracking-widest">Amal Tex</span>
         </a>
@@ -28,9 +28,9 @@
         <ul class="flex flex-col py-6 space-y-1"
             x-data="{selected:null}">
 
-            <x-menu.sub.erp.order/>
-            <x-menu.sub.erp.production/>
-            <x-menu.sub.master/>
+{{--            <x-menu.sub.erp.order/>--}}
+{{--            <x-menu.sub.erp.production/>--}}
+{{--            <x-menu.sub.master/>--}}
             <x-menu.sub.common/>
             <x-menu.sub.logout/>
 

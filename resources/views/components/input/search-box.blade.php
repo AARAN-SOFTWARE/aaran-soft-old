@@ -5,6 +5,6 @@
                placeholder="type for Search...           escape to clear">
     </label>
     <div class="absolute top-0 left-0 inline-flex items-center p-2">
-        <x-aaranUi::icons.search-lens/>
+        <x-icons.search-lens/>
     </div>
 </div>
