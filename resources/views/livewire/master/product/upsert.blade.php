@@ -17,8 +17,8 @@
 
                     <div class="flex flex-col gap-3">
                         <div class="flex flex-col gap-2">
-                            <label for="order_no" class="gray-label">Hsncode</label>
-                            <div x-data="{isTyped: @entangle('orderTyped')}" @click.away="isTyped = false">
+                            <label for="hsncode_no" class="gray-label">Hsncode</label>
+                            <div x-data="{isTyped: @entangle('hsncodeTyped')}" @click.away="isTyped = false">
                                 <div class="relative">
                                     <input
                                         id="hsncode_no"

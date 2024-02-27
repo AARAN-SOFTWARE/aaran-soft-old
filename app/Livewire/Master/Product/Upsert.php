@@ -56,8 +56,8 @@ class Upsert extends Component
         $this->hsncode_id = $obj['id'] ?? '';;
     }
 
-    #[On('refresh-order')]
-    public function refreshOrder($v): void
+    #[On('refresh-hsncode')]
+    public function refreshHsncode($v): void
     {
         $this->hsncode_id = $v['id'];
         $this->hsncode_no = $v['name'];
