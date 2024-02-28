@@ -10,7 +10,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
 });
 
-//Common
+//common
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
 
     Route::get('/cities', App\Livewire\Common\CityList::class)->name('cities');
@@ -30,6 +30,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 //Master
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::get('/contacts', App\Livewire\Common\CityList::class)->name('contacts');
-    Route::get('/products', App\Livewire\Common\StateList::class)->name('products');
+    Route::get('/products', App\Livewire\Master\Product\Index::class)->name('products');
     Route::get('/companies', App\Livewire\Common\PincodeList::class)->name('companies');
+    Route::get('products/{id}/upsert', App\Livewire\Master\Product\Upsert::class)->name('products.upsert');
 });
