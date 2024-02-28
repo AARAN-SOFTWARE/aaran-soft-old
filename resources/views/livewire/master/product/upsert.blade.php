@@ -1,9 +1,6 @@
 <div>
     <x-slot name="header">Product Entery</x-slot>
     <x-forms.m-panel>
-
-        <section class="grid grid-cols-2 gap-12">
-
                 <div>
 
                 <x-input.model-text wire:model="vname" :label="'Name'"/>
@@ -15,11 +12,11 @@
                     @endforeach
                 </x-input.model-select>
 
-                    <div class="flex flex-col gap-3">
-                        <div class="flex flex-col gap-2">
-                            <label for="hsncode_no" class="gray-label">Hsncode</label>
-                            <div x-data="{isTyped: @entangle('hsncodeTyped')}" @click.away="isTyped = false">
-                                <div class="relative">
+                    <div class="flex flex-row gap-3 py-3">
+                        <div class="xl:flex gap-2 w-full">
+                            <label for="hsncode_no" class="w-[10rem] text-zinc-500 tracking-wide py-2">Hsncode</label>
+                            <div x-data="{isTyped: @entangle('hsncodeTyped')}" @click.away="isTyped = false" class="w-full">
+                                <div>
                                     <input
                                         id="hsncode_no"
                                         type="search"
@@ -33,7 +30,7 @@
                                         wire:keydown.arrow-up="decrementHsncode"
                                         wire:keydown.arrow-down="incrementHsncode"
                                         wire:keydown.enter="enterHsncode"
-                                        class="block w-full purple-textbox"
+                                        class="block purple-textbox w-full"
                                     />
 
                                     <div x-show="isTyped"
@@ -84,7 +81,11 @@
                     @endforeach
                 </x-input.model-select></div>
 
-            <div class="py-2 ">
+    </x-forms.m-panel>
+
+    <section class="mt-1">
+        <div class="px-8 py-6 gap-4 bg-gray-100 rounded-b-md shadow-lg w-full ">
+            <div class="py-2 mb-2">
                 <label for="active_id" class="inline-flex relative items-center cursor-pointer">
                     <input type="checkbox" id="active_id" class="sr-only peer"
                            wire:model="active_id" checked>
@@ -98,14 +99,12 @@
                     <span class="ml-3 text-sm font-medium text-gray-900">Active</span>
                 </label>
             </div>
-
-        </section>
-    </x-forms.m-panel>
-
-    <section>
-        <div class="px-8 py-6 gap-4 bg-gray-100 rounded-b-md shadow-lg w-full ">
             <div class="flex flex-col md:flex-row justify-between gap-3">
+
                 <div class="flex gap-3">
+
+
+
                     <x-button.save/>
                     <x-button.back/>
                 </div>
