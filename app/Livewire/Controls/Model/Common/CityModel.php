@@ -24,8 +24,7 @@ class CityModel extends Component
                 'vname' => Str::upper($this->vname),
                 'active_id' => '1'
             ]);
-            $this->dispatch('refresh-size-item', ['name' => $this->vname, 'id' => $obj->id]);
-            $this->dispatch('refresh-size', ['name' => $this->vname, 'id' => $obj->id]);
+            $this->dispatch('refresh-city', ['name' => $this->vname, 'id' => $obj->id]);
             $this->clearAll();
         }
     }
