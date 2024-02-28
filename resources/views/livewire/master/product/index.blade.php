@@ -12,6 +12,7 @@
                 <x-table.ths-center wire:click.prevent="sortBy('vname')">Hsn Code</x-table.ths-center>
                 <x-table.ths-center wire:click.prevent="sortBy('units')">Unit of Measure</x-table.ths-center>
                 <x-table.ths-center wire:click.prevent="sortBy('gst_percent')">Gst Percent</x-table.ths-center>
+                <x-table.ths-center >Action</x-table.ths-center>
             </x-slot>
             <x-slot name="table_body">
                 @forelse ($list as $index =>  $row)
@@ -63,6 +64,21 @@
                             <a href="{{route('products.upsert',[$row->id])}}"
                                class="flex flex-col px-3 text-gray-600 truncate text-xl text-center">
                                 {{ \App\Enums\GstPercent::tryFrom($row->gst_percent)->getName()}}
+                            </a>
+                        </x-table.cell>
+                        <x-table.cell>
+                            <a href="{{route('products.upsert',[$row->id])}}"
+                               class="flex flex-col px-3 text-gray-600 truncate text-xl text-center">
+                                <div class="w-full flex justify-center gap-3">
+                                    <x-button.link >&nbsp;
+                                        <x-icons.icon :icon="'pencil'"
+                                                      class="text-blue-500 h-5 w-auto block"/>
+                                    </x-button.link>
+                                    <x-button.link >&nbsp;
+                                        <x-icons.icon :icon="'trash'"
+                                                      class="text-red-600 h-5 w-auto block"/>
+                                    </x-button.link>
+                                </div>
                             </a>
                         </x-table.cell>
                     </x-table.row>
