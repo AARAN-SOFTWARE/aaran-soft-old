@@ -3,8 +3,10 @@
 namespace Aaran\Common\Models;
 
 use Aaran\Common\Database\Factories\PincodeFactory;
+use Aaran\Master\Models\Contact;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Pincode extends Model
 {
