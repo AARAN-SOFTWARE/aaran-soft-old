@@ -14,9 +14,9 @@ class BankTest extends TestCase
     {
         $bank = Bank::factory()->create();
 
-        $this->assertEquals('STATE BANK OF INDIA', actual: $bank->vname);
-        $this->assertEquals('1', actual: $bank->active_id);
+        $obj = Bank::find($bank->id);
 
-
+        $this->assertEquals($bank->vname, actual: $obj->vname);
+        $this->assertEquals($bank->active_id, actual: $obj->active_id);
     }
 }
