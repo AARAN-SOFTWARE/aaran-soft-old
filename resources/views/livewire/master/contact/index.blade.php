@@ -15,6 +15,7 @@
                 <x-table.ths-center wire:click.prevent="sortBy('vname')">City</x-table.ths-center>
                 <x-table.ths-center wire:click.prevent="sortBy('vname')">State</x-table.ths-center>
                 <x-table.ths-center wire:click.prevent="sortBy('vname')">Pin-Code</x-table.ths-center>
+                <x-table.heading class="w-[12rem]">Action</x-table.heading>
             </x-slot>
 
             <x-slot name="table_body">
@@ -84,6 +85,7 @@
                             </a>
                         </x-table.cell>
 
+                        <x-table.action :id="$row->id"/>
                     </x-table.row>
                 @empty
                     <x-table.empty/>
