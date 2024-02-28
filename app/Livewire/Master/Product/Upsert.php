@@ -15,6 +15,7 @@ use Livewire\Component;
 class Upsert extends Component
 {
     use CommonTrait;
+
     public $hsncode_id = '';
     public $hsncode_no = '';
     public Collection $hsncodeCollection;
@@ -38,6 +39,7 @@ class Upsert extends Component
         }
         $this->highlightHsncode++;
     }
+
     public function setHsncode($name, $id): void
     {
         $this->hsncode_no = $name;
@@ -68,7 +70,7 @@ class Upsert extends Component
 
     public function getHsncodeList(): void
     {
-        $this->hsncodeCollection = $this->hsncode_no ? Hsncode::search(trim($this->hsncode_no ))->get():Hsncode::all();
+        $this->hsncodeCollection = $this->hsncode_no ? Hsncode::search(trim($this->hsncode_no))->get() : Hsncode::all();
     }
 
     public string $product_type;
@@ -82,7 +84,7 @@ class Upsert extends Component
                 Product::create([
                     'vname' => Str::ucfirst($this->vname),
                     'product_type' => $this->product_type,
-                    'hsncode_id'=>$this->hsncode_id,
+                    'hsncode_id' => $this->hsncode_id,
                     'units' => $this->units,
                     'gst_percent' => $this->gst_percent,
                     'active_id' => $this->active_id,
@@ -95,7 +97,7 @@ class Upsert extends Component
                 $obj = Product::find($this->vid);
                 $obj->vname = Str::ucfirst($this->vname);
                 $obj->product_type = $this->product_type;
-                $obj->hsncode_id=$this->hsncode_id;
+                $obj->hsncode_id = $this->hsncode_id;
                 $obj->units = $this->units;
                 $obj->gst_percent = $this->gst_percent;
                 $obj->active_id = $this->active_id;
@@ -111,7 +113,7 @@ class Upsert extends Component
 
     public function setDelete(): void
     {
-        DB::table('products')->where('products.id','=',$this->vid)->delete();
+        DB::table('products')->where('products.id', '=', $this->vid)->delete();
         $this->getRoute();
     }
 
@@ -131,7 +133,7 @@ class Upsert extends Component
     }
 
     public string $vid = '';
-    public string $vname='';
+    public string $vname = '';
 
     public function mount($id): void
     {
@@ -142,16 +144,18 @@ class Upsert extends Component
             $this->vid = $obj->id;
             $this->vname = $obj->vname;
             $this->product_type = $obj->product_type;
-            $this->hsncode_id=$obj->hsncode_id;
+            $this->hsncode_id = $obj->hsncode_id;
             $this->hsncode_no = $obj->hsncode->vname;
             $this->units = $obj->units;
             $this->gst_percent = $obj->gst_percent;
             $this->active_id = $obj->active_id;
+        } else {
+            $this->active_id = true;
         }
 
     }
 
-    public function getRoute():void
+    public function getRoute(): void
     {
         $this->redirect(route('products'));
     }
