@@ -4,7 +4,6 @@ namespace Aaran\Common\Providers;
 
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\ServiceProvider;
 
 class CommonRouteServiceProvider extends RouteServiceProvider
 {
@@ -12,7 +11,7 @@ class CommonRouteServiceProvider extends RouteServiceProvider
     {
         $this->routes(function () {
             Route::middleware('web')
-                ->group(base_path('routes/web.php'));
+                ->group(__DIR__.'/../routes.php');
         });
     }
 

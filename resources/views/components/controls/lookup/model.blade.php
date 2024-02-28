@@ -32,20 +32,20 @@
                     <footer class="flex justify-end px-2 py-4 mt-3 bg-gray-200 rounded-b-md gap-3">
 
                         <button
-                            wire:click="clearAll"
+                            wire:click.prevent="clearAll"
                             class='w-36 bg-blue-600 hover:bg-blue-500  border-b-4 border-blue-700 hover:border-blue-700
                                    focus:outline-none text-white  uppercase font-bold shadow-md rounded-lg p-1'>
                             <div class="flex gap-3 justify-center">
-                                <x-icon icon="chevrons-left" class="h-4 w-auto block"/>
+                                <x-icons.icon icon="chevrons-left" class="h-4 w-auto block"/>
                                 <div class="pt-1.0">Back</div>
                             </div>
                         </button>
 
-                        <button wire:click="save"
+                        <button wire:click.prevent="save"
                                 class='w-36 bg-green-600 hover:bg-green-500  border-b-4 border-green-700 hover:border-green-700
                                     focus:outline-none text-white  uppercase font-bold shadow-md rounded-lg p-1'>
                             <div class="flex gap-3  justify-center">
-                                <x-icon icon="save" class="h-4 w-auto block"/>
+                                <x-icons.icon icon="save" class="h-4 w-auto block"/>
                                 <div class="pt-1.0">
                                     SAVE
                                 </div>
