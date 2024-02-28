@@ -11,7 +11,7 @@ class BankFactory extends Factory
     public function definition(): array
     {
         return [
-            'vname' => 'STATE BANK OF INDIA',
+            'vname' => $this->faker->name,
             'active_id' => 1
         ];
     }

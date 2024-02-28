@@ -11,7 +11,7 @@ class MasterRouteServiceProvider extends RouteServiceProvider
     {
         $this->routes(function () {
             Route::middleware('web')
-                ->group(base_path('routes/web.php'));
+                ->group(__DIR__.'/../routes.php');
         });
     }
 
