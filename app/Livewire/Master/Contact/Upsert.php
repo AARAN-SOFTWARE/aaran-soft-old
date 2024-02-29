@@ -276,7 +276,9 @@ class Upsert extends Component
         $this->pincode_id = $obj->pincode_id;
         $this->pincode_name = $obj->pincode->vname;
         $this->active_id = $obj->active_id;
-      }
+      }else{
+            $this->active_id=true;
+        }
     }
     public function getObj($id)
     {

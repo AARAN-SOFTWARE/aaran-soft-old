@@ -84,8 +84,21 @@
                                 {{ $row->pincode->vname }}
                             </a>
                         </x-table.cell>
-
-                        <x-table.action :id="$row->id"/>
+                        <x-table.cell>
+                            <a href="{{route('contacts.upsert',[$row->id])}}"
+                               class="flex flex-col px-3 text-gray-600 truncate text-xl text-center">
+                                <div class="w-full flex justify-center gap-3">
+                                    <x-button.link >&nbsp;
+                                        <x-icons.icon :icon="'pencil'"
+                                                      class="text-blue-500 h-5 w-auto block"/>
+                                    </x-button.link>
+                                    <x-button.link >&nbsp;
+                                        <x-icons.icon :icon="'trash'"
+                                                      class="text-red-600 h-5 w-auto block"/>
+                                    </x-button.link>
+                                </div>
+                            </a>
+                        </x-table.cell>
                     </x-table.row>
                 @empty
                     <x-table.empty/>

@@ -1,5 +1,5 @@
 <div>
-    <x-slot name="header">Product Entery</x-slot>
+    <x-slot name="header">Product Entry</x-slot>
     <x-forms.m-panel>
                 <div>
 
