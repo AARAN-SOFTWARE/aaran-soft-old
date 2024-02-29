@@ -10,7 +10,8 @@ class StateModel extends Component
 {
     public bool $showModel = false;
 
-    public $vname = "";
+    public $vname ='';
+    public $state_code='';
 
     public function mount($name): void
     {
@@ -22,9 +23,10 @@ class StateModel extends Component
         if ($this->vname != '') {
             $obj = State::create([
                 'vname' => Str::upper($this->vname),
+                'state_code'=>$this->state_code,
                 'active_id' => '1'
             ]);
-            $this->dispatch('refresh-state', ['name' => $this->vname, 'id' => $obj->id]);
+            $this->dispatch('refresh-state', ['name' => $this->vname,'state_code'=>$this->state_code, 'id' => $obj->id]);
             $this->clearAll();
         }
     }
@@ -32,7 +34,8 @@ class StateModel extends Component
     public function clearAll(): void
     {
         $this->showModel = false;
-        $this->vname = "";
+        $this->vname = '';
+        $this->state_code='';
     }
 
 
