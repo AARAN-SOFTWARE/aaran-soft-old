@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace Aaran\Master\Database\Factories;
 
 use App\Models\Contact;
 use Illuminate\Database\Eloquent\Factories\Factory;
