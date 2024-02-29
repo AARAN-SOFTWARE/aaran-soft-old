@@ -1,11 +1,11 @@
 <?php
 
-namespace Database\Factories\Master;
+namespace Aaran\Master\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Master\Company>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Aaran\Master\Models\Company>
  */
 class CompanyFactory extends Factory
 {

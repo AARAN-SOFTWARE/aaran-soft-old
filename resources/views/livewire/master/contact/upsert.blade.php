@@ -192,7 +192,7 @@
         <div class="flex flex-col md:flex-row justify-between gap-3 mt-5 mb-0">
             <div class="flex gap-3">
                 <x-button.save/>
-                <x-button.cancel/>
+                <x-button.back/>
             </div>
             <div>
                 <x-button.delete/>

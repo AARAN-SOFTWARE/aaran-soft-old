@@ -1,8 +1,7 @@
 <?php
 
-namespace Database\Seeders;
+namespace Aaran\Master\Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class CompanySeeder extends Seeder
