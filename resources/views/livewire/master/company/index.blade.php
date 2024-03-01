@@ -115,25 +115,25 @@
                                class="flex px-3 text-gray-600 truncate text-xl text-left">
 
                                 <div class="flex-shrink-0 h-10 w-10 mr-4">
-                                    <img src="{{asset($row->logo)}}"/>
+                                    <img src="{{ asset ('storage/'.$row->logo)}}"/>
                                 </div>
 
                             </a>
                         </x-table.cell>
                         <x-table.cell>
-                            <a href="{{route('companies.upsert',[$row->id])}}"
-                               class="flex flex-col px-3 text-gray-600 truncate text-xl text-center">
                                 <div class="w-full flex justify-center gap-3">
-                                    <x-button.link >&nbsp;
-                                        <x-icons.icon :icon="'pencil'"
-                                                      class="text-blue-500 h-5 w-auto block"/>
-                                    </x-button.link>
-                                    <x-button.link >&nbsp;
+                                    <a href="{{route('companies.upsert',[$row->id])}}"
+                                       class="flex flex-col px-3 text-gray-600 truncate text-xl text-center">
+                                        <x-button.link >&nbsp;
+                                            <x-icons.icon :icon="'pencil'"
+                                                          class="text-blue-500 h-5 w-auto block"/>
+                                        </x-button.link>
+                                    </a>
+                                    <x-button.link wire:click="set_delete({{$row->id}})" wire:confirm="Are you sure you want to delete this ?">&nbsp;
                                         <x-icons.icon :icon="'trash'"
                                                       class="text-red-600 h-5 w-auto block"/>
                                     </x-button.link>
                                 </div>
-                            </a>
                         </x-table.cell>
                     </x-table.row>
                 @empty

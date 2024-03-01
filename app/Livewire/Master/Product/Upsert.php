@@ -7,7 +7,6 @@ use Aaran\Master\Models\Product;
 use App\Livewire\Trait\CommonTrait;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -109,12 +108,6 @@ class Upsert extends Component
             return $message;
         }
         return '';
-    }
-
-    public function setDelete(): void
-    {
-        DB::table('products')->where('products.id', '=', $this->vid)->delete();
-        $this->getRoute();
     }
 
     public function getObj($id)
