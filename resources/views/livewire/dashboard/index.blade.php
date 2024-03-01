@@ -3,7 +3,9 @@
 
     <x-forms.m-panel>
 
-        Success is as dangerous as failure.
+        <div class="w-full h-screen">
+            <livewire:sys.default-company.index/>
+        </div>
 
     </x-forms.m-panel>
 
