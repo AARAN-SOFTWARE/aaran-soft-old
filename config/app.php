@@ -173,6 +173,7 @@ return [
         Aaran\Common\Providers\CommonServiceProvider::class,
         Aaran\Master\Providers\MasterServiceProvider::class,
         Aaran\Entries\Providers\SaleServiceProvider::class,
+        Aaran\Orders\Providers\OrderServiceProvider::class,
 
 
     ])->toArray(),

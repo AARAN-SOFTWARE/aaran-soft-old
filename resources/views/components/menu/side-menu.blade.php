@@ -31,6 +31,7 @@
 {{--            <x-menu.sub.erp.order/>--}}
 {{--            <x-menu.sub.erp.production/>--}}
             <x-menu.sub.master/>
+            <x-menu.sub.order/>
             <x-menu.sub.common/>
             <x-menu.sub.logout/>
 

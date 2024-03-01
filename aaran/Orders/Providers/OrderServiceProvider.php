@@ -11,7 +11,7 @@ class OrderServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
         $this->mergeConfigFrom(__DIR__ . '/../config.php','master');
 
-        $this->app->register(SaleRouteServiceProvider::class);
+        $this->app->register(OrderRouteServiceProvider::class);
     }
 
 }
