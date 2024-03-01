@@ -9,12 +9,11 @@ use Aaran\Master\Models\Company;
 use App\Livewire\Trait\CommonTrait;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
-
+use function Livewire\store;
 class Upsert extends Component
 {
     use CommonTrait;
@@ -226,7 +225,7 @@ class Upsert extends Component
                     'pincode_id' => $this->pincode_id,
                     'active_id' => $this->active_id,
                     'user_id' => Auth::id(),
-                    'logo' => $this->logo,
+                    'logo' => $this->save_logo(),
                 ]);
                 $message = "Saved";
                 $this->getRoute();
@@ -248,21 +247,10 @@ class Upsert extends Component
                 $obj->pincode_id = $this->pincode_id;
                 $obj->active_id = $this->active_id;
                 $obj->user_id = Auth::id();
-                $obj->logo = $this->logo;
+                $obj->logo = $this->save_logo();
                 $obj->save();
                 $message = "Updated";
             }
-//            $this->vname = '';
-//            $this->mobile = '';
-//            $this->whatsapp = '';
-//            $this->email = '';
-//            $this->gstin = '';
-//            $this->address_1 = '';
-//            $this->address_2 = '';
-//            $this->city_id = '';
-//            $this->state_id = '';
-//            $this->pincode_id = '';
-
             $this->getRoute();
             return $message;
         }
@@ -325,17 +313,11 @@ class Upsert extends Component
         return null;
     }
 
-    public function save_logo(): void
+    public function save_logo()
     {
-        $this->logo->store(path: 'photos');
+        return $this->logo->store(path:'photos');
     }
 
-
-    public function setDelete(): void
-    {
-        DB::table('companies')->where('companies.id', '=', $this->vid)->delete();
-        $this->getRoute();
-    }
 
     public function getRoute(): void
     {

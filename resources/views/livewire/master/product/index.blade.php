@@ -67,19 +67,19 @@
                             </a>
                         </x-table.cell>
                         <x-table.cell>
+                                <div class="w-full flex justify-center gap-3">
                             <a href="{{route('products.upsert',[$row->id])}}"
                                class="flex flex-col px-3 text-gray-600 truncate text-xl text-center">
-                                <div class="w-full flex justify-center gap-3">
                                     <x-button.link >&nbsp;
                                         <x-icons.icon :icon="'pencil'"
                                                       class="text-blue-500 h-5 w-auto block"/>
                                     </x-button.link>
-                                    <x-button.link >&nbsp;
-                                        <x-icons.icon :icon="'trash'"
-                                                      class="text-red-600 h-5 w-auto block"/>
-                                    </x-button.link>
-                                </div>
                             </a>
+                            <x-button.link wire:click="set_delete({{$row->id}})" wire:confirm="Are you sure you want to delete this ?">&nbsp;
+                                <x-icons.icon :icon="'trash'"
+                                              class="text-red-600 h-5 w-auto block"/>
+                            </x-button.link>
+                                </div>
                         </x-table.cell>
                     </x-table.row>
                 @empty
