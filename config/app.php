@@ -172,6 +172,7 @@ return [
         App\Providers\JetstreamServiceProvider::class,
         Aaran\Common\Providers\CommonServiceProvider::class,
         Aaran\Master\Providers\MasterServiceProvider::class,
+        Aaran\Entries\Providers\SaleServiceProvider::class,
 
 
     ])->toArray(),
