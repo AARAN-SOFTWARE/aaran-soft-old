@@ -175,6 +175,7 @@ return [
         Aaran\Entries\Providers\SaleServiceProvider::class,
         Aaran\Erp\Providers\ErpServiceProvider::class,
         Aaran\Orders\Providers\OrderServiceProvider::class,
+        Aaran\Style\Providers\StyleServiceProvider::class,
 
 
 
