@@ -1,13 +1,13 @@
 <?php
 
-namespace Aaran\Master\Database\Factories;
+namespace Aaran\Entries\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Aaran\Master\Models\Company>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Aaran\Entries\Models\Sale>
  */
-class CompanyFactory extends Factory
+class SaleFactory extends Factory
 {
     /**
      * Define the model's default state.
