@@ -54,8 +54,6 @@ class Index extends Component
     {
         $obj=$this->getobj($id);
         $obj->delete();
-
-
     }
 
     public function reRender(): void

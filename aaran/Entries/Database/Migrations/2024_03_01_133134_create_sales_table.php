@@ -13,21 +13,21 @@ return new class extends Migration
             $table->string('uniqueno')->unique();
             $table->string('acyear')->nullable();
             $table->foreignId('company_id')->references('id')->on('companies');
-            $table->foreignId('order_id')->references('id')->on('orders');
+            $table->foreignId('contact_id')->references('id')->on('contacts');
             $table->integer('invoice_no');
             $table->date('invoice_date');
-            $table->foreignId('contact_id')->references('id')->on('contacts');
-            $table->string('taxtype')->nullable();
+            $table->foreignId('order_id')->references('id')->on('orders');
+            $table->string('sales_type')->nullable();
             $table->foreignId('transport_id')->references('id')->on('transports');
             $table->string('destination')->nullable();
             $table->string('bundle')->nullable();
             $table->decimal('total_qty',11,3)->nullable();
-            $table->decimal('total_taxable_amount',11,2)->nullable();
+            $table->decimal('total_taxable',11,2)->nullable();
             $table->decimal('total_gst',11,2)->nullable();
             $table->foreignId('ledger_id')->nullable();
             $table->decimal('additional',11,2)->nullable();
-            $table->decimal('rounds')->nullable();
-            $table->decimal('grandtotal',11,2)->nullable();
+            $table->decimal('round_off')->nullable();
+            $table->decimal('grand_total',11,2)->nullable();
             $table->string('active_id',10)->nullable();
             $table->timestamps();
         });
@@ -40,7 +40,7 @@ return new class extends Migration
             $table->foreignId('size_id')->references('id')->on('sizes');
             $table->decimal('qty');
             $table->decimal('price');
-            $table->string('gstpercent_id')->nullable();
+            $table->string('gst_percent')->nullable();
         });
     }
 

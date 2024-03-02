@@ -2,7 +2,11 @@
 
 namespace Aaran\Entries\Models;
 
+use Aaran\Common\Models\Ledger;
+use Aaran\Common\Models\Transport;
+use Aaran\Master\Models\Company;
 use Aaran\Master\Models\Contact;
+use Aaran\Orders\Models\Order;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -30,5 +34,21 @@ class Sale extends Model
     public function contact(): BelongsTo
     {
         return $this->belongsTo(Contact::class);
+    }
+    public function company(): BelongsTo
+    {
+        return $this->belongsTo(Company::class);
+    }
+    public function order(): BelongsTo
+    {
+        return $this->belongsTo(Order::class);
+    }
+    public function transport(): BelongsTo
+    {
+        return $this->belongsTo(Transport::class);
+    }
+    public function ledger(): BelongsTo
+    {
+        return $this->belongsTo(Ledger::class);
     }
 }
