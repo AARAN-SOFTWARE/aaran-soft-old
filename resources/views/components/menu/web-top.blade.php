@@ -14,7 +14,7 @@
         <div class="navbar-collapse offcanvas-collapse lx:flex lg:flex-grow lg:items-center" id="navbarsExampleDefault">
             <ul class=" mr-90 mt-3 mb-2 ml-auto gap-12 flex flex-col list-none lg:mt-0 lg:mb-0 lg:flex-row">
                 <li>
-                    <a class="nav-link hover:underline font-bold  p-3" href="{{ route('/') }}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link hover:underline font-bold  p-3" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li>
                     <a class="nav-link hover:underline page-scroll font-bold p-3" href="{{ route('service') }}">services</a>
