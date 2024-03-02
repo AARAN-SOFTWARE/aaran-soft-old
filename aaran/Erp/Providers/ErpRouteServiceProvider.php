@@ -1,11 +1,11 @@
 <?php
 
-namespace Aaran\Entries\Providers;
+namespace Aaran\Erp\Providers;
 
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Route;
 
-class SaleRouteServiceProvider extends RouteServiceProvider
+class ErpRouteServiceProvider extends RouteServiceProvider
 {
     public function boot(): void
     {
