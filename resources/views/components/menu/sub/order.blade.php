@@ -2,12 +2,12 @@
 <li class="flex align-center flex-col cursor-pointer">
 
     <div
-            @click="selected !== 20 ? selected = 20 : selected = null"
-            class="relative flex flex-row justify-between items-center h-11 focus:outline-none hover:bg-gray-700
+        @click="selected !== 20 ? selected = 20 : selected = null"
+        class="relative flex flex-row justify-between items-center h-11 focus:outline-none hover:bg-gray-700
                                 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-3">
 
                         <span class="inline-flex justify-center items-center ml-4">
-                            <x-menu icon="color-swatch"/>
+                            <x-icons.menu icon="color-swatch"/>
                              <x-menu.header>Order Details</x-menu.header>
                         </span>
 
@@ -27,7 +27,7 @@
 
         <ul class="grid-cols-1 grid bg-gray-800">
 
-            @include('components.menu.items.erp.order-menu')
+            @include('components.menu.items.order-menu')
             <li class="bg-gray-900 mt-0.5"></li>
         </ul>
     </div>
