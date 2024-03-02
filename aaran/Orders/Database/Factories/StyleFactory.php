@@ -1,11 +1,11 @@
 <?php
 
-namespace Aaran\Style\Database\Factories;
+namespace Aaran\Orders\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Aaran\Style\Models\Style>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Aaran\Orders\Models\Style>
  */
 class StyleFactory extends Factory
 {

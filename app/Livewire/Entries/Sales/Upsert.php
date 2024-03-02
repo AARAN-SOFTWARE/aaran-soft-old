@@ -392,7 +392,8 @@ class Upsert extends Component
 
     public function mount($id): void
     {
-        if ($id!=0){
+//
+        if ($id !=0){
 
             $obj=Sale::find($id);
             $this->vid = $obj->id;

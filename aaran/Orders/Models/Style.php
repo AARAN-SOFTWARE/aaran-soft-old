@@ -1,10 +1,11 @@
 <?php
 
-namespace Aaran\Style\Models;
+namespace Aaran\Orders\Models;
 
-use Aaran\Style\Database\Factories\StyleFactory;
+use Aaran\Style\Models\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+
 //use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Style extends Model
