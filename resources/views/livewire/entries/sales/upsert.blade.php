@@ -1,5 +1,5 @@
 <div >
-    <x-slot name="header">Contact Entery</x-slot>
+    <x-slot name="header">Sales Entry</x-slot>
     <x-forms.m-panel>
         <section class="xl:grid grid-cols-3 gap-12">
         <x-input.model-text wire:model="uniqueno" :label="'Sales No'"/>
@@ -101,7 +101,7 @@
                                                 </li>
 
                                             @empty
-                                                @livewire('master.contact.upsert',[$contact_name])
+{{--                                                @livewire('master.contact.upsert',[$contact_name])--}}
                                             @endforelse
                                         @endif
                                     </ul>

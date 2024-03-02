@@ -100,7 +100,10 @@ class Upsert extends Component
 
     public function getCompanyList(): void
     {
+
+
         $this->companyCollection = $this->company_name ? Company::search(trim($this->company_name ))->get():Company::all();
+
     }
 
     public $contact_id= '';
@@ -156,7 +159,9 @@ class Upsert extends Component
 
     public function getContactList(): void
     {
+
         $this->contactCollection = $this->contact_name ? Contact::search(trim($this->contact_name ))->get():Contact::all();
+
     }
 
 
@@ -392,9 +397,7 @@ class Upsert extends Component
 
     public function mount($id): void
     {
-//
         if ($id !=0){
-
             $obj=Sale::find($id);
             $this->vid = $obj->id;
             $this->uniqueno = $obj->uniqueno;
@@ -470,6 +473,7 @@ class Upsert extends Component
 
     public function render()
     {
+
         $this->getCompanyList();
         $this->getContactList();
         $this->getOrderList();
