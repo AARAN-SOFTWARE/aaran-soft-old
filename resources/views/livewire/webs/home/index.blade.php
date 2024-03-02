@@ -1,8 +1,8 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <div class="w-full flex justify-center h-auto">
 <div class=" w-full rounded h-full ">
-    object-cover backdrop-opacity-50 bg-[url('../../../../images/img8.jpg')]
-    <---Home--->
+{{--    object-cover backdrop-opacity-50 bg-[url('../../../../images/img8.jpg')]--}}
+{{--    <---Home--->--}}
     <header id="header" class="header py-20 text-center md:pt-36  xl:flex ">
         <div class="container flex py-20">
             <div class="w-full p-5">
@@ -21,7 +21,7 @@
             <p class="mb-4 text-gray-800 text-3xl leading-10 lg:max-w-5xl lg:mx-auto"> Team management mobile apps don’t get better than CODEXSUN. It’s probably the best app in the world for this purpose. Don’t hesitate to give it a try today and you will fall in love with it</p>
         </div>
     </div>
-<---services--->
+{{--<---services--->--}}
     <div id="services" class="container  mx-auto xl:flex  pt-4 pb-1.5  text-center">
         <div class=" justify-items-center grid grid-cols-3 p-3 gap-3 w-full  mx-auto">
 
@@ -93,14 +93,14 @@
             </div>
         </div>
     </div>
-<---pricing--->
+{{--<---pricing--->--}}
     <div id="pricing" class="cards-2 relative pt-8 text-center  bg-rose-400">
         <div class="absolute bottom-0.5 h-40 w-full bg-white "></div>
-        <div class="">
+{{--        <div class="">--}}
             <h2 class="mb-2.5 text-white grid-rows-1 lg:max-w-xl lg:mx-auto">Pricing options for all budgets</h2>
             <p class="mb-16 text-white lg:max-w-3xl grid-rows-2 lg:mx-auto"> Our pricing plans are setup in such a way that any user can start enjoying Pavo without worrying so much about costs. They are flexible and work for any type of industry </p>
 
-           <---items--->
+{{--           <---items--->--}}
             <div class="container grid grid-cols-3  px-4 pb-px  p-5   mx-auto gap-3.5">
             <div class="card relative block rounded bg-purple-100 w-80 h-auto grid-cols-4 gap-3 flex-col mr-auto mb-6 ml-auto mx-auto shadow-md ">
                 <div class="card-body p-8">
@@ -236,18 +236,18 @@
         </div>
     </div>
 
-    <--- Our Team ---->
+    {{--<--- Our Team ---->--}}
     <div class="team py-32 mx-auto bg-gray-200">
         <div class="container px-4 mx-auto justify-items-center sm:px-8">
             <h2 class="mb-12 text-center font-bold lg:max-w-xl lg:mx-auto">OUR TEAM MEMBERS</h2>
-<---team member--->
+{{--<---team member--->--}}
             <div class="container bg-amber-500 grid grid-cols-3 mx-auto justify-items-center">
 
                 <div class="grid-cols-1 p-7 gap-4">
                     <div class="entry-thumb portfolio-thumb ">
                         <div class="imgoverlay relative overflow-hidden disabled:block text-light ">
                             <a href="../../../../images/taylor.jpg" >
-                                <img class="h-96 pt-1.5" src="../../../../images/taylor.jpg" alt="image">
+                                <img class="h-96 pt-1.5" src="../../../../images/taylor.jpg"  alt="image">
                                 <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>TaylorOtwall</h6></div></div>
                             </a>
                         </div>
@@ -257,7 +257,7 @@
                     <div class="entry-thumb portfolio-thumb">
                         <div class="imgoverlay text-light">
                             <a href="../../../../images/way1.jpg">
-                                <img src="../../../../images/way1.jpg" alt="image">
+                                <img src="../../../../images/way1.jpg"  alt="image">
                                 <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>Jeffrey Way</h6></div></div>
                             </a>
                         </div>
@@ -287,7 +287,7 @@
                     <div class="entry-thumb portfolio-thumb">
                         <div class="imgoverlay text-light">
                             <a href="../../../../images/adam.jpg" >
-                                <img w-80 src="../../../../images/adam.jpg" alt="image">
+                                <img w-80 src="../../../../images/adam.jpg"  alt="image">
                                 <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>adam wathan</h6></div></div>
                             </a>
                         </div>
@@ -304,7 +304,7 @@
                     </div>
                 </div>
             </div>
-<---counter--->
+{{--<---counter--->--}}
     <div class="counter">
         <div class="container flex mx-auto mt-8 px-4 sm:px-8 bg-green-900">
 
@@ -333,8 +333,5 @@
         </div>
     </div>
 
-</div>
-</div>
-    </div>
 </div>
 </div>
