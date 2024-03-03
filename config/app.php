@@ -172,7 +172,7 @@ return [
         App\Providers\JetstreamServiceProvider::class,
         Aaran\Common\Providers\CommonServiceProvider::class,
         Aaran\Master\Providers\MasterServiceProvider::class,
-        Aaran\Entries\Providers\SaleServiceProvider::class,
+        Aaran\Entries\Providers\EntriesServiceProvider::class,
         Aaran\Erp\Providers\ErpServiceProvider::class,
         Aaran\Orders\Providers\OrderServiceProvider::class,
 

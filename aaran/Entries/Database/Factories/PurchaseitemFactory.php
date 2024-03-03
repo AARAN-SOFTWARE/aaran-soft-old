@@ -2,15 +2,15 @@
 
 namespace Aaran\Entries\Database\Factories;
 
-use Aaran\Entries\Models\Sale;
+use Aaran\Entries\Models\Purchaseitem;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Aaran\Entries\Models\Sale>
  */
-class SaleFactory extends Factory
+class PurchaseitemFactory extends Factory
 {
-    protected $model = Sale::class;
+    protected $model = Purchaseitem::class;
     public function definition(): array
     {
         return [

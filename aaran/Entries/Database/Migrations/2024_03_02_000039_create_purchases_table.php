@@ -8,18 +8,18 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('sales', function (Blueprint $table) {
+        Schema::create('purchases', function (Blueprint $table) {
             $table->id();
             $table->string('uniqueno')->unique();
             $table->string('acyear')->nullable();
             $table->foreignId('company_id')->references('id')->on('companies');
             $table->foreignId('contact_id')->references('id')->on('contacts');
             $table->foreignId('order_id')->references('id')->on('orders');
-            $table->integer('invoice_no');
-            $table->date('invoice_date');
+            $table->string('purchase_no')->nullable();
+            $table->date('purchase_date');
+            $table->integer('Entry_no')->nullable();
             $table->string('sales_type')->nullable();
             $table->foreignId('transport_id')->references('id')->on('transports');
-            $table->string('destination')->nullable();
             $table->string('bundle')->nullable();
             $table->decimal('total_qty',11,3)->nullable();
             $table->decimal('total_taxable',11,2)->nullable();
@@ -32,9 +32,9 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('saleitems', function (Blueprint $table) {
+        Schema::create('purchaseitems', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sale_id')->references('id')->on('sales');
+            $table->foreignId('purchase_id')->references('id')->on('purchases');
             $table->foreignId('product_id')->references('id')->on('products');
             $table->foreignId('colour_id')->references('id')->on('colours');
             $table->foreignId('size_id')->references('id')->on('sizes');
@@ -46,8 +46,8 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('saleitems');
+        Schema::dropIfExists('purchaseitems');
 
-        Schema::dropIfExists('sales');
+        Schema::dropIfExists('purchases');
     }
 };

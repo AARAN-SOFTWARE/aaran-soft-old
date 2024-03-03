@@ -4,13 +4,13 @@ namespace Aaran\Entries\Models;
 
 use Aaran\Common\Models\Colour;
 use Aaran\Common\Models\Size;
-use Aaran\Entries\Database\Factories\SaleitemFactory;
+use Aaran\Entries\Database\Factories\PurchaseitemFactory;
 use Aaran\Master\Models\Product;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Saleitem extends Model
+class Purchaseitem extends Model
 {
     use HasFactory;
 
@@ -36,8 +36,8 @@ class Saleitem extends Model
         return $this->belongsTo(Size::class);
     }
 
-    protected static function newFactory(): SaleitemFactory
+    protected static function newFactory(): PurchaseitemFactory
     {
-        return new SaleitemFactory();
+        return new PurchaseitemFactory();
     }
 }

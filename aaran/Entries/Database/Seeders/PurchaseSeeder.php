@@ -4,7 +4,7 @@ namespace Aaran\Entries\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class Sales extends Seeder
+class PurchaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.

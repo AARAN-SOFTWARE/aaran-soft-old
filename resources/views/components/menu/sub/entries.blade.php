@@ -8,7 +8,7 @@
 
                         <span class="inline-flex justify-center items-center ml-4">
                             <x-icons.menu icon="color-swatch"/>
-                             <x-menu.header>Sales</x-menu.header>
+                             <x-menu.header>Entries</x-menu.header>
                         </span>
 
         <span class="inline-flex justify-center items-center">
@@ -27,7 +27,7 @@
 
         <ul class="grid-cols-1 grid bg-gray-800">
 
-            @include('components.menu.items.sales-menu')
+            @include('components.menu.items.entries-menu')
             <li class="bg-gray-900 mt-0.5"></li>
         </ul>
     </div>

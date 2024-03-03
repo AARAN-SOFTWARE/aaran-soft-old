@@ -4,7 +4,7 @@ namespace Aaran\Entries\Models;
 
 use Aaran\Common\Models\Ledger;
 use Aaran\Common\Models\Transport;
-use Aaran\Entries\Database\Factories\SaleFactory;
+use Aaran\Entries\Database\Factories\PurchaseFactory;
 use Aaran\Master\Models\Company;
 use Aaran\Master\Models\Contact;
 use Aaran\Orders\Models\Order;
@@ -13,11 +13,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Sale extends Model
+class Purchase extends Model
 {
     use HasFactory;
-
-    public $timestamps = false;
 
     protected $guarded = [];
 
@@ -29,31 +27,36 @@ class Sale extends Model
 
     public static function nextNo()
     {
-        return static::max('invoice_no') + 1;
+        return static::max('entry_no') + 1;
     }
 
     public function contact(): BelongsTo
     {
         return $this->belongsTo(Contact::class);
     }
+
     public function company(): BelongsTo
     {
         return $this->belongsTo(Company::class);
     }
+
     public function order(): BelongsTo
     {
         return $this->belongsTo(Order::class);
     }
+
     public function transport(): BelongsTo
     {
         return $this->belongsTo(Transport::class);
     }
+
     public function ledger(): BelongsTo
     {
         return $this->belongsTo(Ledger::class);
     }
-    protected static function newFactory():SaleFactory
+
+    protected static function newFactory(): PurchaseFactory
     {
-        return new SaleFactory();
+        return new PurchaseFactory();
     }
 }

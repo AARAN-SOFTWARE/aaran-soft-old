@@ -5,7 +5,7 @@ namespace Aaran\Entries\Providers;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Route;
 
-class SaleRouteServiceProvider extends RouteServiceProvider
+class EntriesRouteServiceProvider extends RouteServiceProvider
 {
     public function boot(): void
     {

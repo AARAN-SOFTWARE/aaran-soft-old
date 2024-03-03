@@ -2,18 +2,16 @@
 
 namespace Aaran\Entries\Database\Factories;
 
+use Aaran\Entries\Models\Purchase;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class SalesFactory extends Factory
+class PurchaseFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+
+    protected $model = Purchase::class;
     public function definition(): array
     {
         return [
