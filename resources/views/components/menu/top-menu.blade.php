@@ -31,7 +31,7 @@
             </div>
 
             {{-- login menu--}}
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
+            <div class="sm:flex sm:items-center sm:ml-6">
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
                     <x-jet.dropdown align="right" width="48">
@@ -72,11 +72,11 @@
                                 {{ __('Profile') }}
                             </x-jet.dropdown-link>
 
-{{--                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())--}}
-{{--                                <x-jet.dropdown-link href="{{ route('api-tokens.index') }}">--}}
-{{--                                    {{ __('API Tokens') }}--}}
-{{--                                </x-jet.dropdown-link>--}}
-{{--                            @endif--}}
+                            {{--                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())--}}
+                            {{--                                <x-jet.dropdown-link href="{{ route('api-tokens.index') }}">--}}
+                            {{--                                    {{ __('API Tokens') }}--}}
+                            {{--                                </x-jet.dropdown-link>--}}
+                            {{--                            @endif--}}
 
                             <div class="border-t border-gray-100"></div>
 
@@ -85,7 +85,7 @@
                                 @csrf
 
                                 <x-jet.dropdown-link href="{{ route('logout') }}"
-                                                 onclick="event.preventDefault();
+                                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                     {{ __('Log Out') }}
                                 </x-jet.dropdown-link>
