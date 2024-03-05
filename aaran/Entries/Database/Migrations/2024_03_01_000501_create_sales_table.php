@@ -41,6 +41,7 @@ return new class extends Migration
             $table->decimal('qty');
             $table->decimal('price');
             $table->string('gst_percent')->nullable();
+            $table->timestamps();
         });
     }
 
