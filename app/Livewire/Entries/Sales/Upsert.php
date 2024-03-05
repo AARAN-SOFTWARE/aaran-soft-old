@@ -23,8 +23,6 @@ class Upsert extends Component
 {
     use CommonTrait;
 
-
-
     public string $uniqueno='';
     public string $acyear='';
     public string $invoice_no='';
