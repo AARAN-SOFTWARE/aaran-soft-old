@@ -2,15 +2,14 @@
 
 namespace Aaran\Common\Database\Seeders;
 
+use Aaran\Common\Models\Colour;
 use Illuminate\Database\Seeder;
 
 class ColourSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public static function run(): void
     {
-        //
+        Colour::create([]);
+
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Aaran\Master\Database\Factories;
 
+use Aaran\Master\Models\Company;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,11 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class CompanyFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = Company::class;
     public function definition(): array
     {
         return [
