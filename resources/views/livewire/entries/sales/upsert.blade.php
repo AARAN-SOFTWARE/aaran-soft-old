@@ -549,7 +549,7 @@
 
                     <x-input.model-text wire:model="additional" :label="'Extra-Charges'"/>
                     <x-input.model-text wire:model="round_off" :label="'Round Off'"/>
-                    <x-input.model-text wire:model="grand_total" :label="'Grand Total'"/></div>
+                    <x-input.model-text wire:model="grand_total" wire:click.prevent="gt" :label="'Grand Total'"/></div>
             </section>
 
         </section>
