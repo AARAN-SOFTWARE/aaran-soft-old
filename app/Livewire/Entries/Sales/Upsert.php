@@ -517,7 +517,7 @@ class Upsert extends Component
     {
         if ($this-> uniqueno!= '') {
             if ($this->vid == "") {
-               $obj= Sale::create([
+                $obj= Sale::create([
                     'uniqueno' => $this->uniqueno,
                     'acyear'=>$this->acyear,
                     'company_id' => $this->company_id,
@@ -618,27 +618,30 @@ class Upsert extends Component
             $this->grand_total = $obj->grand_total;
             $this->active_id = $obj->active_id;
             $data=DB::table('saleitems')->select('saleitems.*',
-                    'products.vname as product_name',
+                'products.vname as product_name',
                 'colours.vname as colour_name',
                 'sizes.vname as size_name',)->join('products','products.id','=','saleitems.product_id')
                 ->join('colours', 'colours.id', '=', 'saleitems.colour_id')
                 ->join('sizes', 'sizes.id', '=', 'saleitems.size_id')->where('sale_id','=',$id)->get()->transform(function ($data){
-                  return [
-                      'saleitem_id' => $data->id,
-                      'product_name' => $data->product_name,
-                      'product_id' => $data->product_id,
-                      'colour_name' => $data->colour_name,
-                      'colour_id' => $data->colour_id,
-                      'size_name' => $data->size_name,
-                      'size_id' => $data->size_id,
-                      'qty' => $data->qty,
-                      'price' => $data->price,
-                      'gst_percent' => $data->gst_percent,
-                  ];
+                    return [
+                        'saleitem_id' => $data->id,
+                        'product_name' => $data->product_name,
+                        'product_id' => $data->product_id,
+                        'colour_name' => $data->colour_name,
+                        'colour_id' => $data->colour_id,
+                        'size_name' => $data->size_name,
+                        'size_id' => $data->size_id,
+                        'qty' => $data->qty,
+                        'price' => $data->price,
+                        'gst_percent' => $data->gst_percent,
+                    ];
                 });
             $this->itemList = $data;
         }else{
+
             $this->active_id=true;
+            $this->additional=0;
+            $this->grand_total=0;
             $this->invoice_date=Carbon::now()->format('Y-m-d');
         }
     }
@@ -766,7 +769,13 @@ class Upsert extends Component
 
     public function getRoute(): void
     {
+
         $this->redirect(route('sales'));
+    }
+
+    public function gt()
+    {
+        $this->grand_total=round(($this->additional)+($this->round_off));
     }
 
 

@@ -5,59 +5,59 @@
             <div class="w-1/2">
                 <x-input.model-text wire:model="uniqueno" :label="'Sales No'"/>
                 <div class="flex flex-row py-3 gap-3">
-            <div class="xl:flex w-full gap-2">
-                <label for="city_name" class="w-[10rem] text-zinc-500 tracking-wide py-2 ">Company Name</label>
-                <div x-data="{isTyped: @entangle('companyTyped')}" @click.away="isTyped = false" class="w-full">
-                    <div class="relative">
-                        <input
-                            id="company_name"
-                            type="search"
-                            wire:model.live="company_name"
-                            autocomplete="off"
-                            placeholder="Company Name.."
-                            @focus="isTyped = true"
-                            @keydown.escape.window="isTyped = false"
-                            @keydown.tab.window="isTyped = false"
-                            @keydown.enter.prevent="isTyped = false"
-                            wire:keydown.arrow-up="decrementCompany"
-                            wire:keydown.arrow-down="incrementCompany"
-                            wire:keydown.enter="enterCompany"
-                            class="block w-full purple-textbox"
-                        />
+                    <div class="xl:flex w-full gap-2">
+                        <label for="city_name" class="w-[10rem] text-zinc-500 tracking-wide py-2 ">Company Name</label>
+                        <div x-data="{isTyped: @entangle('companyTyped')}" @click.away="isTyped = false" class="w-full">
+                            <div class="relative">
+                                <input
+                                    id="company_name"
+                                    type="search"
+                                    wire:model.live="company_name"
+                                    autocomplete="off"
+                                    placeholder="Company Name.."
+                                    @focus="isTyped = true"
+                                    @keydown.escape.window="isTyped = false"
+                                    @keydown.tab.window="isTyped = false"
+                                    @keydown.enter.prevent="isTyped = false"
+                                    wire:keydown.arrow-up="decrementCompany"
+                                    wire:keydown.arrow-down="incrementCompany"
+                                    wire:keydown.enter="enterCompany"
+                                    class="block w-full purple-textbox"
+                                />
 
-                        <div x-show="isTyped"
-                             x-transition:leave="transition ease-in duration-100"
-                             x-transition:leave-start="opacity-100"
-                             x-transition:leave-end="opacity-0"
-                             x-cloak
-                        >
-                            <div class="absolute z-20 w-full mt-2">
-                                <div class="block py-1 shadow-md w-full
+                                <div x-show="isTyped"
+                                     x-transition:leave="transition ease-in duration-100"
+                                     x-transition:leave-start="opacity-100"
+                                     x-transition:leave-end="opacity-0"
+                                     x-cloak
+                                >
+                                    <div class="absolute z-20 w-full mt-2">
+                                        <div class="block py-1 shadow-md w-full
                 rounded-lg border-transparent flex-1 appearance-none border
                                  bg-white text-gray-800 ring-1 ring-purple-600">
-                                    <ul class="overflow-y-scroll h-96">
-                                        @if($companyCollection)
-                                            @forelse ($companyCollection as $i => $company)
+                                            <ul class="overflow-y-scroll h-96">
+                                                @if($companyCollection)
+                                                    @forelse ($companyCollection as $i => $company)
 
-                                                <li class="cursor-pointer px-3 py-1 hover:font-bold hover:bg-yellow-100 border-b border-gray-300 h-8
+                                                        <li class="cursor-pointer px-3 py-1 hover:font-bold hover:bg-yellow-100 border-b border-gray-300 h-8
                                                         {{ $highlightCompany=== $i ? 'bg-yellow-100' : '' }}"
-                                                    wire:click.prevent="setCompany('{{$company->vname}}','{{$company->id}}')"
-                                                    x-on:click="isTyped = false">
-                                                    {{ $company->vname }}
-                                                </li>
+                                                            wire:click.prevent="setCompany('{{$company->vname}}','{{$company->id}}')"
+                                                            x-on:click="isTyped = false">
+                                                            {{ $company->vname }}
+                                                        </li>
 
-                                            @empty
-                                                @livewire('controls.model.master.company-model',[$company_name])
-                                            @endforelse
-                                        @endif
-                                    </ul>
+                                                    @empty
+                                                        @livewire('controls.model.master.company-model',[$company_name])
+                                                    @endforelse
+                                                @endif
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
                 <x-input.model-text wire:model="acyear" :label="'Acyear'"/>
             </div>
 
@@ -122,12 +122,9 @@
             </div>
 
         </section>
-
-
         <section class="text-2xl font-bold">
             Sales Item
         </section>
-{{--        sales items --}}
         <section class="flex flex-row w-full gap-0.5">
             <div class="w-full">
                 <label for="product_name"></label>
@@ -171,7 +168,8 @@
                                                 </li>
 
                                             @empty
-                                                @livewire('controls.model.master.product-model',[$product_name])                                            @endforelse
+                                                @livewire('controls.model.master.product-model',[$product_name])
+                                            @endforelse
                                         @endif
                                     </ul>
                                 </div>
@@ -303,7 +301,6 @@
             <button wire:click="addItems" class="px-3 bg-green-500 text-white font-semibold tracking-wider ">Add
             </button>
         </section>
-{{--        table--}}
         <section>
 
             <div class="py-2 mt-5">
@@ -371,190 +368,190 @@
             </div>
 
         </section>
-
         <section class="grid grid-cols-3 gap-2 ">
             <section class="w-full">
-            <div class="w-1/2">
-            <div class="flex flex-col gap-2">
-                <div class="xl:flex w-full gap-2">
-                    <label for="pincode_name" class="w-[10rem] text-zinc-500 tracking-wide py-2">Transport</label>
-                    <div x-data="{isTyped: @entangle('transportTyped')}" @click.away="isTyped = false" class="w-full">
-                        <div class="relative">
-                            <input
-                                id="transport_name"
-                                type="search"
-                                wire:model.live="transport_name"
-                                autocomplete="off"
-                                placeholder="Transport.."
-                                @focus="isTyped = true"
-                                @keydown.escape.window="isTyped = false"
-                                @keydown.tab.window="isTyped = false"
-                                @keydown.enter.prevent="isTyped = false"
-                                wire:keydown.arrow-up="decrementTransport"
-                                wire:keydown.arrow-down="incrementTransport"
-                                wire:keydown.enter="enterTransport"
-                                class="block w-full purple-textbox"
-                            />
+                <div class="w-1/2">
+                    <div class="flex flex-col gap-2">
+                        <div class="xl:flex w-full gap-2">
+                            <label for="pincode_name" class="w-[10rem] text-zinc-500 tracking-wide py-2">Transport</label>
+                            <div x-data="{isTyped: @entangle('transportTyped')}" @click.away="isTyped = false" class="w-full">
+                                <div class="relative">
+                                    <input
+                                        id="transport_name"
+                                        type="search"
+                                        wire:model.live="transport_name"
+                                        autocomplete="off"
+                                        placeholder="Transport.."
+                                        @focus="isTyped = true"
+                                        @keydown.escape.window="isTyped = false"
+                                        @keydown.tab.window="isTyped = false"
+                                        @keydown.enter.prevent="isTyped = false"
+                                        wire:keydown.arrow-up="decrementTransport"
+                                        wire:keydown.arrow-down="incrementTransport"
+                                        wire:keydown.enter="enterTransport"
+                                        class="block w-full purple-textbox"
+                                    />
 
-                            <div x-show="isTyped"
-                                 x-transition:leave="transition ease-in duration-100"
-                                 x-transition:leave-start="opacity-100"
-                                 x-transition:leave-end="opacity-0"
-                                 x-cloak
-                            >
-                                <div class="absolute z-20 w-full mt-2">
-                                    <div class="block py-1 shadow-md w-full
+                                    <div x-show="isTyped"
+                                         x-transition:leave="transition ease-in duration-100"
+                                         x-transition:leave-start="opacity-100"
+                                         x-transition:leave-end="opacity-0"
+                                         x-cloak
+                                    >
+                                        <div class="absolute z-20 w-full mt-2">
+                                            <div class="block py-1 shadow-md w-full
                 rounded-lg border-transparent flex-1 appearance-none border
                                  bg-white text-gray-800 ring-1 ring-purple-600">
-                                        <ul class="overflow-y-scroll h-96">
-                                            @if($transportCollection)
-                                                @forelse ($transportCollection as $i => $transport)
-                                                    <li class="cursor-pointer px-3 py-1 hover:font-bold hover:bg-yellow-100 border-b border-gray-300 h-8
+                                                <ul class="overflow-y-scroll h-96">
+                                                    @if($transportCollection)
+                                                        @forelse ($transportCollection as $i => $transport)
+                                                            <li class="cursor-pointer px-3 py-1 hover:font-bold hover:bg-yellow-100 border-b border-gray-300 h-8
                                                         {{ $highlightTransport === $i ? 'bg-yellow-100' : '' }}"
-                                                        wire:click.prevent="setTransport('{{$transport->vname}}','{{$transport->id}}')"
-                                                        x-on:click="isTyped = false">
-                                                        {{ $transport->vname }}
-                                                    </li>
-                                                @empty
-                                                    @livewire('controls.model.common.transport-mode',[$transport_name])
-                                                @endforelse
-                                            @endif
-                                        </ul>
+                                                                wire:click.prevent="setTransport('{{$transport->vname}}','{{$transport->id}}')"
+                                                                x-on:click="isTyped = false">
+                                                                {{ $transport->vname }}
+                                                            </li>
+                                                        @empty
+                                                            @livewire('controls.model.common.transport-mode',[$transport_name])
+                                                        @endforelse
+                                                    @endif
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <x-input.model-text wire:model="total_qty" :label="'Total Qty'"/>
+                    <x-input.model-text wire:model="destination" :label="'Destination'"/>
+                    <x-input.model-text wire:model="bundle" :label="'Bundle'"/>
                 </div>
-            </div>
-                <x-input.model-text wire:model="total_qty" :label="'Total Qty'"/>
-            <x-input.model-text wire:model="destination" :label="'Destination'"/>
-            <x-input.model-text wire:model="bundle" :label="'Bundle'"/>
-            </div>
-        </section>
+            </section>
             <section class="w-full">
                 <div class="w-1/2">
-                <div class="flex flex-col gap-2">
-                    <div class="xl:flex w-full gap-2">
-                        <label for="order_name" class="w-[10rem] text-zinc-500 tracking-wide py-2">Order NO</label>
-                        <div x-data="{isTyped: @entangle('orderTyped')}" @click.away="isTyped = false" class="w-full">
-                            <div class="relative">
-                                <input
-                                    id="order_name"
-                                    type="search"
-                                    wire:model.live="order_name"
-                                    autocomplete="off"
-                                    placeholder="Order.."
-                                    @focus="isTyped = true"
-                                    @keydown.escape.window="isTyped = false"
-                                    @keydown.tab.window="isTyped = false"
-                                    @keydown.enter.prevent="isTyped = false"
-                                    wire:keydown.arrow-up="decrementOrder"
-                                    wire:keydown.arrow-down="incrementOrder"
-                                    wire:keydown.enter="enterOrder"
-                                    class="block w-full purple-textbox"
-                                />
+                    <div class="flex flex-col gap-2">
+                        <div class="xl:flex w-full gap-2">
+                            <label for="order_name" class="w-[10rem] text-zinc-500 tracking-wide py-2">Order NO</label>
+                            <div x-data="{isTyped: @entangle('orderTyped')}" @click.away="isTyped = false" class="w-full">
+                                <div class="relative">
+                                    <input
+                                        id="order_name"
+                                        type="search"
+                                        wire:model.live="order_name"
+                                        autocomplete="off"
+                                        placeholder="Order.."
+                                        @focus="isTyped = true"
+                                        @keydown.escape.window="isTyped = false"
+                                        @keydown.tab.window="isTyped = false"
+                                        @keydown.enter.prevent="isTyped = false"
+                                        wire:keydown.arrow-up="decrementOrder"
+                                        wire:keydown.arrow-down="incrementOrder"
+                                        wire:keydown.enter="enterOrder"
+                                        class="block w-full purple-textbox"
+                                    />
 
-                                <div x-show="isTyped"
-                                     x-transition:leave="transition ease-in duration-100"
-                                     x-transition:leave-start="opacity-100"
-                                     x-transition:leave-end="opacity-0"
-                                     x-cloak
-                                >
-                                    <div class="absolute z-20 w-full mt-2">
-                                        <div class="block py-1 shadow-md w-full
+                                    <div x-show="isTyped"
+                                         x-transition:leave="transition ease-in duration-100"
+                                         x-transition:leave-start="opacity-100"
+                                         x-transition:leave-end="opacity-0"
+                                         x-cloak
+                                    >
+                                        <div class="absolute z-20 w-full mt-2">
+                                            <div class="block py-1 shadow-md w-full
                 rounded-lg border-transparent flex-1 appearance-none border
                                  bg-white text-gray-800 ring-1 ring-purple-600">
-                                            <ul class="overflow-y-scroll h-96">
-                                                @if($orderCollection)
-                                                    @forelse ($orderCollection as $i => $order)
-                                                        <li class="cursor-pointer px-3 py-1 hover:font-bold hover:bg-yellow-100 border-b border-gray-300 h-8
+                                                <ul class="overflow-y-scroll h-96">
+                                                    @if($orderCollection)
+                                                        @forelse ($orderCollection as $i => $order)
+                                                            <li class="cursor-pointer px-3 py-1 hover:font-bold hover:bg-yellow-100 border-b border-gray-300 h-8
                                                         {{ $highlightOrder === $i ? 'bg-yellow-100' : '' }}"
-                                                            wire:click.prevent="setOrder('{{$order->vname}}','{{$order->id}}')"
-                                                            x-on:click="isTyped = false">
-                                                            {{ $order->vname }}
-                                                        </li>
-                                                    @empty
-                                                        @livewire('controls.model.order.order-model',[$order_name])
-                                                    @endforelse
-                                                @endif
-                                            </ul>
+                                                                wire:click.prevent="setOrder('{{$order->vname}}','{{$order->id}}')"
+                                                                x-on:click="isTyped = false">
+                                                                {{ $order->vname }}
+                                                            </li>
+                                                        @empty
+                                                            @livewire('controls.model.order.order-model',[$order_name])
+                                                        @endforelse
+                                                    @endif
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <x-input.model-select wire:model="sales_type" :label="'Sales Type'">
-                    <option class="text-gray-400"> choose ..</option>
-                    @foreach(\App\Enums\GST::cases() as $sales_type)
-                        <option value="{{$sales_type->value}}">{{$sales_type->getName()}}</option>
-                    @endforeach
-                </x-input.model-select>
-                <x-input.model-text wire:model="total_taxable" :label="'Total Taxable'"/>
-                <x-input.model-text wire:model="total_gst" :label="'Total Gst'"/>
+                    <x-input.model-select wire:model="sales_type" :label="'Sales Type'">
+                        <option class="text-gray-400"> choose ..</option>
+                        @foreach(\App\Enums\GST::cases() as $sales_type)
+                            <option value="{{$sales_type->value}}">{{$sales_type->getName()}}</option>
+                        @endforeach
+                    </x-input.model-select>
+                    <x-input.model-text wire:model="total_taxable" :label="'Total Taxable'"/>
+                    <x-input.model-text wire:model="total_gst" :label="'Total Gst'"/>
                 </div>
             </section>
             <section class="w-full">
                 <div class="w-1/2">
-                <div class="flex flex-col gap-2">
-                    <div class="xl:flex w-full gap-2">
-                        <label for="pincode_name" class="w-[10rem] text-zinc-500 tracking-wide py-2">Ledger</label>
-                        <div x-data="{isTyped: @entangle('ledgerTyped')}" @click.away="isTyped = false" class='w-full' >
-                            <div class="relative">
-                                <input
-                                    id="ledger_name"
-                                    type="search"
-                                    wire:model.live="ledger_name"
-                                    autocomplete="off"
-                                    placeholder="Ledger.."
-                                    @focus="isTyped = true"
-                                    @keydown.escape.window="isTyped = false"
-                                    @keydown.tab.window="isTyped = false"
-                                    @keydown.enter.prevent="isTyped = false"
-                                    wire:keydown.arrow-up="decrementLedger"
-                                    wire:keydown.arrow-down="incrementLedger"
-                                    wire:keydown.enter="enterLedger"
-                                    class="block w-full purple-textbox"
-                                />
+                    <div class="flex flex-col gap-2">
+                        <div class="xl:flex w-full gap-2">
+                            <label for="pincode_name" class="w-[10rem] text-zinc-500 tracking-wide py-2">Ledger</label>
+                            <div x-data="{isTyped: @entangle('ledgerTyped')}" @click.away="isTyped = false" class='w-full' >
+                                <div class="relative">
+                                    <input
+                                        id="ledger_name"
+                                        type="search"
+                                        wire:model.live="ledger_name"
+                                        autocomplete="off"
+                                        placeholder="Ledger.."
+                                        @focus="isTyped = true"
+                                        @keydown.escape.window="isTyped = false"
+                                        @keydown.tab.window="isTyped = false"
+                                        @keydown.enter.prevent="isTyped = false"
+                                        wire:keydown.arrow-up="decrementLedger"
+                                        wire:keydown.arrow-down="incrementLedger"
+                                        wire:keydown.enter="enterLedger"
+                                        class="block w-full purple-textbox"
+                                    />
 
-                                <div x-show="isTyped"
-                                     x-transition:leave="transition ease-in duration-100"
-                                     x-transition:leave-start="opacity-100"
-                                     x-transition:leave-end="opacity-0"
-                                     x-cloak
-                                >
-                                    <div class="absolute z-20 w-full mt-2">
-                                        <div class="block py-1 shadow-md w-full
+                                    <div x-show="isTyped"
+                                         x-transition:leave="transition ease-in duration-100"
+                                         x-transition:leave-start="opacity-100"
+                                         x-transition:leave-end="opacity-0"
+                                         x-cloak
+                                    >
+                                        <div class="absolute z-20 w-full mt-2">
+                                            <div class="block py-1 shadow-md w-full
                 rounded-lg border-transparent flex-1 appearance-none border
                                  bg-white text-gray-800 ring-1 ring-purple-600">
-                                            <ul class="overflow-y-scroll h-96">
-                                                @if($ledgerCollection)
-                                                    @forelse ($ledgerCollection as $i => $ledger)
-                                                        <li class="cursor-pointer px-3 py-1 hover:font-bold hover:bg-yellow-100 border-b border-gray-300 h-8
+                                                <ul class="overflow-y-scroll h-96">
+                                                    @if($ledgerCollection)
+                                                        @forelse ($ledgerCollection as $i => $ledger)
+                                                            <li class="cursor-pointer px-3 py-1 hover:font-bold hover:bg-yellow-100 border-b border-gray-300 h-8
                                                         {{ $highlightLedger === $i ? 'bg-yellow-100' : '' }}"
-                                                            wire:click.prevent="setLedger('{{$ledger->vname}}','{{$ledger->id}}')"
-                                                            x-on:click="isTyped = false">
-                                                            {{ $ledger->vname }}
-                                                        </li>
-                                                    @empty
-                                                        @livewire('controls.model.common.ledger-model',[$ledger_name])
-                                                    @endforelse
-                                                @endif
-                                            </ul>
+                                                                wire:click.prevent="setLedger('{{$ledger->vname}}','{{$ledger->id}}')"
+                                                                x-on:click="isTyped = false">
+                                                                {{ $ledger->vname }}
+                                                            </li>
+                                                        @empty
+                                                            @livewire('controls.model.common.ledger-model',[$ledger_name])
+                                                        @endforelse
+                                                    @endif
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <x-input.model-text wire:model="additional" :label="'Extra-Charges'"/>
-                <x-input.model-text wire:model="round_off" :label="'Round Off'"/>
-                <x-input.model-text wire:model="grand_total" :label="'Grand Total'"/></div>
+                    <x-input.model-text wire:model="additional" :label="'Extra-Charges'"/>
+                    <x-input.model-text wire:model="round_off" :label="'Round Off'"/>
+                    <x-input.model-text wire:model="grand_total" wire:click.prevent="gt" :label="'Grand Total'"/></div>
             </section>
+
         </section>
     </x-forms.m-panel>
     <div class="px-8 py-6 gap-4 bg-gray-100 rounded-b-md shadow-lg w-full ">
@@ -580,6 +577,7 @@
             </div>
         </div>
     </div>
+
 
 </div>
 
