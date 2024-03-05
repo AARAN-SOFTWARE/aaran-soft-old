@@ -62,6 +62,9 @@ trait CommonTrait
         $this->active_id = '1';
         $this->searches = '';
         $this->order_name='';
+        $this->state_code='';
+        $this->desc='';
+
     }
 
     public function resetFilters()

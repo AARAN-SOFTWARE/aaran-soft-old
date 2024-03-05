@@ -16,27 +16,25 @@
                     <x-table.row>
 
                         <x-table.cell>
-                            <a href="{{route('orders.style',[$row->id])}}"
-                               class="flex px-3 text-gray-600 truncate text-xl text-left">
+
+
                                 {{ $index + 1 }}
-                            </a>
+
                         </x-table.cell>
 
                         <x-table.cell>
-                            <a href="{{route('orders.style',[$row->id])}}"
-                               class="flex flex-col px-3">
+
                                 <div class="text-gray-600 truncate text-xl text-left">
                                     {{ $row->vname }}
                                 </div>
-                            </a>
+
 
                         </x-table.cell>
 
                         <x-table.cell>
-                            <a href="{{route('orders.style',[$row->id])}}"
-                               class="flex flex-col px-3 text-gray-600 truncate text-xl text-left">
+
                                 {{ $row->desc }}
-                            </a>
+                           
                         </x-table.cell>
 
 
@@ -54,7 +52,7 @@
         <x-modal.delete/>
 
         <x-forms.create :id="$vid">
-            <x-input.model-text wire:model="vname" :label="'Style Name'"/>
+            <x-input.model-text wire:model="vname" :label="'style Name'"/>
             <x-input.model-text wire:model="desc" :label="'Description'"/>
         </x-forms.create>
 
