@@ -4,6 +4,7 @@ namespace App\Livewire\Entries\Sales;
 
 use Aaran\Entries\Models\Sale;
 use App\Livewire\Trait\CommonTrait;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class Index extends Component
@@ -68,6 +69,7 @@ class Index extends Component
     public function set_delete($id): void
     {
         $obj=$this->getObj($id);
+        DB::table('saleitems')->where('sale_id', '=', $this->vid)->delete();
         $obj->delete();
     }
 
