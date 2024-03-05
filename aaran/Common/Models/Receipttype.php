@@ -3,16 +3,13 @@
 namespace Aaran\Common\Models;
 
 use Aaran\Common\Database\Factories\ReceipttypeFactory;
-use Aaran\Common\Database\Factories\TransportFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Receipttype extends Model
 {
     use HasFactory;
-
     protected $guarded = [];
-
     public $timestamps = false;
 
     public static function search(string $searches)

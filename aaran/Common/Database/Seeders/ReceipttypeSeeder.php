@@ -2,15 +2,16 @@
 
 namespace Aaran\Common\Database\Seeders;
 
+use Aaran\Common\Models\Receipttype;
 use Illuminate\Database\Seeder;
 
 class ReceipttypeSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public static function run(): void
     {
-        //
+        Receipttype::create([
+            'vname' => 'Tiruppur',
+            'active_id' => '1'
+        ]);
     }
 }
