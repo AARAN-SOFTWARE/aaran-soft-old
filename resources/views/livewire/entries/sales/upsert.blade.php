@@ -1,6 +1,8 @@
 <div >
     <x-slot name="header">Sales Entry</x-slot>
     <x-forms.m-panel>
+
+
         <section class="grid grid-cols-2 gap-2 ">
             <div class="w-1/2">
                 <x-input.model-text wire:model="uniqueno" :label="'Sales No'"/>
