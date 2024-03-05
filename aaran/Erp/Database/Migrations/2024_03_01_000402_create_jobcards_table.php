@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->integer('vno');
             $table->date('vdate');
+            $table->foreignId('order_id')->references('id')->on('orders');
             $table->foreignId('style_id')->references('id')->on('styles');
             $table->string('total_qty');
             $table->string('active_id', 3)->nullable();

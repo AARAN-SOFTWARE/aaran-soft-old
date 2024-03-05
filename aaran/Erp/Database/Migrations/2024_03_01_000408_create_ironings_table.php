@@ -8,35 +8,36 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('pe_outwards', function (Blueprint $table) {
+        Schema::create('ironings', function (Blueprint $table) {
             $table->id();
             $table->integer('vno');
             $table->date('vdate');
-            $table->foreignId('contact_id')->references('id')->on('contacts');
-            $table->foreignId('jobcard_id')->references('id')->on('jobcards');
+            $table->string('iron_master');
+            $table->foreignId('order_id')->references('id')->on('orders');
+            $table->foreignId('style_id')->references('id')->on('styles');
             $table->decimal('total_qty',11,3);
             $table->string('receiver_details');
             $table->string('active_id', 3)->nullable();
+//            $table->foreignId('tenant_id')->references('id')->on('tenants');
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });
 
-        Schema::create('pe_outward_items', function (Blueprint $table) {
+        Schema::create('ironing_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pe_outward_id')->references('id')->on('pe_outwards');
+            $table->foreignId('ironing_id')->references('id')->on('ironings');
             $table->foreignId('jobcard_item_id')->references('id')->on('jobcard_items');
-            $table->foreignId('cutting_item_id')->references('id')->on('cutting_items');
+            $table->foreignId('section_inward_item_id')->references('id')->on('section_inward_items');
             $table->foreignId('colour_id')->references('id')->on('colours');
             $table->foreignId('size_id')->references('id')->on('sizes');
             $table->decimal('qty',11,3);
-            $table->decimal('pending_qty',11,3);
             $table->string('active_id', 3)->nullable();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('pe_outward_items');
-        Schema::dropIfExists('pe_outwards');
+        Schema::dropIfExists('ironing_items');
+        Schema::dropIfExists('ironings');
     }
 };
