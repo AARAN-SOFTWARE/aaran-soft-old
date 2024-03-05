@@ -2,9 +2,7 @@
 
 namespace Tests\Feature\Livewire\Order;
 
-use App\Livewire\Order\Index;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+use App\Livewire\Orders\Order\Index;
 use Livewire\Livewire;
 use Tests\TestCase;
 

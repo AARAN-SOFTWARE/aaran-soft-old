@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Order;
+namespace App\Livewire\Orders\Order;
 
 use Aaran\Orders\Models\Order;
 use App\Livewire\Trait\CommonTrait;
@@ -67,7 +67,7 @@ class Index extends Component
 
     public function render()
     {
-        return view('livewire.order.index')->with([
+        return view('livewire.orders.order.index')->with([
             'list' => $this->getList()
         ]);
     }
