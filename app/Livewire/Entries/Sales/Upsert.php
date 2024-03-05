@@ -639,6 +639,7 @@ class Upsert extends Component
             $this->itemList = $data;
         }else{
             $this->active_id=true;
+            $this->additional=0;
             $this->invoice_date=Carbon::now()->format('Y-m-d');
         }
     }
@@ -767,6 +768,12 @@ class Upsert extends Component
     public function getRoute(): void
     {
         $this->redirect(route('sales'));
+    }
+
+    public function gt()
+    {
+        $this->grand_total=0;
+        $this->grand_total=round(($this->additional)+($this->round_off));
     }
 
 
