@@ -2,13 +2,11 @@
 
 namespace App\Livewire\Erp\Production\Cutting;
 
-use App\Models\Common\Colour;
-use App\Models\Common\Size;
-use App\Models\Erp\Order;
-use App\Models\Erp\Production\Cutting;
-use App\Models\Erp\Production\CuttingItem;
-use App\Models\Erp\Production\Jobcard;
-use App\Models\Erp\Production\JobcardItem;
+use Aaran\Erp\Models\Production\Cutting;
+use Aaran\Erp\Models\Production\CuttingItem;
+use Aaran\Erp\Models\Production\Jobcard;
+use Aaran\Erp\Models\Production\JobcardItem;
+use Aaran\Orders\Models\Order;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Support\Collection;
@@ -310,7 +308,7 @@ class Upsert extends Component
                 ->join('colours', 'colours.id', '=', 'jobcard_items.colour_id')
                 ->join('sizes', 'sizes.id', '=', 'jobcard_items.size_id')
                 ->where('cutting_id', '=', $id)
-                ->where('cuttings.tenant_id', '=', session()->get('tenant_id'))
+                ->where('cuttings.company_id', '=', session()->get('company_id'))
                 ->get()
                 ->transform(function ($data) {
                     return [
@@ -428,7 +426,7 @@ class Upsert extends Component
 
     public function save(): string
     {
-        if (session()->has('tenant_id')) {
+        if (session()->has('company_id')) {
 
             if ($this->order_id != '') {
 
@@ -442,7 +440,7 @@ class Upsert extends Component
                         'cutting_master' => $this->cutting_master,
                         'total_qty' => $this->total_qty,
                         'active_id' => '1',
-                        'tenant_id' => session()->get('tenant_id'),
+                        'company_id' => session()->get('company_id'),
                         'user_id' => \Auth::id(),
                     ]);
                     $this->saveItem($obj->id);
@@ -458,7 +456,7 @@ class Upsert extends Component
                     $obj->cutting_master = $this->cutting_master;
                     $obj->total_qty = $this->total_qty;
                     $obj->active_id = '1';
-                    $obj->tenant_id = session()->get('tenant_id');
+                    $obj->company_id = session()->get('company_id');
                     $obj->user_id = \Auth::id();
                     $obj->save();
 
@@ -499,13 +497,6 @@ class Upsert extends Component
             $item->cutting_qty = $item->qty - $sum;
             $item->save();
         }
-    }
-
-    public function setDelete()
-    {
-        DB::table('cutting_items')->where('cutting_id', '=', $this->vid)->delete();
-        DB::table('cuttings')->where('id', '=', $this->vid)->delete();
-        $this->getRoute();
     }
 
     public function getRoute(): void

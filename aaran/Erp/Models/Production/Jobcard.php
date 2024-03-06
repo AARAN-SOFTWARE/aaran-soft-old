@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models\Erp\Production;
+namespace Aaran\Erp\Models\Production;
 
-use App\Models\Erp\Order;
-use App\Models\Erp\Style;
+use Aaran\Orders\Models\Order;
+use Aaran\Orders\Models\Style;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

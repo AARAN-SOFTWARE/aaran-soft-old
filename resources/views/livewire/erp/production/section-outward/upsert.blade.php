@@ -103,7 +103,7 @@
                                                     </li>
 
                                                 @empty
-                                                    @livewire('controls.model.erp.order-model',[$order_no])
+                                                    @livewire('controls.model.order.order-model',[$order_no])
                                                 @endforelse
                                             @endif
                                         </ul>
@@ -286,15 +286,6 @@
                 </div>
             </div>
 
-
-            {{--            <div class="w-full">--}}
-            {{--                <label for="colour_name"></label>--}}
-            {{--                <input id="colour_name" wire:model="colour_name" class="w-full border-gray-200" placeholder="Colour">--}}
-            {{--            </div>--}}
-            {{--            <div class="w-full">--}}
-            {{--                <label for="size_name"></label>--}}
-            {{--                <input id="size_name" wire:model="size_name" class="w-full border-gray-200" placeholder="Size">--}}
-            {{--            </div>--}}
             <div class="w-full">
                 <label for="cutting_qty"></label>
                 <input id="cutting_qty" wire:model="qty" class="w-full border-gray-200" placeholder="Qty">
@@ -342,7 +333,7 @@
                             <td class="text-center border border-gray-300">
                                 <button wire:click.prevent="removeItems({{$index}})"
                                         class="py-1.5 w-full text-red-500 items-center ">
-                                    <x-aaranUi::icons.icon icon="trash" class="block w-auto h-6"/>
+                                    <x-icons.icon icon="trash" class="block w-auto h-6"/>
                                 </button>
                             </td>
                         </tr>
@@ -383,9 +374,6 @@
                 </div>
                 <div>
                     <x-button.print/>
-                </div>
-                <div>
-                    <x-button.delete/>
                 </div>
             </div>
         </div>

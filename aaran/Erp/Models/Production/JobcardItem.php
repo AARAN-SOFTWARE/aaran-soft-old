@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Erp\Production;
+namespace Aaran\Erp\Models\Production;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

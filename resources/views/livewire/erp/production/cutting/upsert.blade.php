@@ -47,7 +47,7 @@
                                                         </li>
 
                                                     @empty
-                                                        @livewire('controls.model.erp.order-model',[$order_no])
+                                                        @livewire('controls.model.order.order-model',[$order_no])
                                                     @endforelse
                                                 @endif
                                             </ul>
@@ -278,14 +278,14 @@
                                     {{$index+1}}
                                 </button>
                             </td>
-                            <td class="px-2 text-left border border-gray-300">{{$row['fabric_lot_no']}}</td>
-                            <td class="px-2 text-center border border-gray-300">{{$row['colour_name']}}</td>
-                            <td class="px-2 text-center border border-gray-300">{{$row['size_name']}}</td>
-                            <td class="px-2 text-center border border-gray-300">{{floatval($row['qty'])}}</td>
+                            <td class="px-2 text-left border border-gray-300"  wire:click.prevent="changeItems({{$index}})">{{$row['fabric_lot_no']}}</td>
+                            <td class="px-2 text-center border border-gray-300"  wire:click.prevent="changeItems({{$index}})">{{$row['colour_name']}}</td>
+                            <td class="px-2 text-center border border-gray-300"  wire:click.prevent="changeItems({{$index}})">{{$row['size_name']}}</td>
+                            <td class="px-2 text-center border border-gray-300" wire:click.prevent="changeItems({{$index}})">{{floatval($row['qty'])}}</td>
                             <td class="text-center border border-gray-300">
                                 <button wire:click.prevent="removeItems({{$index}})"
                                         class="py-1.5 w-full text-red-500 items-center ">
-                                    <x-aaranUi::icons.icon icon="trash" class="block w-auto h-6"/>
+                                    <x-icons.icon icon="trash" class="block w-auto h-6"/>
                                 </button>
                             </td>
                         </tr>
@@ -320,9 +320,6 @@
                 </div>
                 <div>
 {{--                    <x-button.print/>--}}
-                </div>
-                <div>
-                    <x-button.delete/>
                 </div>
             </div>
         </div>

@@ -218,7 +218,7 @@ class ContactModel extends Component
                 'user_id' => Auth::id(),
                 'active_id' => '1'
             ]);
-            $this->dispatch('refresh-size', ['name' => $this->vname, 'id' => $obj->id]);
+            $this->dispatch('refresh-contact', ['name' => $this->vname, 'id' => $obj->id]);
             $this->clearAll();
         }
     }

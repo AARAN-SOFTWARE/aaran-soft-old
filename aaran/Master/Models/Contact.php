@@ -26,8 +26,8 @@ class Contact extends Model
 
         return collect([
             'contact_name' => $obj->vname,
-            'address_1' => $obj->address_street . ', ' . $obj->address_area,
-            'address_2' => $obj->address_area,
+            'address_1' => $obj->address_1 . ', ' . $obj->address_area,
+            'address_2' => $obj->address_2,
             'address_3' => $obj->city->vname . ' - ' . $obj->pincode->vname . '.  ' . $obj->state->vname . ' - ' . $obj->state->state_code,
             'gstCell' =>  'GSTin - '.$obj->gstin. ', Mobile - ' . $obj->mobile
         ]);

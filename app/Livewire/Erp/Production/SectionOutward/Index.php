@@ -2,8 +2,9 @@
 
 namespace App\Livewire\Erp\Production\SectionOutward;
 
+use Aaran\Erp\Models\Production\SectionOutward;
 use App\Livewire\Trait\EntriesIndexAbstract;
-use App\Models\Erp\Production\SectionOutward;
+use Illuminate\Support\Facades\DB;
 
 class Index extends EntriesIndexAbstract
 {
@@ -26,14 +27,40 @@ class Index extends EntriesIndexAbstract
             ->join('orders', 'orders.id', '=', 'jobcards.order_id')
             ->join('styles', 'styles.id', '=', 'jobcards.style_id')
             ->where('section_outwards.active_id', '=', $this->activeRecord)
-            ->where('section_outwards.tenant_id', '=', session()->get('tenant_id'))
+            ->where('section_outwards.company_id', '=', session()->get('company_id'))
             ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
             ->paginate($this->perPage);
     }
+    public function set_delete($id): void
+    {
+        $obj=$this->getObj($id);
+        DB::table('section_outward_items')->where('section_outward_id', '=', $this->vid)->delete();
+        $obj->delete();
+    }
+    private function getObj($id)
+    {
+        if ($id) {
+            $obj = SectionOutward::find($id);
+            $this->vid = $obj->id;
+            $this->vno = $obj->vno;
+            $this->vdate = $obj->vdate;
+            $this->contact_id = $obj->contact_id;
+            $this->contact_name = $obj->contact->vname;
+            $this->order_no = $obj->jobcard->order->vname;
+            $this->jobcard_id = $obj->jobcard_id;
+            $this->jobcard_no = $obj->jobcard->vno;
+            $this->total_qty = $obj->total_qty;
+            $this->receiver_details = $obj->receiver_details;
+            return $obj;
+        }
+        return null;
+    }
+
     public function render()
     {
         return view('livewire.erp.production.section-outward.index')->with([
             'list' => $this->getList()
         ]);
     }
+
 }

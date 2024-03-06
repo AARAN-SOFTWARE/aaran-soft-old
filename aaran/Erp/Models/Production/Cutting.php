@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Models\Erp\Production;
+namespace Aaran\Erp\Models\Production;
 
-use App\Models\Erp\Order;
+use Aaran\Erp\Models\Production\Jobcard;
+use Aaran\Orders\Models\Order;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
