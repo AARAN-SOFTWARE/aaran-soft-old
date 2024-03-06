@@ -2,7 +2,6 @@
 
 namespace Aaran\Common\Database\Factories;
 
-use Aaran\Common\Models\Bank;
 use Aaran\Common\Models\Receipttype;
 use Illuminate\Database\Eloquent\Factories\Factory;
 

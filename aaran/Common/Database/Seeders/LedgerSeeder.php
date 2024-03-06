@@ -2,15 +2,16 @@
 
 namespace Aaran\Common\Database\Seeders;
 
+use Aaran\Common\Models\Ledger;
 use Illuminate\Database\Seeder;
 
 class LedgerSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public static function run(): void
     {
-        //
+        Ledger::create([
+            'vname' => 'Tiruppur',
+            'active_id' => '1'
+        ]);
     }
 }

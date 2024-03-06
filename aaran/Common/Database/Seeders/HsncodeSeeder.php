@@ -2,15 +2,26 @@
 
 namespace Aaran\Common\Database\Seeders;
 
+use Aaran\Common\Models\Hsncode;
 use Illuminate\Database\Seeder;
 
 class HsncodeSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public static function run(): void
     {
-        //
+        Hsncode::create([
+            'vname' => '6100',
+            'active_id' => '1'
+        ]);
+
+        Hsncode::create([
+            'vname' => '1466',
+            'active_id' => '1'
+        ]);
+
+        Hsncode::create([
+            'vname' => '2922',
+            'active_id' => '1'
+        ]);
     }
 }

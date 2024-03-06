@@ -2,15 +2,28 @@
 
 namespace Aaran\Common\Database\Seeders;
 
+use Aaran\Common\Models\Size;
 use Illuminate\Database\Seeder;
-
 class SizeSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public static function run(): void
     {
-        //
+
+        Size::create([
+            'vname' => 's',
+            'active_id' => '1'
+        ]);
+        Size::create([
+            'vname' => 'm',
+            'active_id' => '1'
+        ]);
+        Size::create([
+            'vname' => 'l',
+            'active_id' => '1'
+        ]);
+        Size::create([
+            'vname' => 'xl',
+            'active_id' => '1'
+        ]);
     }
 }

@@ -9,9 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Hsncode extends Model
 {
     use HasFactory;
-
     protected $guarded = [];
-
     public $timestamps = false;
 
     public static function search(string $searches)

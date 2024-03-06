@@ -2,6 +2,7 @@
 
 namespace Aaran\Common\Models;
 
+use Aaran\Common\Database\Factories\DepartmentFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,6 +19,9 @@ class Department extends Model
         return empty($searches) ? static::query()
             : static::where('vname', 'like', '%' . $searches . '%');
     }
-
+    protected static function newFactory():DepartmentFactory
+    {
+        return new DepartmentFactory();
+    }
 
 }
