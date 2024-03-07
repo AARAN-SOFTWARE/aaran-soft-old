@@ -323,6 +323,103 @@ class Upsert extends Component
             ->get() : Size::all();
     }
 
+
+    //
+    // Job List
+    //
+
+    public $jobcard_item_id = '';
+    public $jobcard_item_name = '';
+    public Collection $jobcardItemCollection;
+    public $highlightJobcardItem = 0;
+    public $jobcardItemTyped = false;
+
+    public function decrementJobcardItem(): void
+    {
+        if ($this->highlightJobcardItem === 0) {
+            $this->highlightJobcardItem = count($this->jobcardItemCollection) - 1;
+            return;
+        }
+        $this->highlightJobcardItem--;
+    }
+
+    public function incrementJobcardItem(): void
+    {
+        if ($this->highlightJobcardItem === count($this->jobcardItemCollection) - 1) {
+            $this->highlightJobcardItem = 0;
+            return;
+        }
+        $this->highlightJobcardItem++;
+    }
+
+    public function enterJobcardItem(): void
+    {
+        $obj = $this->jobcardItemCollection[$this->highlightJobcardItem] ?? null;
+
+        $this->jobcard_item_id = '';
+        $this->jobcardItemCollection = Collection::empty();
+        $this->highlightJobcardItem = 0;
+
+        $this->jobcard_item_id = $obj['jobcard_item_id'] ?? '';
+        $this->fabric_lot_id = $obj['fabric_lot_id'] ?? '';
+        $this->fabric_lot_no = $obj['fabric_lot_no'] ?? '';
+        $this->colour_id = $obj['colour_id'] ?? '';
+        $this->colour_name = $obj['colour_name'] ?? '';
+        $this->size_id = $obj['size_id'] ?? '';
+        $this->size_name = $obj['size_name'] ?? '';
+        $this->qty = $obj['qty'] ?? '';
+
+        $this->jobcardItemName = $this->fabric_lot_no . ' - ' . $this->colour_name . ' - ' . $this->size_name;
+    }
+
+
+    public $jobcardItemName = '';
+
+    public function setJobcardItem($jobcard_item_id, $fabric_lot_id, $fabric_lot_no, $colour_id, $colour_name, $size_id, $size_name, $qty): void
+    {
+        $this->jobcard_item_id = $jobcard_item_id;
+        $this->fabric_lot_id = $fabric_lot_id;
+        $this->fabric_lot_no = $fabric_lot_no;
+        $this->colour_id = $colour_id;
+        $this->colour_name = $colour_name;
+        $this->size_id = $size_id;
+        $this->size_name = $size_name;
+        $this->qty = $qty + 0;
+
+        $this->jobcardItemName = $fabric_lot_no . ' - ' . $colour_name . ' - ' . $size_name;
+
+        $this->getJobcardItemList();
+    }
+
+    public function getJobcardItemList(): void
+    {
+        $data = DB::table('jobcard_items')
+            ->select('jobcard_items.*',
+                'fabric_lots.vname as fabric_lot_no',
+                'colours.vname as colour_name',
+                'sizes.vname as size_name'
+            )
+            ->join('fabric_lots', 'fabric_lots.id', '=', 'jobcard_items.fabric_lot_id')
+            ->join('colours', 'colours.id', '=', 'jobcard_items.colour_id')
+            ->join('sizes', 'sizes.id', '=', 'jobcard_items.size_id')
+            ->where('jobcard_id', '=', $this->jobcard_id)
+            ->get()
+            ->transform(function ($data) {
+                return [
+                    'jobcard_item_id' => $data->id,
+                    'fabric_lot_id' => $data->fabric_lot_id,
+                    'fabric_lot_no' => $data->fabric_lot_no,
+                    'colour_id' => $data->colour_id,
+                    'colour_name' => $data->colour_name,
+                    'size_id' => $data->size_id,
+                    'size_name' => $data->size_name,
+                    'qty' => $data->cutting_qty + 0,
+                ];
+            });
+
+        $this->jobcardItemCollection = $data;
+    }
+
     //
     // properties
     //

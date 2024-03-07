@@ -2,9 +2,9 @@
 
 namespace App\Livewire\Erp\Order;
 
+use Aaran\Erp\Models\Production\Jobcard;
 use Aaran\Orders\Models\Order;
 use App\Livewire\Trait\EntriesIndexAbstract;
-use App\Models\Erp\Production\Jobcard;
 
 class Style extends EntriesIndexAbstract
 {
