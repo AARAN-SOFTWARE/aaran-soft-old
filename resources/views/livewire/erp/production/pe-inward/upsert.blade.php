@@ -50,7 +50,6 @@
                                                     </li>
                                                 @empty
                                                     @livewire('controls.model.master.contact-model',[$contact_name])
-
                                                 @endforelse
                                             @endif
                                         </ul>
@@ -103,7 +102,7 @@
                                                     </li>
 
                                                 @empty
-                                                    @livewire('controls.model.erp.order-model',[$order_no])
+                                                    @livewire('controls.model.order.order-model',[$order_no])
                                                 @endforelse
                                             @endif
                                         </ul>
@@ -236,7 +235,6 @@
                                             <thead>
                                             <tr class="h-8 text-xs bg-gray-100 border border-gray-300">
                                                 <th class="px-2 text-center border border-gray-300">Outward No</th>
-{{--                                                <th class="px-2 text-center border border-gray-300">Lot No</th>--}}
                                                 <th class="px-2 text-center border border-gray-300">COLOUR</th>
                                                 <th class="px-2 text-center border border-gray-300">SIZE</th>
                                                 <th class="px-2 text-center border border-gray-300">QTY</th>
@@ -274,7 +272,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td colspan="5">
-                                                            <a href="{{route('cuttings.upsert',['0'])}}" role="button"
+                                                            <a href="{{route('peoutwards.upsert',['0'])}}" role="button"
                                                                class="flex items-center justify-center bg-green-500 w-full h-8 text-white text-center">
                                                                 Not found , Want to create new
                                                             </a>
@@ -294,15 +292,6 @@
                 </div>
             </div>
 
-
-            {{--            <div class="w-full">--}}
-            {{--                <label for="colour_name"></label>--}}
-            {{--                <input id="colour_name" wire:model="colour_name" class="w-full border-gray-200" placeholder="Colour">--}}
-            {{--            </div>--}}
-            {{--            <div class="w-full">--}}
-            {{--                <label for="size_name"></label>--}}
-            {{--                <input id="size_name" wire:model="size_name" class="w-full border-gray-200" placeholder="Size">--}}
-            {{--            </div>--}}
             <div class="w-full">
                 <label for="cutting_qty"></label>
                 <input id="cutting_qty" wire:model="qty" class="w-full border-gray-200" placeholder="Qty">
@@ -343,14 +332,14 @@
                                     {{$index+1}}
                                 </button>
                             </td>
-                            <td class="px-2 text-left border border-gray-300">{{$row['pe_outward_no']}}</td>
-                            <td class="px-2 text-center border border-gray-300">{{$row['colour_name']}}</td>
-                            <td class="px-2 text-center border border-gray-300">{{$row['size_name']}}</td>
-                            <td class="px-2 text-center border border-gray-300">{{floatval($row['qty'])}}</td>
+                            <td class="px-2 text-left border border-gray-300" wire:click.prevent="changeItems({{$index}})">{{$row['pe_outward_no']}}</td>
+                            <td class="px-2 text-center border border-gray-300" wire:click.prevent="changeItems({{$index}})">{{$row['colour_name']}}</td>
+                            <td class="px-2 text-center border border-gray-300" wire:click.prevent="changeItems({{$index}})">{{$row['size_name']}}</td>
+                            <td class="px-2 text-center border border-gray-300" wire:click.prevent="changeItems({{$index}})">{{floatval($row['qty'])}}</td>
                             <td class="text-center border border-gray-300">
                                 <button wire:click.prevent="removeItems({{$index}})"
                                         class="py-1.5 w-full text-red-500 items-center ">
-                                    <x-aaranUi::icons.icon icon="trash" class="block w-auto h-6"/>
+                                    <x-icons.icon icon="trash" class="block w-auto h-6"/>
                                 </button>
                             </td>
                         </tr>
@@ -391,9 +380,6 @@
                 </div>
                 <div>
 {{--                    <x-button.print/>--}}
-                </div>
-                <div>
-                    <x-button.delete/>
                 </div>
             </div>
         </div>

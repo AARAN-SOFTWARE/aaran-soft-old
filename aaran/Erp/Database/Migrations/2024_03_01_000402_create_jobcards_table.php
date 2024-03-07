@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('style_id')->references('id')->on('styles');
             $table->string('total_qty');
             $table->string('active_id', 3)->nullable();
+            $table->foreignId('company_id')->references('id')->on('companies');
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });

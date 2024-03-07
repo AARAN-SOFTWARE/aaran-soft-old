@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models\Erp\Production;
+namespace Aaran\Erp\Models\Production;
 
-use App\Models\Master\Contact;
+use Aaran\Master\Models\Contact;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

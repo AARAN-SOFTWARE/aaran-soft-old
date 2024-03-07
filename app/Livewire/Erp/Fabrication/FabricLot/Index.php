@@ -2,8 +2,8 @@
 
 namespace App\Livewire\Erp\Fabrication\FabricLot;
 
+use Aaran\Erp\Models\Fabrication\FabricLot;
 use App\Livewire\Trait\CommonTrait;
-use App\Models\Erp\Fabrication\FabricLot;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Livewire\Component;
@@ -16,7 +16,7 @@ class Index extends Component
 
     public function getSave(): string
     {
-        if (session()->has('tenant_id')) {
+        if (session()->has('company_id')) {
 
             if ($this->vname != '') {
 
@@ -25,7 +25,7 @@ class Index extends Component
                         'vname' => Str::upper($this->vname),
                         'desc' => Str::ucfirst($this->desc),
                         'active_id' => $this->active_id,
-                        'tenant_id' => session()->get('tenant_id'),
+                        'company_id' => session()->get('company_id'),
                         'user_id' => Auth::id(),
                     ]);
                     $message = "Saved";
@@ -35,7 +35,7 @@ class Index extends Component
                     $obj->vname = Str::upper($this->vname);
                     $obj->desc = Str::ucfirst($this->desc);
                     $obj->active_id = $this->active_id ?: '0';
-                    $obj->tenant_id = session()->get('tenant_id');
+                    $obj->company_id = session()->get('company_id');
                     $obj->user_id = Auth::id();
                     $obj->save();
                     $message = "Updated";

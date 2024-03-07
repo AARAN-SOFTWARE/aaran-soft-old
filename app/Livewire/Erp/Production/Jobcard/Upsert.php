@@ -2,13 +2,13 @@
 
 namespace App\Livewire\Erp\Production\Jobcard;
 
-use App\Models\Common\Colour;
-use App\Models\Common\Size;
-use App\Models\Erp\Fabrication\FabricLot;
-use App\Models\Erp\Order;
-use App\Models\Erp\Production\Jobcard;
-use App\Models\Erp\Production\JobcardItem;
-use App\Models\Erp\Style;
+use Aaran\Common\Models\Colour;
+use Aaran\Common\Models\Size;
+use Aaran\Erp\Models\Fabrication\FabricLot;
+use Aaran\Erp\Models\Production\Jobcard;
+use Aaran\Erp\Models\Production\JobcardItem;
+use Aaran\Orders\Models\Order;
+use Aaran\Orders\Models\Style;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -75,8 +75,7 @@ class Upsert extends Component
     public function getOrderList(): void
     {
         $this->orderCollection = $this->order_no ? Order::search(trim($this->order_no))
-            ->where('tenant_id', '=', session()->get('tenant_id'))
-            ->get() : Order::where('tenant_id', '=', session()->get('tenant_id'))->get();
+            ->get() : Order::all();
     }
 
     //
@@ -477,7 +476,7 @@ class Upsert extends Component
 
     public function save(): string
     {
-        if (session()->has('tenant_id')) {
+        if (session()->has('company_id')) {
 
             if ($this->order_id != '') {
 
@@ -490,7 +489,7 @@ class Upsert extends Component
                         'style_id' => $this->style_id,
                         'total_qty' => $this->total_qty,
                         'active_id' => '1',
-                        'tenant_id' => session()->get('tenant_id'),
+                        'company_id' => session()->get('company_id'),
                         'user_id' => \Auth::id(),
                     ]);
                     $this->saveItem($obj->id);
@@ -505,7 +504,7 @@ class Upsert extends Component
                     $obj->style_id = $this->style_id;
                     $obj->total_qty = $this->total_qty;
                     $obj->active_id = '1';
-                    $obj->tenant_id = session()->get('tenant_id');
+                    $obj->company_id = session()->get('company_id');
                     $obj->user_id = \Auth::id();
                     $obj->save();
 
@@ -542,13 +541,6 @@ class Upsert extends Component
                 'active_id' => '1',
             ]);
         }
-    }
-
-    public function setDelete()
-    {
-        DB::table('jobcard_items')->where('jobcard_id', '=', $this->vid)->delete();
-        DB::table('jobcards')->where('id', '=', $this->vid)->delete();
-        $this->getRoute();
     }
 
     public function getRoute(): void

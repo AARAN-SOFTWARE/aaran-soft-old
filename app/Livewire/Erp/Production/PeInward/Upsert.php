@@ -2,14 +2,13 @@
 
 namespace App\Livewire\Erp\Production\PeInward;
 
-use App\Models\Erp\Order;
-use App\Models\Erp\Production\CuttingItem;
-use App\Models\Erp\Production\Jobcard;
-use App\Models\Erp\Production\JobcardItem;
-use App\Models\Erp\Production\PeInward;
-use App\Models\Erp\Production\PeInwardItem;
-use App\Models\Erp\Production\PeOutwardItem;
-use App\Models\Master\Contact;
+use Aaran\Erp\Models\Production\Jobcard;
+use Aaran\Erp\Models\Production\JobcardItem;
+use Aaran\Erp\Models\Production\PeInward;
+use Aaran\Erp\Models\Production\PeInwardItem;
+use Aaran\Erp\Models\Production\PeOutwardItem;
+use Aaran\Master\Models\Contact;
+use Aaran\Orders\Models\Order;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -135,9 +134,7 @@ class Upsert extends Component
 
     public function getOrderList(): void
     {
-        $this->orderCollection = $this->order_no ? Order::search(trim($this->order_no))
-            ->where('tenant_id', '=', session()->get('tenant_id'))
-            ->get() : Order::where('tenant_id', '=', session()->get('tenant_id'))->get();
+        $this->orderCollection = $this->order_no ? Order::search(trim($this->order_no))->get() : Order::all();
     }
 
     //
@@ -189,10 +186,10 @@ class Upsert extends Component
     public function getJobcardList(): void
     {
         $this->jobcardCollection = $this->jobcard_no ? Jobcard::search(trim($this->jobcard_no))
-            ->where('tenant_id', '=', session()->get('tenant_id'))
+            ->where('company_id', '=', session()->get('company_id'))
             ->where('order_id', '=', $this->order_id ?: '1')
             ->get() :
-            Jobcard::where('tenant_id', '=', session()->get('tenant_id'))->get();
+            Jobcard::where('company_id', '=', session()->get('company_id'))->get();
     }
 
     #[On('refresh-jobcard')]
@@ -452,7 +449,7 @@ class Upsert extends Component
 
     public function save(): string
     {
-        if (session()->has('tenant_id')) {
+        if (session()->has('company_id')) {
 
             if ($this->contact_id != '') {
 
@@ -468,7 +465,7 @@ class Upsert extends Component
                         'total_qty' => $this->total_qty,
                         'receiver_details' => $this->receiver_details,
                         'active_id' => $this->active_id,
-                        'tenant_id' => session()->get('tenant_id'),
+                        'company_id' => session()->get('company_id'),
                         'user_id' => \Auth::id(),
                     ]);
                     $this->saveItem($obj->id);
@@ -486,7 +483,7 @@ class Upsert extends Component
                     $obj->total_qty = $this->total_qty;
                     $obj->receiver_details = $this->receiver_details;
                     $obj->active_id = $this->active_id ?: '0';
-                    $obj->tenant_id = session()->get('tenant_id');
+                    $obj->company_id = session()->get('company_id');
                     $obj->user_id = \Auth::id();
                     $obj->save();
 
@@ -535,13 +532,6 @@ class Upsert extends Component
             $item_1->pending_qty = $item_1->qty - $sum_1;
             $item_1->save();
         }
-    }
-
-    public function setDelete()
-    {
-        DB::table('pe_inward_items')->where('pe_inward_id', '=', $this->vid)->delete();
-        DB::table('pe_inward_items')->where('id', '=', $this->vid)->delete();
-        $this->getRoute();
     }
 
     public function getRoute(): void

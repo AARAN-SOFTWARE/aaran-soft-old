@@ -8,6 +8,7 @@ use Aaran\Common\Models\State;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Collection;
 
 class Company extends Model
 {
@@ -19,6 +20,17 @@ class Company extends Model
     {
         return empty($searches) ? static::query()
             : static::where('vname', 'like', '%' . $searches . '%');
+    }
+
+    public static function printDetails($ids): Collection
+    {
+        $obj = self::find($ids);
+
+        return collect([
+            'company_name' => $obj->display_name,
+            'address_1' => $obj->address_1 . ', ' . $obj->address_2 . ' - ' . $obj->city->vname . ' - ' . $obj->pincode->vname . '.',
+            'address_2' => 'GSTin - ' . $obj->gstin . ', Mobile - ' . $obj->mobile,
+        ]);
     }
 
      public function city(): BelongsTo

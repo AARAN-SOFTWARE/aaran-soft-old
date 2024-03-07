@@ -28,8 +28,8 @@
         <ul class="flex flex-col py-6 space-y-1"
             x-data="{selected:null}">
 
-{{--            <x-menu.sub.erp.order/>--}}
-{{--            <x-menu.sub.erp.production/>--}}
+
+            <x-menu.sub.erp.production/>
             <x-menu.sub.master/>
             <x-menu.sub.order/>
             <x-menu.sub.entries/>
