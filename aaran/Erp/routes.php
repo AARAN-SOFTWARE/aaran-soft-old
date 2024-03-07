@@ -8,6 +8,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('orders/{id}/style', App\Livewire\Erp\Order\Style::class)->name('orders.style');
     Route::get('orders/{id}/job-details', App\Livewire\Erp\Order\JobDetails::class)->name('orders.job-details');
 
+    Route::get('iornings', App\Livewire\Erp\Production\Ironing\Index::class)->name('iornings');
+    Route::get('iornings/{id}/upsert', App\Livewire\Erp\Production\Ironing\Upsert::class)->name('iornings.upsert');
+
     Route::get('fabriclots', App\Livewire\Erp\Fabrication\FabricLot\Index::class)->name('fabriclots');
 
     Route::get('jobcards', App\Livewire\Erp\Production\Jobcard\Index::class)->name('jobcards');

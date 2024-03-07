@@ -325,10 +325,10 @@
                                     {{$index+1}}
                                 </button>
                             </td>
-                            <td class="px-2 text-left border border-gray-300">{{$row['cutting_no']}}</td>
-                            <td class="px-2 text-center border border-gray-300">{{$row['colour_name']}}</td>
-                            <td class="px-2 text-center border border-gray-300">{{$row['size_name']}}</td>
-                            <td class="px-2 text-center border border-gray-300">{{floatval($row['qty'])}}</td>
+                            <td class="px-2 text-left border border-gray-300" wire:click.prevent="changeItems({{$index}})">{{$row['cutting_no']}}</td>
+                            <td class="px-2 text-center border border-gray-300" wire:click.prevent="changeItems({{$index}})">{{$row['colour_name']}}</td>
+                            <td class="px-2 text-center border border-gray-300" wire:click.prevent="changeItems({{$index}})">{{$row['size_name']}}</td>
+                            <td class="px-2 text-center border border-gray-300" wire:click.prevent="changeItems({{$index}})">{{floatval($row['qty'])}}</td>
                             <td class="text-center border border-gray-300">
                                 <button wire:click.prevent="removeItems({{$index}})"
                                         class="py-1.5 w-full text-red-500 items-center ">

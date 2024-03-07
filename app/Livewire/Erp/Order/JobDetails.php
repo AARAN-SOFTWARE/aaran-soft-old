@@ -2,14 +2,14 @@
 
 namespace App\Livewire\Erp\Order;
 
-use App\Models\Erp\Order;
-use App\Models\Erp\Production\CuttingItem;
-use App\Models\Erp\Production\Jobcard;
-use App\Models\Erp\Production\JobcardItem;
-use App\Models\Erp\Production\PeInwardItem;
-use App\Models\Erp\Production\PeOutwardItem;
-use App\Models\Erp\Production\SectionInwardItem;
-use App\Models\Erp\Production\SectionOutwardItem;
+use Aaran\Erp\Models\Production\CuttingItem;
+use Aaran\Erp\Models\Production\Jobcard;
+use Aaran\Erp\Models\Production\JobcardItem;
+use Aaran\Erp\Models\Production\PeInwardItem;
+use Aaran\Erp\Models\Production\PeOutwardItem;
+use Aaran\Erp\Models\Production\SectionInwardItem;
+use Aaran\Erp\Models\Production\SectionOutwardItem;
+use Aaran\Orders\Models\Order;
 use Livewire\Component;
 
 class JobDetails extends Component
