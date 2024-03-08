@@ -2,18 +2,12 @@
 
 namespace Aaran\Master\Database\Factories;
 
+use Aaran\Master\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Aaran\Master\Models\Product>
- */
 class ProductFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = Product::class;
     public function definition(): array
     {
         return [

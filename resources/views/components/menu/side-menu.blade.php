@@ -8,7 +8,7 @@
 {{--            <span class="p-1 rounded bg-white">--}}
 {{--            <x-assets.logo.aaran class="h-7 w-auto block"/>--}}
 {{--            </span>--}}
-            <span class="font-bold text-2xl sm:text-3xl tracking-widest">Amal Tex</span>
+            <span class="font-bold text-2xl sm:text-3xl tracking-widest">{{ config('app.name') }}</span>
         </a>
 
         <button

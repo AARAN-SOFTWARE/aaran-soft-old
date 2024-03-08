@@ -3,10 +3,12 @@
 namespace Aaran\Master\Models;
 
 use Aaran\Common\Models\{City, Pincode, State};
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Collection;
+use LaravelIdea\Helper\Aaran\Master\Models\_IH_Contact_QB;
 
 class Contact extends Model
 {
@@ -14,7 +16,7 @@ class Contact extends Model
 
     protected $guarded = [];
 
-    public static function search(string $searches)
+    public static function search(string $searches): Builder|_IH_Contact_QB|Contact
     {
         return empty($searches) ? static::query()
             : static::where('vname', 'like', '%' . $searches . '%');
