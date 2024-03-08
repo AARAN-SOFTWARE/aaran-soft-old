@@ -1,50 +1,50 @@
 <script src="https://cdn.tailwindcss.com"></script>
-<div class="w-full flex justify-center h-auto object-cover backdrop-opacity-10 bg-gradient-to-r from-cyan-100 to-sky-300 ">
-<div class=" w-full rounded h-full ">
+<div class="loading w-full flex justify-center h-auto object-cover bg-gradient-to-r from-gray-100 to-blue-100">
+<div class="w-full rounded h-full">
 
-
-{{--    <---Home--->--}}
-    <header id="header" class="header py-20 text-center md:pt-36 xl:flex ">
+    {{--    <---Home--->--}}
+    <header id="header" class="header py-20 text-center md:pt-36 xl:flex">
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         />
-        <div class="w-full" >
-        <div class="xl:container w-full flex flex-row py-20  ">
-            <div class="w-full p-5   animate__animated wow animate__wobble">
-                <h1 class="h1-large pt-16 mb-5 font-bold  ">Team management Our application</h1>
-                <p class=" mb-8 font-medium ">Start getting things done together with your team based on CODEXSUN revolutionary team management features</p>
+        <div class="w-full">
+        <div class="xl:container w-full mx-auto flex flex-row py-20">
+            <div class="w-full p-5 animate__animated wow animate__fadeInDown bg-gradient-to-r from-gray-50 to-red-100">
+                <h1 class="pt-20 mb-5 font-extrabold text-3xl">Team management Our application</h1>
+                <p class="mb-8 font-light text-2xl ">Start getting things done together with your team based on CODEXSUN revolutionary team management features</p>
                 <a class="btn-solid-lg hover:bg-emerald-400 rounded gap-3 bordered bg-gray-400 border-gray-500 p-3" href="{{ route('register') }}"><i class="fab fa-apple border-gray-500 hover:underline hover:bg-blue-500 "></i>register</a>
             </div>
-            <div class="w-full flex animate__animated wow animate__bounceInRight">
-                <img class="h-auto rounded max-w-lg ms-auto inline  " src="../../../../images/img1.jpg" alt="image description">
+            <div class="w-full flex mx-auto animate__animated wow animate__bounceInRight bg-gradient-to-r from-red-100 to-gray-100">
+                <img class="h-auto rounded ms-auto inline max-w-2xl" src="../../../../images/img1.jpg" alt="image description">
             </div>
         </div>
         </div>
     </header>
 
-    <div class="pt-2 pb-14 text-center font-sans animate__animated wow animate__bounce">
+    <div class="pt-4 pb-14 text-center font-sans animate__animated wow animate__bounce bg-gray-50">
         <div class="container px-4 sm:px-8 xl:px-4 justify-items-center mx-auto  animate__animated animate__backInUp">
             <p class="mb-4 text-gray-800 text-3xl leading-10 lg:max-w-5xl lg:mx-auto"> Team management mobile apps don’t get better than CODEXSUN. It’s probably the best app in the world for this purpose. Don’t hesitate to give it a try today, and you will fall in love with it</p>
         </div>
     </div>
 {{--<---services--->--}}
-    <section id="service">
-    <div id="services" class="container  mx-auto xl:flex  md:flex-row  sm:flex-row sm:gap-3 pt-4 pb-1.5  text-center ">
-        <div class=" justify-items-center grid grid-cols-3 p-3 gap-3 w-full mx-auto">
+    <section href="{{ route('service') }}">
+        <div class="w-full bg-gray-50">
+        <div id="services" class="container  mx-auto xl:flex  md:flex-row  sm:flex-row sm:gap-3 pt-4 pb-1.5  text-center bg-gray-50 ">
+            <div class=" justify-items-center grid md:grid-cols-3 p-3 gap-3 w-full mx-auto">
 
-            <div class=" mb-3.5 grid-cols-1 w-72 h-80 shadow-2xl  gap-4 border rounded-2xl bg-blue-50  animate__animated wow animate__fadeInLeftBig ">
+            <div class="mb-3.5 lg:grid-cols-1 w-72 h-80 shadow-2xl grid-rows-1 gap-4 border rounded-2xl bg-blue-50  animate__animated wow animate__fadeInLeftBig ">
                 <div class=" mb-1.5 ">
                     <img class="w-40 h-40 mr-auto ml-auto" src="../../../../images/features-icon-1.svg" alt="alternative" />
                 </div>
                 <div class="card-body">
                     <h5 class="card-title font-sans font-bold mb-1.5">Platform Integration</h5>
-                    <p class="mb-4  font-medium">Your sales force can use the app on any smartphone platform without compatibility issues</p>
+                    <p class="mb-4 font-medium">Your sales force can use the app on any smartphone platform without compatibility issues</p>
                 </div>
             </div>
 
-            <div class=" mb-3.5 w-72 h-80 shadow-2xl  border grid-cols-2 rounded-2xl bg-blue-50  animate__animated wow animate__fadeInDownBig" >
-                <div class="  mb-1.5">
+            <div class="mb-3.5 w-72 h-80 shadow-2xl grid-rows-2 border lg:grid-cols-2 rounded-2xl bg-blue-50  animate__animated wow animate__fadeInDownBig" >
+                <div class="mb-1.5">
                     <img class="w-40 h-40 mr-auto ml-auto" src="../../../../images/features-icon-2.svg" alt="alternative" />
                 </div>
                 <div class="card-body ">
@@ -53,8 +53,7 @@
                 </div>
             </div>
 
-
-            <div class=" mb-3.5  w-72 h-80 border shadow-2xl  grid-cols-3 rounded-2xl bg-blue-50  animate__animated wow animate__fadeInRightBig">
+            <div class="mb-3.5 w-72 h-80 border shadow-2xl grid-rows-3 lg:grid-cols-3 rounded-2xl bg-blue-50  animate__animated wow animate__fadeInRightBig">
                 <div class=" mb-1.5">
                     <img class="w-40 h-40 mr-auto ml-auto" src="../../../../images/features-icon-3.svg" alt="alternative" />
                 </div>
@@ -64,9 +63,8 @@
                 </div>
             </div>
 
-
             <!-- Card -->
-            <div class=" mb-3.5  border w-72 h-80 shadow-2xl rounded-2xl grid-cols-4 bg-blue-50  animate__animated wow animate__fadeInBottomLeft">
+            <div class="mb-3.5 border w-72 h-80 shadow-2xl grid-rows-4 rounded-2xl lg:grid-cols-4 bg-blue-50  animate__animated wow animate__fadeInBottomLeft">
                 <div class=" mb-1.5">
                     <img class="w-40 h-40 mr-auto ml-auto" src="../../../../images/features-icon-4.svg" alt="alternative" />
                 </div>
@@ -75,10 +73,7 @@
                     <p class="mb-4 font-medium">Choose from one of the 40 languages that come pre-installed and start selling smarter</p>
                 </div>
             </div>
-
-
-
-            <div class=" card mb-3.5  border w-72 h-80 shadow-2xl rounded-2xl grid-cols-5 bg-blue-50  animate__animated wow animate__fadeInUpBig">
+            <div class="mb-3.5 border w-72 h-80 shadow-2xl grid-rows-5 rounded-2xl lg:grid-cols-5 bg-blue-50  animate__animated wow animate__fadeInUpBig">
                 <div class=" mb-1.5">
                     <img class="w-40 h-40 mr-auto ml-auto" src="../../../../images/features-icon-5.svg" alt="alternative" />
                 </div>
@@ -88,9 +83,7 @@
                 </div>
             </div>
 
-
-
-            <div class=" card mb-3.5  border w-72 h-80 shadow-2xl grid-cols-6 rounded-2xl bg-blue-50  animate__animated wow animate__backInUp">
+            <div class="mb-3.5 border w-72 h-80 shadow-2xl grid-rows-6 lg:grid-cols-6 rounded-2xl bg-blue-50  animate__animated wow animate__backInUp">
                 <div class="mb-1.5">
                     <img class="w-40 h-40 mr-auto ml-auto" src="../../../../images/features-icon-6.svg" alt="alternative" />
                 </div>
@@ -101,17 +94,18 @@
             </div>
         </div>
     </div>
+        </div>
 {{--<---pricing--->--}}
-    <div id="pricing" class="cards-2 relative pt-8 text-center bg-gradient-to-r from-neutral-300 to-blue-100  ">
-        <div class="absolute bottom-0.5 h-40 w-full  "></div>
+    <div id="pricing" class="cards-2 relative pt-8 text-center mx-auto bg-gradient-to-r from-gray-300 to-gray-100  ">
+        <div class="absolute bottom-0.5 h-40 w-full"></div>
 {{--        <div class="">--}}
-            <h2 class="mb-2.5 text-white grid-rows-1 lg:max-w-xl lg:mx-auto">Pricing options for all budgets</h2>
-            <p class="mb-16 text-white lg:max-w-3xl grid-rows-2 lg:mx-auto"> Our pricing plans are set up in such a way that any user can start enjoying Pavo without worrying so much about costs. They are flexible and work for any type of industry </p>
+            <h2 class="mb-2.5 font-semibold grid-rows-1 lg:max-w-xl p-3 lg:mx-auto text-2xl">Pricing options for all budgets</h2>
+            <p class="mb-16 lg:max-w-3xl grid-rows-2 p-3 lg:mx-auto text-2xl"> Our pricing plans are set up in such a way that any user can start enjoying Pavo without worrying so much about costs. They are flexible and work for any type of industry </p>
 
 {{--           <---items--->--}}
-            <div class="container grid grid-cols-3  px-4 pb-px  p-5   mx-auto gap-3.5">
-            <div class="card relative block rounded  w-80 h-auto grid-cols-4 gap-3 flex-col mr-auto mb-6 ml-auto mx-auto shadow-md ">
-                <div class="card-body p-8 bg-gradient-to-r from-cyan-200 to-blue-100 animate__animated wow animate__flipInY">
+            <div class="container md:grid-cols-3 flex px-4 pb-px p-5 mx-auto gap-3.5">
+            <div class="card relative block rounded  w-80 h-auto md:grid-cols-4 gap-3 flex-col mr-auto mb-6 ml-auto mx-auto shadow-md">
+                <div class="card-body p-8 bg-gradient-to-r from-cyan-200 to-blue-100 animate__animated wow animate__zoomIn">
                     <div class="card-title mb-1.5 text-blue-500 font-bold text-center">STANDARD</div>
                     <div class="price"><span class="currency mr-1.5 text-amber-800 font-light ">$</span><span class="value text-gray-700 font-medium h-5 text-center">29</span></div>
                     <div class="frequency mb-1.5 font-semibold text-center">monthly</div>
@@ -154,8 +148,8 @@
                 </div>
             </div>
 
-            <div class="card relative block w-80 h-auto grid-cols-5 gap-3 mr-auto mx-auto mb-6 ml-auto border rounded shadow-md">
-                <div class="card-body p-8 bg-gradient-to-r from-cyan-200 to-blue-100 animate__animated wow animate__flipInY">
+            <div class="card relative block w-80 h-auto md:grid-cols-5 gap-3 mr-auto mx-auto mb-6 ml-auto border rounded shadow-md">
+                <div class="card-body p-8 bg-gradient-to-r from-cyan-200 to-blue-100 animate__animated wow animate__zoomIn">
                     <div class="card-title mb-1.5 text-blue-500 font-bold text-center">ADVANCED</div>
                     <div class="price"><span class="currency mr-1.5 text-amber-800 font-light">$</span><span class="value text-gray-700 font-medium h-5 text-center">39</span></div>
                     <div class="frequency mb-1.5 font-semibold text-center">monthly</div>
@@ -198,8 +192,8 @@
                 </div>
             </div>
 
-            <div class=" relative block  w-80 h-auto mr-auto grid-cols-6 gap-3 mb-6 ml-auto mx-auto border rounded shadow-md">
-                <div id="progress" class="card-body p-7 bg-gradient-to-r from-cyan-200 to-blue-100 animate__animated wow animate__flipInY">
+            <div class=" relative block   w-80 h-auto mr-auto grid-cols-6 gap-3 mb-6 ml-auto mx-auto border rounded shadow-md">
+                <div id="progress" class="card-body p-8 bg-gradient-to-r from-cyan-200 to-blue-100 animate__animated wow animate__zoomIn">
                     <div class="card-title mb-1.5 text-blue-500 font-bold text-center">PREMIUM</div>
                     <div class="price"><span class="currency mr-1.5 text-amber-800 font-light">$</span><span class="value text-gray-700 font-medium h-5 text-center">49</span></div>
                     <div class="frequency mb-1.5 font-semibold text-center">monthly</div>
@@ -245,16 +239,16 @@
     </div>
 </section>
     {{--<--- Our Team ---->--}}
-    <section id="about">
-    <div class="team py-32 mx-auto bg-gradient-to-r from-cyan-200 to-blue-100">
+    <section href="{{ route('about') }}">
+    <div class="team py-32 mx-auto bg-gradient-to-r from-cyan-100 to-purple-200">
         <div class="container px-4 mx-auto justify-items-center sm:px-8">
             <h2 class="mb-12 text-center font-bold lg:max-w-xl lg:mx-auto">OUR TEAM MEMBERS</h2>
 {{--<---team member--->--}}
-            <div id="progress" class=" slide-from-left  container bg-gradient-to-r from-cyan-200 to-blue-100  grid grid-cols-3 mx-auto justify-items-center">
+            <div id="progress" class=" slide-from-left  container bg-gradient-to-r from-cyan-100 to-purple-200  grid md:grid-cols-3 mx-auto justify-items-center">
 
-                <div class="grid-cols-1 p-7 gap-4">
+                <div class="md:grid-cols-1 p-7 gap-4">
                     <div class="entry-thumb portfolio-thumb ">
-                        <div class="imgoverlay relative overflow-hidden rounded-2xl disabled:block text-light ">
+                        <div class="imgoverlay relative overflow-hidden rounded-2xl disabled:block text-light animate__animated wow animate__backInUp">
                             <a href="../../../../images/taylor.jpg" >
                                 <img class="h-96 pt-1.5" src="../../../../images/taylor.jpg"  alt="image">
                                 <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>TaylorOtwall</h6></div></div>
@@ -262,9 +256,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-cols-2 p-7 gap-4">
+                <div class="md:grid-cols-2 p-7 gap-4">
                     <div class="entry-thumb portfolio-thumb">
-                        <div class="imgoverlay text-light rounded-2xl">
+                        <div class="imgoverlay text-light rounded-2xl animate__animated wow animate__backInUp">
                             <a href="../../../../images/way1.jpg">
                                 <img src="../../../../images/way1.jpg"  alt="image">
                                 <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>Jeffrey Way</h6></div></div>
@@ -272,9 +266,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-cols-3 p-7 gap-4">
+                <div class="md:grid-cols-3 p-7 gap-4">
                     <div class="entry-thumb portfolio-thumb ">
-                        <div class="imgoverlay text-light rounded-2xl">
+                        <div class="imgoverlay text-light rounded-2xl animate__animated wow animate__backInUp">
                             <a href="../../../../images/caleb.jpg" >
                                 <img src="../../../../images/caleb.jpg" alt="image">
                                 <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>Caleb Porzio</h6></div></div>
@@ -282,9 +276,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-cols-4 p-7 grid-rows-1 gap-4">
+                <div class="md:grid-cols-4 p-7 grid-rows-1 gap-4">
                     <div class="entry-thumb portfolio-thumb ">
-                        <div class="imgoverlay text-light rounded-2xl">
+                        <div class="imgoverlay text-light rounded-2xl animate__animated wow animate__backInUp">
                             <a href="../../../../images/rasmus%20.jpg" >
                                 <img src="../../../../images/rasmus%20.jpg" alt="image">
                                 <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>Rasmus Lerdorf</h6></div></div>
@@ -292,9 +286,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-cols-5 p-7 gap-4">
+                <div class="md:grid-cols-5 p-7 gap-4">
                     <div class="entry-thumb portfolio-thumb">
-                        <div class="imgoverlay text-light rounded-2xl">
+                        <div class="imgoverlay text-light rounded-2xl animate__animated wow animate__backInUp">
                             <a href="../../../../images/adam.jpg" >
                                 <img w-80 src="../../../../images/adam.jpg"  alt="image">
                                 <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>adam wathan</h6></div></div>
@@ -302,9 +296,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-cols-6 p-7 gap-4">
+                <div class="md:grid-cols-6 p-7 gap-4">
                     <div class="entry-thumb portfolio-thumb">
-                        <div class="imgoverlay text-light rounded-2xl">
+                        <div class="imgoverlay text-light rounded-2xl animate__animated wow animate__backInUp">
                             <a href="../../../../images/eich.jpg" >
                                 <img class="h-80 w-72" src="../../../../images/eich.jpg" alt="image">
                                 <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>Eich</h6></div></div>
@@ -314,39 +308,38 @@
                 </div>
             </div>
         </div>
+    </div>
 {{--<---counter--->--}}
+    <div class="counter w-full xl:flex sm:flex bg-gray-100">
+        <div class="container flex mx-auto mt-8 py-4 px-4 sm:px-8 ">
 
-    <div class="counter w-full xl:flex sm:flex ">
-        <div class="container flex mx-auto mt-8 px-4 sm:px-8 ">
-
-            <div class="grid grid-cols-5  mx-auto items-center gap-10 text-center animate__animated wow animate__zoomInDown">
-                <div class="cell mr-2.5 grid-cols-1 ml-2.5 ">
-                    <div class="counter-value font-extrabold  number-count" data-count="231">231</div>
-                    <p class="counter-info">Happy Users</p>
+            <div class="grid md:grid-cols-5  mx-auto items-center gap-10 text-center animate__animated wow animate__zoomInDown">
+                <div class="cell mr-2.5 md:grid-cols-1 ml-2.5 text-3xl">
+                    <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                    <p class="counter-info text-2xl">Happy Users</p>
                 </div>
-                <div class="cell mr-2.5 ml-2.5 grid-cols-2 animate__animated wow animate_zoomInDown">
-                    <div class="counter-value font-extrabold  number-count" data-count="385">385</div>
-                    <p class="counter-info">Issues Solved</p>
+                <div class="cell text-3xl mr-2.5 ml-2.5 md:grid-cols-2 animate__animated wow animate_zoomInDown">
+                    <span data-purecounter-start="0" data-purecounter-end="385" data-purecounter-duration="1" class="purecounter"></span>
+                    <p class="counter-info text-2xl">Issues Solved</p>
                 </div>
-                <div class="cell mr-2.5 ml-2.5 grid-cols-3 animate__animated wow animate_zoomInDown">
-                    <div class="counter-value font-extrabold  number-count" data-count="159">159</div>
-                    <p class="counter-info">Good Reviews</p>
+                <div class="cell text-3xl mr-2.5 ml-2.5 md:grid-cols-3 animate__animated wow animate_zoomInDown">
+                    <span data-purecounter-start="0" data-purecounter-end="159" data-purecounter-duration="1" class="purecounter"></span>
+                    <p class="counter-info text-2xl">Good Reviews</p>
                 </div>
-                <div class="cell mr-2.5 ml-2.5 grid-cols-4 animate__animated wow animate_zoomInDown">
-                    <div class="counter-value font-extrabold  number-count" data-count="127">127</div>
-                    <p class="counter-info">Case Studies</p>
+                <div class="cell text-3xl mr-2.5 ml-2.5 md:grid-cols-4 animate__animated wow animate_zoomInDown">
+                    <span data-purecounter-start="0" data-purecounter-end="127" data-purecounter-duration="1" class="purecounter"></span>
+                    <p class="counter-info text-2xl">Case Studies</p>
                 </div>
-                <div class="cell mr-2.5 ml-2.5 grid-cols-5 animate__animated wow animate_zoomInDown">
-                    <div class="counter-value font-extrabold  number-count" data-count="211">211</div>
-                    <p class="counter-info">Orders Received</p>
+                <div class="cell text-3xl mr-2.5 ml-2.5 md:grid-cols-5 animate__animated wow animate_zoomInDown">
+                    <span data-purecounter-start="0" data-purecounter-end="333" data-purecounter-duration="1" class="purecounter"></span>
+                    <p class="counter-info text-2xl">Orders Received</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
     </section>
 {{--<----contact---->--}}
-    <section id="contact">
+    <section href="{{ route('contact') }}">
     <div class="contact  relative mx-auto justify-items-center h-full p-10 bg-gradient-to-r from-violet-200 to-blue-300" id="contact">
         <div class="container justify-items-center mx-auto ">
             <div class="section-header  justify-items-center animate__animated wow animate__fadeInTopLeft">
@@ -356,45 +349,45 @@
                     We've got the solutions to take your business to the next level.            </p>
             </div>
         </div>
-            <div class="row items-center w-full  p-5 grid grid-cols-2">
-                <div class=" grid-cols-1 w-96 ml-80 h-auto  p-10 animate__animated wow animate__fadeInLeftBig">
+            <div class="row justify-items-center w-full mx-auto p-3 grid md:grid-cols-2 ">
+                <div class="md:grid-cols-1 w-auto grid-rows-1 h-auto mx-auto p-3 animate__animated wow animate__fadeInLeftBig ">
                     <div class="form">
                         <form action="" method="get">
                             <div class="form-row">
-                                <div class="form-group col-md-6 p-3.5 ">
+                                <div class="form-group col-md-6 md:p-3.5">
                                     <label>
-                                        <input type="text" class="form-control w-60" placeholder="Your Name" />
+                                        <input type="text" class="form-control  md:w-72" placeholder="Your Name" />
                                     </label>
                                 </div>
-                                <div class="form-group col-md-6 p-3.5">
+                                <div class="form-group col-md-6 md:p-3.5">
                                     <label>
-                                        <input type="email" class="form-control w-60" placeholder="Your Email" />
+                                        <input type="email" class="form-control mx-auto md:w-72" placeholder="Your Email" />
                                     </label>
                                 </div>
                             </div>
-                            <div class="form-group p-3.5">
+                            <div class="form-group md:p-3.5">
                                 <label>
-                                    <input type="text" class="form-control w-60" placeholder="Subject" />
+                                    <input type="text" class="form-control mx-auto md:w-72" placeholder="Subject" />
                                 </label>
                             </div>
-                            <div class="form-group p-3.5">
+                            <div class="form-group md:p-3.5">
                                 <label>
-                                    <textarea class="form-control w-60" rows="5" placeholder="Message"></textarea>
+                                    <textarea class="form-control mx-auto md:w-72" rows="5" placeholder="Message"></textarea>
                                 </label>
                             </div>
                             <div class="p-3 self-center flex-1 text-center">
-                                <button id="button" type="submit" class="bg-indigo-600 shadow-xl hover:bg-indigo-500 text-white font-bold rounded-full p-4 w-52">Send message</button>
+                                <button id="button" type="Send message" class="bg-indigo-600 shadow-xl hover:bg-indigo-500 text-white font-bold rounded-full p-4 mx-auto md:w-60">Send message</button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class=" w-full h-full  p-5 justify-items-center mx-auto animate__animated wow animate__fadeInRightBig">
-                    <div class="contact-info grid-cols-2   h-full w-full p-5">
-                        <div class=" h-full bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10  flex items-end justify-start relative">
+                <div class=" w-full h-full md:w-auto md:h-auto p-5 justify-items-center mx-auto animate__animated wow animate__fadeInRightBig">
+                    <div class="contact-info md:grid-cols-2  md:h-full md:w-full p-5 grid-rows-2">
+                        <div class="h-full bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
                             <iframe width="100%" height="100%" class="absolute inset-0"  title="map"    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d411.4922916291721!2d77.34064677816176!3d11.128529397090245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1690604229895!5m2!1sen!2sin" loading="lazy" style="filter: grayscale(1) contrast(1.2) opacity(0.4);">
                             </iframe>
-                            <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
-                                <div class="lg:w-1/2 px-6">
+                            <div class="bg-white relative flex flex-wrap py-6 mx-auto rounded shadow-md">
+                                <div class="lg:w-1/2  px-6">
                                     <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
                                     <p class="mt-1">10-A Venkatappa Gounder Street </p>
                                 </div>
@@ -422,7 +415,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg>
-            <span class="ml-3 text-xl">AARAN ASSOCIATES</span>
+            <span class="ml-3 text-xl">AARAN SOFT</span>
         </a>
         <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2023 Sundar —
             <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@aaransoftwares@gmail.com</a>
@@ -435,7 +428,15 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js">
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pure/3.0.0/pure-min.css"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+    <script>
+        new PureCounter();
+    </script>
+
     <script>
         new WOW().init();
     </script>
+
 </div>
