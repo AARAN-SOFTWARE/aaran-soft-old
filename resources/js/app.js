@@ -7,11 +7,11 @@ btn.addEventListener("click", isSend);
 function isSend() {
     btn.innerHTML = "Successful! 🎉";
     btnReset();
-};
+}
 
 function btnReset() {
     setTimeout(function() {
-        btn.innerHTML = "Submit";
+        btn.innerHTML = "Send message";
     }, 2000);
 }
 
