@@ -1,14 +1,13 @@
 <?php
 
-namespace Database\Factories\Erp\Production;
+namespace Aaran\Erp\Database\Factories\Erp\Production;
 
+use Aaran\Erp\Models\Production\Cutting;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Erp\Production\Cutting>
- */
 class CuttingFactory extends Factory
 {
+    protected $model = Cutting::class;
     public function definition(): array
     {
         return [

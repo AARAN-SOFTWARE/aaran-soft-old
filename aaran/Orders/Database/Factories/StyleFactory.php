@@ -2,13 +2,12 @@
 
 namespace Aaran\Orders\Database\Factories;
 
+use Aaran\Orders\Models\Style;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Aaran\Orders\Models\Style>
- */
 class StyleFactory extends Factory
 {
+    protected $model = Style::class;
     public function definition(): array
     {
         return [

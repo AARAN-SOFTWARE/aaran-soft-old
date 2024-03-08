@@ -5,6 +5,7 @@ namespace Aaran\Erp\Models\Production;
 use Aaran\Orders\Models\Order;
 use Aaran\Orders\Models\Style;
 use App\Models\User;
+use Database\Factories\Erp\Production\JobcardFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,11 +15,17 @@ class Jobcard extends Model
     use HasFactory;
 
     protected $guarded = [];
+    public $timestamps = false;
 
     public static function search(string $searches)
     {
         return empty($searches) ? static::query()
             : static::where('vno', 'like', '%' . $searches . '%');
+    }
+
+    protected static function newFactory(): JobcardFactory
+    {
+        return new JobcardFactory();
     }
 
     public static function nextNo()
