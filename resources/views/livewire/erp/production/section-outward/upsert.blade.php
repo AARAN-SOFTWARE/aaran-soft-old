@@ -375,19 +375,6 @@
                 <div>
                     <x-button.print/>
                 </div>
-                <div>
-                    <a href="{{route('orders.job-details',[$order_no])}}"
-                       class="flex px-3 text-gray-600 truncate text-xl  justify-center">
-                        <button class="inline-flex items-center px-4 py-2 border border-transparent
-                                    rounded-md font-semibold text-xs text-white uppercase tracking-widest
-                                    focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150
-                                    focus:ring-indigo-500 bg-green-600 hover:bg-green-500 active:bg-green-700 border-green-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                                <path fill-rule="evenodd" d="M15.28 9.47a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 1 1-1.06-1.06L13.69 10 9.97 6.28a.75.75 0 0 1 1.06-1.06l4.25 4.25ZM6.03 5.22l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L8.69 10 4.97 6.28a.75.75 0 0 1 1.06-1.06Z" clip-rule="evenodd" />
-                            </svg>Progress
-                        </button>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
