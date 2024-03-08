@@ -1,6 +1,6 @@
 import './bootstrap';
 
-let btn = document.querySelector("button");
+let btn = document.querySelector("#msg");
 
 btn.addEventListener("click", isSend);
 
