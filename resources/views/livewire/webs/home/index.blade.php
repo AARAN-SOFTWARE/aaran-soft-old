@@ -376,7 +376,7 @@
                                 </label>
                             </div>
                             <div class="p-3 self-center flex-1 text-center">
-                                <button id="button" type="Send message" class="bg-indigo-600 shadow-xl hover:bg-indigo-500 text-white font-bold rounded-full p-4 mx-auto md:w-60">Send message</button>
+                                <button id="msg" type="Send message" class="bg-indigo-600 shadow-xl hover:bg-indigo-500 text-white font-bold rounded-full p-4 mx-auto md:w-60">Send message</button>
                             </div>
                         </form>
                     </div>
