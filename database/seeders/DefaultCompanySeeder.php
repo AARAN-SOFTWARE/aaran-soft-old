@@ -2,16 +2,16 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\DefaultCompany;
 use Illuminate\Database\Seeder;
 
 class DefaultCompanySeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public static function run(): void
     {
-        //
+        DefaultCompany::create([
+            'company_id' => '1',
+            'acyear' => '1'
+        ]);
     }
 }
