@@ -488,8 +488,8 @@
                             <option value="{{$sales_type->value}}">{{$sales_type->getName()}}</option>
                         @endforeach
                     </x-input.model-select>
-                    <x-input.model-text wire:model="total_taxable" :label="'Total Taxable'"/>
                     <x-input.model-text wire:model="total_gst" :label="'Total Gst'"/>
+                    <x-input.model-text wire:model="total_taxable" wire:click="total_tax()" :label="'Total Taxable'"/>
                 </div>
             </section>
             <section class="w-full">
