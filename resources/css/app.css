@@ -394,24 +394,24 @@
     box-shadow: 0 0 5px #3F69AA;
 }
 
-.contact .form button[type="submit"] {
-    padding: 6px 25px 7px 25px;
-    color: #3F69AA;
-    letter-spacing: 1px;
-    transition: 0.3s;
-    cursor: pointer;
-    border-radius: 30px;
-    border: 2px solid #3F69AA;
-    background: #ffffff;
-}
+/*.contact .form button[type="submit"] {*/
+/*    padding: 6px 25px 7px 25px;*/
+/*    color: #3F69AA;*/
+/*    letter-spacing: 1px;*/
+/*    transition: 0.3s;*/
+/*    cursor: pointer;*/
+/*    border-radius: 30px;*/
+/*    border: 2px solid #3F69AA;*/
+/*    background: #ffffff;*/
+/*}*/
 
-.contact .form button[type="submit"]:hover {
-    background: #3F69AA;
-    color: #FFFFFF;
-}
-.button,
-button:focus,
-button:hover {
-    outline: none;
-}
+/*.contact .form button[type="submit"]:hover {*/
+/*    background: #3F69AA;*/
+/*    color: #FFFFFF;*/
+/*}*/
+/*.button,*/
+/*button:focus,*/
+/*button:hover {*/
+/*    outline: none;*/
+/*}*/
 
