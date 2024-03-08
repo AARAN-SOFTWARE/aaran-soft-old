@@ -56,6 +56,12 @@ class Index extends EntriesIndexAbstract
         return null;
     }
 
+    public function print($id)
+    {
+
+        $this->redirect(route('sectionoutwards.print', [$this->getObj($id)]));
+    }
+
     public function render()
     {
         return view('livewire.erp.production.section-outward.index')->with([

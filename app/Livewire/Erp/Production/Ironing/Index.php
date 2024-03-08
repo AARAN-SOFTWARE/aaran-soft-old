@@ -12,7 +12,7 @@ class Index extends EntriesIndexAbstract
 
     public function create(): void
     {
-        $this->redirect(route('iornings.upsert',['0']));
+        $this->redirect(route('ironings.upsert',['0']));
     }
 
     public function getList()
