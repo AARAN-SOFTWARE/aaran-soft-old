@@ -2,6 +2,7 @@
 
 namespace Aaran\Erp\Models\Production;
 
+use Aaran\Erp\Database\Factories\Erp\Production\CuttingFactory;
 use Aaran\Erp\Models\Production\Jobcard;
 use Aaran\Orders\Models\Order;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,11 +14,17 @@ class Cutting extends Model
     use HasFactory;
 
     protected $guarded = [];
+    public $timestamps = false;
 
     public static function search(string $searches)
     {
         return empty($searches) ? static::query()
             : static::where('vname', 'like', '%' . $searches . '%');
+    }
+
+    protected static function newFactory(): CuttingFactory
+    {
+        return new CuttingFactory();
     }
 
     public static function nextNo()
