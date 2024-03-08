@@ -1,4 +1,5 @@
 <div>
+
 <section href="{{ route('service') }}">
     <div id="services" class="container  mx-auto xl:flex  md:flex-row  sm:flex-row sm:gap-3 pt-4 pb-1.5  text-center ">
         <div class=" justify-items-center grid grid-cols-3 p-3 gap-3 w-full mx-auto">

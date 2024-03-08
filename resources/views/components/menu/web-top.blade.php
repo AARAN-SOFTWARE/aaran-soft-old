@@ -4,7 +4,6 @@
             <div class=" p-1 rounded py-2">
                 <x-assets.logo.cxlogo :icon="'light'"  class="h-7 w-auto block"/>
             </div>
-
 {{--            <x-assets.logo.cxlogo--}}
             <span
                 class="self-center text-2xl font-semibold whitespace-nowrap px-2 tracking-wider">CODEXSUN</span>
