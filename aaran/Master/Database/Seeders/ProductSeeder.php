@@ -15,7 +15,8 @@ class ProductSeeder extends Seeder
             'hsncode_id' => '1',
             'units' => '1',
             'gst_percent' => '1',
-            'active_id' => '1'
+            'active_id' => '1',
+            'user_id' => '1'
         ]);
     }
 }
