@@ -18,7 +18,7 @@
                 @forelse ($list as $index =>  $row)
                     <x-table.row>
                         <x-table.cell>
-                            <a href="{{route('iornings.upsert',[$row->id])}}"
+                            <a href="{{route('ironings.upsert',[$row->id])}}"
                                class="flex flex-col px-3">
                                 <div class="text-gray-600 truncate text-xl text-left">
                                     {{ $index+1 }}
@@ -27,7 +27,7 @@
                         </x-table.cell>
 
                         <x-table.cell>
-                            <a href="{{route('iornings.upsert',[$row->id])}}"
+                            <a href="{{route('ironings.upsert',[$row->id])}}"
                                class="flex flex-col px-3">
                                 <div class="text-gray-600 truncate text-xl text-left">
                                     {{ $row->order->vname }}
@@ -36,7 +36,7 @@
                         </x-table.cell>
 
                         <x-table.cell>
-                            <a href="{{route('iornings.upsert',[$row->id])}}"
+                            <a href="{{route('ironings.upsert',[$row->id])}}"
                                class="flex px-3 text-gray-600 truncate text-xl text-left">
                                 {{ $row->jobcard_id }}
                             </a>
@@ -45,28 +45,28 @@
 
 
                         <x-table.cell>
-                            <a href="{{route('iornings.upsert',[$row->id])}}"
+                            <a href="{{route('ironings.upsert',[$row->id])}}"
                                class="flex flex-col px-3 text-gray-600 truncate text-xl text-left">
                                 {{date('d-m-Y', strtotime($row->vdate))}}
                             </a>
                         </x-table.cell>
 
                         <x-table.cell>
-                            <a href="{{route('iornings.upsert',[$row->id])}}"
+                            <a href="{{route('ironings.upsert',[$row->id])}}"
                                class="flex flex-col px-3 text-gray-600 truncate text-xl text-left">
                                 {{ $row->iron_master }}
                             </a>
                         </x-table.cell>
 
                         <x-table.cell>
-                            <a href="{{route('iornings.upsert',[$row->id])}}"
+                            <a href="{{route('ironings.upsert',[$row->id])}}"
                                class="flex flex-col px-3 text-gray-600 truncate text-xl text-center">
                                 {{ $row->total_qty + 0 }}
                             </a>
                         </x-table.cell>
                         <x-table.cell>
                             <div class="w-full flex justify-center gap-3">
-                                <a href="{{route('iornings.upsert',[$row->id])}}"
+                                <a href="{{route('ironings.upsert',[$row->id])}}"
                                    class="flex flex-col px-3 text-gray-600 truncate text-xl text-center">
                                     <x-button.link >&nbsp;
                                         <x-icons.icon :icon="'pencil'"
