@@ -683,6 +683,8 @@ class Upsert extends Component
 
         $this->calculateTotal();
         $this->resetsItems();
+        $this->total_tax();
+        $this->gt();
         $this->render();
     }
     public function resetsItems(): void
