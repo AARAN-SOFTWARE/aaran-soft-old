@@ -683,6 +683,8 @@ class Upsert extends Component
 
         $this->calculateTotal();
         $this->resetsItems();
+        $this->total_tax();
+        $this->gt();
         $this->render();
     }
     public function resetsItems(): void
@@ -726,9 +728,11 @@ class Upsert extends Component
         if ($this->itemList) {
             $this->total_qty = 0;
             $this->round_off=0;
+            $this->total_gst=0;
             foreach ($this->itemList as $row) {
                 $this->total_qty += round(floatval($row['qty']),3);
                 $this->round_off += round(floatval($row['price'])*$row['qty'], );
+                $this->total_gst = round(floatval($row['gst_percent']),);
             }
         }
     }

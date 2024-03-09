@@ -60,6 +60,7 @@ class CityList extends Component
 
     public function render()
     {
+        sleep(0.5);
         return view('livewire.common.city-list')->with([
             'list' => $this->getList()
         ]);
