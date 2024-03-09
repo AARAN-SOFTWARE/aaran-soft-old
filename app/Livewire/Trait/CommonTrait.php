@@ -12,7 +12,7 @@ trait CommonTrait
     public bool $showDeleteModal = false;
 
     public bool $sortAsc = true;
-    public string $perPage = "100";
+    public string $perPage = "25";
     public string $activeRecord = "1";
 
     public string $searches = "";
