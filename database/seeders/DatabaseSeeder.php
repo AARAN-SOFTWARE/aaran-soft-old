@@ -12,9 +12,26 @@ use Aaran\Common\Database\Seeders\PincodeSeeder;
 use Aaran\Common\Database\Seeders\ReceipttypeSeeder;
 use Aaran\Common\Database\Seeders\SizeSeeder;
 use Aaran\Common\Database\Seeders\StateSeeder;
+use Aaran\Erp\Database\Seeders\CuttingItemSeeder;
+use Aaran\Erp\Database\Seeders\CuttingSeeder;
+use Aaran\Erp\Database\Seeders\FabricLotSeeder;
+use Aaran\Erp\Database\Seeders\IroningItemSeeder;
+use Aaran\Erp\Database\Seeders\IroningSeeder;
+use Aaran\Erp\Database\Seeders\JobcardItemSeeder;
+use Aaran\Erp\Database\Seeders\JobcardSeeder;
+use Aaran\Erp\Database\Seeders\PeInwardItemSeeder;
+use Aaran\Erp\Database\Seeders\PeInwardSeeder;
+use Aaran\Erp\Database\Seeders\PeOutwardItemSeeder;
+use Aaran\Erp\Database\Seeders\PeOutwardSeeder;
+use Aaran\Erp\Database\Seeders\SectionInwardItemSeeder;
+use Aaran\Erp\Database\Seeders\SectionInwardSeeder;
+use Aaran\Erp\Database\Seeders\SectionOutwardItemSeeder;
+use Aaran\Erp\Database\Seeders\SectionOutwardSeeder;
 use Aaran\Master\Database\Seeders\CompanySeeder;
 use Aaran\Master\Database\Seeders\ContactSeeder;
 use Aaran\Master\Database\Seeders\ProductSeeder;
+use Aaran\Orders\Database\Seeders\OrderSeeder;
+use Aaran\Orders\Database\Seeders\StyleSeeder;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -62,17 +79,32 @@ class DatabaseSeeder extends Seeder
 
         HsncodeSeeder::run();
         ColourSeeder::run();
-        SizeSeeder::run();
-
+        DepartmentSeeder::run();
         LedgerSeeder::run();
         ReceipttypeSeeder::run();
-
-        DepartmentSeeder::run();
+        SizeSeeder::run();
 
         CompanySeeder::run();
         DefaultCompanySeeder::run();
-
         ContactSeeder::run();
         ProductSeeder::run();
+
+
+        OrderSeeder::run();
+        StyleSeeder::run();
+        FabricLotSeeder::run();
+
+
+        JobcardSeeder::run();
+        CuttingSeeder::run();
+        PeOutwardSeeder::run();
+        PeInwardSeeder::run();
+        SectionOutwardSeeder::run();
+        SectionInwardSeeder::run();
+        IroningSeeder::run();
+
+
+
+
     }
 }

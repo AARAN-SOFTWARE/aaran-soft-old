@@ -1,17 +1,22 @@
 <?php
 
-namespace Database\Seeders;
+namespace Aaran\Erp\Database\Seeders;
 
+use Aaran\Erp\Models\Fabrication\FabricLot;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class FabricLotSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public static function run(): void
     {
-        //
+        FabricLot::create([
+            'vname' => 'Cotton',
+            'desc' => '1',
+            'active_id' => '1',
+            'company_id' => '1',
+            'user_id' => '1'
+        ]);
+
     }
 }

@@ -5,6 +5,7 @@
         <x-forms.top-controls :show-filters="$showFilters"/>
 
         <x-forms.table :list="$list">
+
             <x-slot name="table_header">
                 <x-table.ths-slno wire:click.prevent="sortBy('vname')">Sl.no</x-table.ths-slno>
                 <x-table.ths-center wire:click.prevent="sortBy('vname')">City</x-table.ths-center>
