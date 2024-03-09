@@ -31,7 +31,7 @@ class Upsert extends Component
     public string $destination='';
     public string $bundle='';
     public mixed $total_qty=0;
-    public string $total_taxable='';
+    public mixed $total_taxable='';
     public string $total_gst='';
     public mixed $additional='';
     public mixed $round_off='';
@@ -642,6 +642,7 @@ class Upsert extends Component
             $this->active_id=true;
             $this->additional=0;
             $this->grand_total=0;
+            $this->total_taxable=0;
             $this->invoice_date=Carbon::now()->format('Y-m-d');
         }
     }
@@ -727,7 +728,7 @@ class Upsert extends Component
             $this->round_off=0;
             foreach ($this->itemList as $row) {
                 $this->total_qty += round(floatval($row['qty']),3);
-                $this->round_off += round(floatval($row['price']), );
+                $this->round_off += round(floatval($row['price'])*$row['qty'], );
             }
         }
     }
@@ -775,7 +776,13 @@ class Upsert extends Component
 
     public function gt()
     {
-        $this->grand_total=round(($this->additional)+($this->round_off));
+        $this->grand_total=round(($this->additional)+($this->round_off)+($this->total_taxable));
+    }
+
+    public function total_tax()
+    {
+        $this->total_taxable=round(($this->round_off)*($this->total_gst)/100);
+        $this->gt();
     }
 
 
