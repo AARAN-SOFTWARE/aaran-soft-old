@@ -5,10 +5,10 @@ namespace App\Enums;
 enum GstPercent: int
 {
     case T1 = 0;
-    case T5 = 1;
-    case T12 = 2;
-    case T18 = 3;
-    case T24 = 4;
+    case T5 = 5;
+    case T12 = 12;
+    case T18 = 18;
+    case T24 = 24;
 
 
     public function getName(): string

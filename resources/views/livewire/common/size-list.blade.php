@@ -34,6 +34,7 @@
                 @endforelse
             </x-slot>
             <x-slot name="table_pagination">
+                <div class="text-gray-700 text-sm">Result:{{  \Illuminate\Support\Number::format($list->total()) }}</div>
                 {{ $list->links() }}
             </x-slot>
         </x-forms.table>
