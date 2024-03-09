@@ -7,22 +7,13 @@
         <x-forms.table>
             <x-slot name="table_header">
                 <x-table.ths-slno wire:click.prevent="sortBy('invoice_no')">Sl.no</x-table.ths-slno>
-                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Sales NO</x-table.ths-center>
-                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Company Name</x-table.ths-center>
-                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Contact</x-table.ths-center>
+                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Order No</x-table.ths-center>
                 <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Invoice NO</x-table.ths-center>
                 <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Invoice Date</x-table.ths-center>
-                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Order Id</x-table.ths-center>
-                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Sales Type</x-table.ths-center>
-                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Transport</x-table.ths-center>
-                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Destination</x-table.ths-center>
-                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Bundle</x-table.ths-center>
+                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Party Name</x-table.ths-center>
                 <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Total Qty</x-table.ths-center>
                 <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Total Taxable</x-table.ths-center>
-                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Total Dst</x-table.ths-center>
-                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Ledger No</x-table.ths-center>
-                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Additional Charges</x-table.ths-center>
-                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Round Off</x-table.ths-center>
+                <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Total Gst</x-table.ths-center>
                 <x-table.ths-center wire:click.prevent="sortBy('invoice_no')">Grand Total</x-table.ths-center>
                 <x-table.heading>Action</x-table.heading>
             </x-slot>
@@ -41,15 +32,10 @@
                         <x-table.cell>
                             <a href="{{route('sales.upsert',[$row->id])}}"
                                class="flex px-3 text-gray-600 truncate text-xl text-left">
-                                {{ $row->uniqueno}}
+                                {{ $row->order->vname}}
                             </a>
                         </x-table.cell>
-                        <x-table.cell>
-                            <a href="{{route('sales.upsert',[$row->id])}}"
-                               class="flex px-3 text-gray-600 truncate text-xl text-left">
-                                {{ $row->company->vname}}
-                            </a>
-                        </x-table.cell>
+
                         <x-table.cell>
                             <a href="{{route('sales.upsert',[$row->id])}}"
                                class="flex px-3 text-gray-600 truncate text-xl text-left">
@@ -69,12 +55,7 @@
                                 {{ $row->invoice_date}}
                             </a>
                         </x-table.cell>
-                        <x-table.cell>
-                            <a href="{{route('sales.upsert',[$row->id])}}"
-                               class="flex px-3 text-gray-600 truncate text-xl text-left">
-                                {{ $row->order->vname}}
-                            </a>
-                        </x-table.cell>
+
                         <x-table.cell>
                             <a href="{{route('sales.upsert',[$row->id])}}"
                                class="flex px-3 text-gray-600 truncate text-xl text-left">
