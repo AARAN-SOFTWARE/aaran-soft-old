@@ -466,7 +466,7 @@ class Upsert extends Component
         if ($this->uniqueno != '') {
             if ($this->vid == "") {
                 $obj = Sale::create([
-                    'uniqueno' => session()->get('company_id') . '~' . $this->invoice_no . '~' . $this->invoice_date,
+                    'uniqueno' =>"{$this->contact_id}~{$this->invoice_no}~{$this->invoice_date}" ,
                     'acyear' => '1',
                     'company_id' => session()->get('company_id'),
                     'contact_id' => $this->contact_id,
@@ -492,9 +492,9 @@ class Upsert extends Component
 
             } else {
                 $obj = Sale::find($this->vid);
-                $obj->uniqueno = $this->uniqueno;
-                $obj->acyear = $this->acyear;
-                $obj->company_id = $this->company_id;
+                $obj->uniqueno = session()->get('company_id') . '~' . $this->invoice_no . '~' . $this->invoice_date;
+                $obj->acyear = 1;
+                $obj->company_id = session()->get('company_id');
                 $obj->contact_id = $this->contact_id;
                 $obj->invoice_no = $this->invoice_no;
                 $obj->invoice_date = $this->invoice_date;
@@ -538,6 +538,7 @@ class Upsert extends Component
 
     public function mount($id): void
     {
+        $this->invoice_no = Sale::nextNo();
         if ($id != 0) {
             $obj = Sale::find($id);
             $this->vid = $obj->id;
@@ -586,11 +587,12 @@ class Upsert extends Component
                 });
             $this->itemList = $data;
         } else {
-
+            $this->uniqueno="{$this->contact_id}~{$this->invoice_no}~{$this->invoice_date}";
             $this->active_id = true;
             $this->additional = 0;
             $this->grand_total = 0;
             $this->total_taxable = 0;
+            $this->total_gst = 0;
             $this->invoice_date = Carbon::now()->format('Y-m-d');
         }
     }
@@ -684,7 +686,7 @@ class Upsert extends Component
             foreach ($this->itemList as $row) {
                 $this->total_qty += round(floatval($row['qty']), 3);
                 $this->round_off += round(floatval($row['price']) * $row['qty'],);
-                $this->total_gst = round(floatval($row['gst_percent']),);
+                $this->total_gst += round(floatval($row['gst_percent']),);
             }
         }
     }
