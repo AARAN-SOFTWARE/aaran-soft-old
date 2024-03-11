@@ -23,22 +23,22 @@ class Upsert extends Component
 {
     use CommonTrait;
 
-    public string $uniqueno='';
-    public string $acyear='';
-    public string $invoice_no='';
-    public string $invoice_date='';
-    public string $sales_type='';
-    public string $destination='';
-    public string $bundle='';
-    public mixed $total_qty=0;
-    public mixed $total_taxable='';
-    public string $total_gst='';
-    public mixed $additional='';
-    public mixed $round_off='';
-    public mixed $grand_total='';
-    public mixed $qty='';
-    public mixed $price='';
-    public string $gst_percent='';
+    public string $uniqueno = '';
+    public string $acyear = '';
+    public string $invoice_no = '';
+    public string $invoice_date = '';
+    public string $sales_type = '';
+    public string $destination = '';
+    public string $bundle = '';
+    public mixed $total_qty = 0;
+    public mixed $total_taxable = '';
+    public string $total_gst = '';
+    public mixed $additional = '';
+    public mixed $round_off = '';
+    public mixed $grand_total = '';
+    public mixed $qty = '';
+    public mixed $price = '';
+    public string $gst_percent = '';
     public string $itemIndex = "";
     public $itemList = [];
 
@@ -52,67 +52,7 @@ class Upsert extends Component
     public string $colour;
     public string $size;
 
-
-    public $company_id = '';
-    public $company_name = '';
-    public Collection $companyCollection;
-    public $highlightCompany = 0;
-    public $companyTyped = false;
-
-    public function decrementCompany(): void
-    {
-        if ($this->highlightCompany === 0) {
-            $this->highlightCompany = count($this->companyCollection) - 1;
-            return;
-        }
-        $this->highlightCompany--;
-    }
-
-    public function incrementCompany(): void
-    {
-        if ($this->highlightCompany === count($this->companyCollection) - 1) {
-            $this->highlightCompany = 0;
-            return;
-        }
-        $this->highlightCompany++;
-    }
-    public function setCompany($name, $id): void
-    {
-        $this->company_name = $name;
-        $this->company_id = $id;
-        $this->getCompanyList();
-    }
-
-    public function enterCompany(): void
-    {
-        $obj = $this->companyCollection[$this->highlightCompany] ?? null;
-
-        $this->company_name = '';
-        $this->companyCollection = Collection::empty();
-        $this->highlightCompany = 0;
-
-        $this->company_name = $obj['vname'] ?? '';
-        $this->company_id = $obj['id'] ?? '';
-    }
-
-    #[On('refresh-company')]
-    public function refreshCompany($v): void
-    {
-        $this->company_id = $v['id'];
-        $this->company_name = $v['name'];
-        $this->companyTyped = false;
-
-    }
-
-    public function getCompanyList(): void
-    {
-
-
-        $this->companyCollection = $this->company_name ? Company::search(trim($this->company_name ))->get():Company::all();
-
-    }
-
-    public $contact_id= '';
+    public $contact_id = '';
     public $contact_name = '';
     public Collection $contactCollection;
     public $highlightContact = 0;
@@ -135,6 +75,7 @@ class Upsert extends Component
         }
         $this->highlightContact++;
     }
+
     public function setContact($name, $id): void
     {
         $this->contact_name = $name;
@@ -166,7 +107,7 @@ class Upsert extends Component
     public function getContactList(): void
     {
 
-        $this->contactCollection = $this->contact_name ? Contact::search(trim($this->contact_name ))->get():Contact::all();
+        $this->contactCollection = $this->contact_name ? Contact::search(trim($this->contact_name))->get() : Contact::all();
 
     }
 
@@ -194,6 +135,7 @@ class Upsert extends Component
         }
         $this->highlightOrder++;
     }
+
     public function setOrder($name, $id): void
     {
         $this->order_name = $name;
@@ -224,8 +166,8 @@ class Upsert extends Component
 
     public function getOrderList(): void
     {
-        $this->orderCollection = $this->order_name ? Order::search(trim($this->order_name ))
-            ->get():Order::all();
+        $this->orderCollection = $this->order_name ? Order::search(trim($this->order_name))
+            ->get() : Order::all();
     }
 
     public $transport_id = '';
@@ -251,6 +193,7 @@ class Upsert extends Component
         }
         $this->highlightTransport++;
     }
+
     public function setTransport($name, $id): void
     {
         $this->transport_name = $name;
@@ -281,8 +224,8 @@ class Upsert extends Component
 
     public function getTransportList(): void
     {
-        $this->transportCollection = $this->transport_name ? Transport::search(trim($this->transport_name ))
-            ->get():Transport::all();
+        $this->transportCollection = $this->transport_name ? Transport::search(trim($this->transport_name))
+            ->get() : Transport::all();
     }
 
     public $ledger_id = '';
@@ -308,6 +251,7 @@ class Upsert extends Component
         }
         $this->highlightLedger++;
     }
+
     public function setLedger($name, $id): void
     {
         $this->ledger_name = $name;
@@ -335,6 +279,7 @@ class Upsert extends Component
         $this->ledgerTyped = false;
 
     }
+
     public function getLedgerList(): void
     {
         $this->ledgerCollection = $this->ledger_name ? Ledger::search(trim($this->ledger_name))
@@ -364,6 +309,7 @@ class Upsert extends Component
         }
         $this->highlightProduct++;
     }
+
     public function setProduct($name, $id): void
     {
         $this->product_name = $name;
@@ -394,8 +340,8 @@ class Upsert extends Component
 
     public function getProductList(): void
     {
-        $this->productCollection = $this->product_name ? Product::search(trim($this->product_name ))
-            ->get():Product::all();
+        $this->productCollection = $this->product_name ? Product::search(trim($this->product_name))
+            ->get() : Product::all();
     }
 
     public $colour_id = '';
@@ -479,6 +425,7 @@ class Upsert extends Component
         }
         $this->highlightSize++;
     }
+
     public function setSize($name, $id): void
     {
         $this->size_name = $name;
@@ -506,6 +453,7 @@ class Upsert extends Component
         $this->sizeTyped = false;
 
     }
+
     public function getSizeList(): void
     {
         $this->sizeCollection = $this->size_name ? Size::search(trim($this->size_name))
@@ -515,12 +463,12 @@ class Upsert extends Component
 
     public function save(): string
     {
-        if ($this-> uniqueno!= '') {
+        if ($this->uniqueno != '') {
             if ($this->vid == "") {
-                $obj= Sale::create([
-                    'uniqueno' => $this->uniqueno,
-                    'acyear'=>$this->acyear,
-                    'company_id' => $this->company_id,
+                $obj = Sale::create([
+                    'uniqueno' => session()->get('company_id') . '~' . $this->invoice_no . '~' . $this->invoice_date,
+                    'acyear' => '1',
+                    'company_id' => session()->get('company_id'),
                     'contact_id' => $this->contact_id,
                     'invoice_no' => $this->invoice_no,
                     'invoice_date' => $this->invoice_date,
@@ -590,8 +538,8 @@ class Upsert extends Component
 
     public function mount($id): void
     {
-        if ($id !=0){
-            $obj=Sale::find($id);
+        if ($id != 0) {
+            $obj = Sale::find($id);
             $this->vid = $obj->id;
             $this->uniqueno = $obj->uniqueno;
             $this->acyear = $obj->acyear;
@@ -609,20 +557,20 @@ class Upsert extends Component
             $this->destination = $obj->destination;
             $this->bundle = $obj->bundle;
             $this->total_qty = $obj->total_qty;
-            $this->total_taxable= $obj->total_taxable;
-            $this->total_gst=$obj->total_gst;
+            $this->total_taxable = $obj->total_taxable;
+            $this->total_gst = $obj->total_gst;
             $this->ledger_id = $obj->ledger_id;
             $this->ledger_name = $obj->ledger->vname;
             $this->additional = $obj->additional;
             $this->round_off = $obj->round_off;
             $this->grand_total = $obj->grand_total;
             $this->active_id = $obj->active_id;
-            $data=DB::table('saleitems')->select('saleitems.*',
+            $data = DB::table('saleitems')->select('saleitems.*',
                 'products.vname as product_name',
                 'colours.vname as colour_name',
-                'sizes.vname as size_name',)->join('products','products.id','=','saleitems.product_id')
+                'sizes.vname as size_name',)->join('products', 'products.id', '=', 'saleitems.product_id')
                 ->join('colours', 'colours.id', '=', 'saleitems.colour_id')
-                ->join('sizes', 'sizes.id', '=', 'saleitems.size_id')->where('sale_id','=',$id)->get()->transform(function ($data){
+                ->join('sizes', 'sizes.id', '=', 'saleitems.size_id')->where('sale_id', '=', $id)->get()->transform(function ($data) {
                     return [
                         'saleitem_id' => $data->id,
                         'product_name' => $data->product_name,
@@ -637,13 +585,13 @@ class Upsert extends Component
                     ];
                 });
             $this->itemList = $data;
-        }else{
+        } else {
 
-            $this->active_id=true;
-            $this->additional=0;
-            $this->grand_total=0;
-            $this->total_taxable=0;
-            $this->invoice_date=Carbon::now()->format('Y-m-d');
+            $this->active_id = true;
+            $this->additional = 0;
+            $this->grand_total = 0;
+            $this->total_taxable = 0;
+            $this->invoice_date = Carbon::now()->format('Y-m-d');
         }
     }
 
@@ -687,6 +635,7 @@ class Upsert extends Component
         $this->gt();
         $this->render();
     }
+
     public function resetsItems(): void
     {
         $this->itemIndex = '';
@@ -701,6 +650,7 @@ class Upsert extends Component
         $this->gst_percent = '';
         $this->calculateTotal();
     }
+
     public function changeItems($index): void
     {
         $this->itemIndex = $index;
@@ -717,21 +667,23 @@ class Upsert extends Component
         $this->gst_percent = $items['gst_percent'];
         $this->calculateTotal();
     }
+
     public function removeItems($index): void
     {
         unset($this->itemList[$index]);
         $this->itemList = collect($this->itemList);
         $this->calculateTotal();
     }
+
     public function calculateTotal(): void
     {
         if ($this->itemList) {
             $this->total_qty = 0;
-            $this->round_off=0;
-            $this->total_gst=0;
+            $this->round_off = 0;
+            $this->total_gst = 0;
             foreach ($this->itemList as $row) {
-                $this->total_qty += round(floatval($row['qty']),3);
-                $this->round_off += round(floatval($row['price'])*$row['qty'], );
+                $this->total_qty += round(floatval($row['qty']), 3);
+                $this->round_off += round(floatval($row['price']) * $row['qty'],);
                 $this->total_gst = round(floatval($row['gst_percent']),);
             }
         }
@@ -758,8 +710,8 @@ class Upsert extends Component
             $this->destination = $obj->destination;
             $this->bundle = $obj->bundle;
             $this->total_qty = $obj->total_qty;
-            $this->total_taxable= $obj->total_taxable;
-            $this->total_gst=$obj->total_gst;
+            $this->total_taxable = $obj->total_taxable;
+            $this->total_gst = $obj->total_gst;
             $this->ledger_id = $obj->ledger_id;
             $this->ledger_name = $obj->ledger->vname;
             $this->additional = $obj->additional;
@@ -780,19 +732,18 @@ class Upsert extends Component
 
     public function gt()
     {
-        $this->grand_total=round(($this->additional)+($this->round_off)+($this->total_taxable));
+        $this->grand_total = round(($this->additional) + ($this->round_off) + ($this->total_taxable));
     }
 
     public function total_tax()
     {
-        $this->total_taxable=round(($this->round_off)*($this->total_gst)/100);
+        $this->total_taxable = round(($this->round_off) * ($this->total_gst) / 100);
         $this->gt();
     }
 
 
     public function render()
     {
-        $this->getCompanyList();
         $this->getContactList();
         $this->getOrderList();
         $this->getTransportList();

@@ -2,64 +2,6 @@
     <x-slot name="header">Sales Entry</x-slot>
     <x-forms.m-panel>
         <section class="grid grid-cols-2 gap-2 ">
-            <div class="w-1/2">
-                <x-input.model-text wire:model="uniqueno" :label="'Sales No'"/>
-                <div class="flex flex-row py-3 gap-3">
-                    <div class="xl:flex w-full gap-2">
-                        <label for="city_name" class="w-[10rem] text-zinc-500 tracking-wide py-2 ">Company Name</label>
-                        <div x-data="{isTyped: @entangle('companyTyped')}" @click.away="isTyped = false" class="w-full">
-                            <div class="relative">
-                                <input
-                                    id="company_name"
-                                    type="search"
-                                    wire:model.live="company_name"
-                                    autocomplete="off"
-                                    placeholder="Company Name.."
-                                    @focus="isTyped = true"
-                                    @keydown.escape.window="isTyped = false"
-                                    @keydown.tab.window="isTyped = false"
-                                    @keydown.enter.prevent="isTyped = false"
-                                    wire:keydown.arrow-up="decrementCompany"
-                                    wire:keydown.arrow-down="incrementCompany"
-                                    wire:keydown.enter="enterCompany"
-                                    class="block w-full purple-textbox"
-                                />
-
-                                <div x-show="isTyped"
-                                     x-transition:leave="transition ease-in duration-100"
-                                     x-transition:leave-start="opacity-100"
-                                     x-transition:leave-end="opacity-0"
-                                     x-cloak
-                                >
-                                    <div class="absolute z-20 w-full mt-2">
-                                        <div class="block py-1 shadow-md w-full
-                rounded-lg border-transparent flex-1 appearance-none border
-                                 bg-white text-gray-800 ring-1 ring-purple-600">
-                                            <ul class="overflow-y-scroll h-96">
-                                                @if($companyCollection)
-                                                    @forelse ($companyCollection as $i => $company)
-
-                                                        <li class="cursor-pointer px-3 py-1 hover:font-bold hover:bg-yellow-100 border-b border-gray-300 h-8
-                                                        {{ $highlightCompany=== $i ? 'bg-yellow-100' : '' }}"
-                                                            wire:click.prevent="setCompany('{{$company->vname}}','{{$company->id}}')"
-                                                            x-on:click="isTyped = false">
-                                                            {{ $company->vname }}
-                                                        </li>
-
-                                                    @empty
-                                                        @livewire('controls.model.master.company-model',[$company_name])
-                                                    @endforelse
-                                                @endif
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <x-input.model-text wire:model="acyear" :label="'Acyear'"/>
-            </div>
 
             <div class="w-1/2">
                 <x-input.model-text wire:model="invoice_no" :label="'Invoice No'"/>
@@ -547,7 +489,7 @@
                         </div>
                     </div>
 
-                    <x-input.model-text wire:model="additional" :label="'Extra-Charges'"/>
+                    <x-input.model-text wire:model="additional"  wire:change.prevent="gt" :label="'Extra-Charges'"/>
                     <x-input.model-text wire:model="round_off" :label="'Round Off'"/>
                     <x-input.model-text wire:model="grand_total" wire:click.prevent="gt" :label="'Grand Total'"/></div>
             </section>

@@ -20,6 +20,7 @@ class Index extends Component
     {
         return Sale::search($this->searches)
             ->where('active_id', '=', $this->activeRecord)
+            ->where('company_id', '=',  session()->get('company_id'))
             ->orderBy($this->sortField_1, $this->sortAsc ? 'asc' : 'desc')
             ->paginate($this->perPage);
     }
