@@ -36,12 +36,7 @@
                             </a>
                         </x-table.cell>
 
-                        <x-table.cell>
-                            <a href="{{route('sales.upsert',[$row->id])}}"
-                               class="flex px-3 text-gray-600 truncate text-xl text-left">
-                                {{ $row->contact->vname}}
-                            </a>
-                        </x-table.cell>
+
                         <x-table.cell>
                             <a href="{{route('sales.upsert',[$row->id])}}"
                                class="flex px-3 text-gray-600 truncate text-xl text-center">
@@ -55,30 +50,10 @@
                                 {{ $row->invoice_date}}
                             </a>
                         </x-table.cell>
-
                         <x-table.cell>
                             <a href="{{route('sales.upsert',[$row->id])}}"
                                class="flex px-3 text-gray-600 truncate text-xl text-left">
-                                {{\App\Enums\GST::tryFrom($row->sales_type)->getName()}}
-                            </a>
-                        </x-table.cell>
-                        <x-table.cell>
-                            <a href="{{route('sales.upsert',[$row->id])}}"
-                               class="flex px-3 text-gray-600 truncate text-xl text-left">
-                                {{ $row->transport->vname}}
-                            </a>
-                        </x-table.cell>
-                        <x-table.cell>
-                            <a href="{{route('sales.upsert',[$row->id])}}"
-                               class="flex px-3 text-gray-600 truncate text-xl text-left">
-                                {{ $row->destination}}
-                            </a>
-                        </x-table.cell>
-
-                        <x-table.cell>
-                            <a href="{{route('sales.upsert',[$row->id])}}"
-                               class="flex flex-col px-3 text-gray-600 truncate text-xl text-center">
-                                {{ $row->bundle }}
+                                {{ $row->contact->vname}}
                             </a>
                         </x-table.cell>
 
@@ -99,24 +74,6 @@
                             <a href="{{route('sales.upsert',[$row->id])}}"
                                class="flex flex-col px-3 text-gray-600 truncate text-xl text-center">
                                 {{ $row->total_gst }}
-                            </a>
-                        </x-table.cell>
-                        <x-table.cell>
-                            <a href="{{route('sales.upsert',[$row->id])}}"
-                               class="flex flex-col px-3 text-gray-600 truncate text-xl text-center">
-                                {{ $row->ledger->vname }}
-                            </a>
-                        </x-table.cell>
-                        <x-table.cell>
-                            <a href="{{route('sales.upsert',[$row->id])}}"
-                               class="flex flex-col px-3 text-gray-600 truncate text-xl text-center">
-                                {{ $row->additional }}
-                            </a>
-                        </x-table.cell>
-                        <x-table.cell>
-                            <a href="{{route('sales.upsert',[$row->id])}}"
-                               class="flex flex-col px-3 text-gray-600 truncate text-xl text-center">
-                                {{ $row->round_off }}
                             </a>
                         </x-table.cell>
                         <x-table.cell>
