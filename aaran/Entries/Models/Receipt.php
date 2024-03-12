@@ -2,6 +2,7 @@
 
 namespace Aaran\Entries\Models;
 
+use Aaran\Common\Models\Bank;
 use Aaran\Common\Models\Receipttype;
 use Aaran\Entries\Database\Factories\ReceiptFactory;
 use Aaran\Master\Models\Company;
@@ -21,7 +22,7 @@ class Receipt extends Model
     public static function search(string $searches)
     {
         return empty($searches) ? static::query()
-            : static::where('invoice_no', 'like', '%' . $searches . '%');
+            : static::where('vdate', 'like', '%' . $searches . '%');
     }
 
     public static function nextNo()
@@ -47,6 +48,10 @@ class Receipt extends Model
     public function receipttype(): BelongsTo
     {
         return $this->belongsTo(Receipttype::class);
+    }
+    public function bank(): BelongsTo
+    {
+        return $this->belongsTo(Bank::class);
     }
 
     protected static function newFactory(): ReceiptFactory

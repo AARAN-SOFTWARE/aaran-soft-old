@@ -716,18 +716,6 @@ class Upsert extends Component
             $this->round_off = round(floatval($this->round_off), 2);
             $this->grand_total = round((floatval($this->grand_total)) + (floatval($this->additional)), 2);
         }
-
-
-//        if ($this->itemList) {
-//            $this->total_qty = 0;
-//            $this->round_off = 0;
-//            $this->total_gst = 0;
-//            foreach ($this->itemList as $row) {
-//                $this->total_qty += round(floatval($row['qty']), 3);
-//                $this->round_off += round(floatval($row['price']) * $row['qty'],);
-//                $this->total_gst += round(floatval($row['gst_percent']),);
-//            }
-//        }
     }
 
     public function getObj($id)
