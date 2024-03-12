@@ -310,64 +310,67 @@
 
             <div class="py-2 mt-5">
 
+
                 <table class="w-full">
                     <thead>
                     <tr class="h-8 text-xs bg-gray-100 border border-gray-300">
                         <th class="w-12 px-2 text-center border border-gray-300">#</th>
-                        <th class="px-2 text-center border border-gray-300">Product</th>
+                        <th class="px-2 text-center border border-gray-300">PRODUCT</th>
                         <th class="px-2 text-center border border-gray-300">COLOUR</th>
                         <th class="px-2 text-center border border-gray-300">SIZE</th>
-                        <th class="px-2 text-center border border-gray-300">price</th>
-                        <th class="px-2 text-center border border-gray-300">Gst Percent</th>
                         <th class="px-2 text-center border border-gray-300">QTY</th>
+                        <th class="px-2 text-center border border-gray-300">PRICE</th>
+                        <th class="px-2 text-center border border-gray-300">TAXABLE</th>
+                        <th class="px-2 text-center border border-gray-300">GST PERCENT</th>
+                        <th class="px-2 text-center border border-gray-300">GST</th>
+                        <th class="px-2 text-center border border-gray-300">SUBTOTAL</th>
                         <th class="w-12 px-1 text-center border border-gray-300">ACTION</th>
                     </tr>
 
                     </thead>
-
                     <tbody>
-                    @php
-                        $totalQty = 0;
-                        $round_off=0;
-                    @endphp
 
-                    @foreach($itemList as $index => $row)
-                        <tr class="border border-gray-400 hover:bg-yellow-100">
-                            <td class="text-center border border-gray-300 bg-gray-100">
-                                <button class="w-full h-full cursor-pointer"
-                                        wire:click.prevent="changeItems({{$index}})">
-                                    {{$index+1}}
-                                </button>
-                            </td>
-                            <td class="px-2 text-left border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{$row['product_name']}}</td>
-                            <td class="px-2 text-center border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{$row['colour_name']}}</td>
-                            <td class="px-2 text-center border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{$row['size_name']}}</td>
-                            <td class="px-2 text-center border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{floatval($row['price'])}}</td>
-                            <td class="px-2 text-center border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{\App\Enums\GstPercent::tryFrom(floatval($row['gst_percent']))->getName()}}</td>
-                            <td class="px-2 text-center border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{floatval($row['qty'])}}</td>
-                            <td class="text-center border border-gray-300">
-                                <button wire:click.prevent="removeItems({{$index}})"
-                                        class="py-1.5 w-full text-red-500 items-center ">
-                                    <x-icons.icon icon="trash" class="block w-auto h-6"/>
-                                </button>
-                            </td>
-                        </tr>
-                        @php
-                            $totalQty += $row['qty']+0;
-                            $round_off += $row['price']+0
-                        @endphp
+                    @if ($itemList)
 
-                    @endforeach
+                        @foreach($itemList as $index => $row)
 
-
+                            <tr class="border border-gray-400 hover:bg-amber-50">
+                                <td class="text-center border border-gray-300 bg-gray-100">
+                                    <button class="w-full h-full cursor-pointer" wire:click.prevent="changeItems({{$index}})">
+                                        {{$index+1}}
+                                    </button>
+                                </td>
+                                <td class="px-2 text-left border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{$row['product_name']}}</td>
+                                <td class="px-2 text-left border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{$row['colour_name']}}</td>
+                                <td class="px-2 text-left border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{$row['size_name']}}</td>
+                                <td class="px-2 text-center border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{$row['qty']}}</td>
+                                <td class="px-2 text-right border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{$row['price']}}</td>
+                                <td class="px-2 text-right border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{$row['taxable']}}</td>
+                                <td class="px-2 text-center border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{$row['gst_percent']}}</td>
+                                <td class="px-2 text-right border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{$row['gst_amount']}}</td>
+                                <td class="px-2 text-right border border-gray-300 cursor-pointer" wire:click.prevent="changeItems({{$index}})">{{$row['subtotal']}}</td>
+                                <td class="text-center border border-gray-300">
+                                    <button wire:click.prevent="removeItems({{$index}})"
+                                            class="py-1.5 w-full text-red-500 items-center ">
+                                        <x-icons.icon icon="trash" class="block w-auto h-6"/>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                     <tfoot class="mt-2">
-                    <tr class="h-8 text-sm border border-gray-400 bg-lime-300">
-                        <td colspan="6" class="px-2 text-xs text-right border border-gray-300">&nbsp;TOTALS&nbsp;&nbsp;&nbsp;</td>
-                        <td class="px-2 text-center border border-gray-300"  wire:model="total_qty">{{$totalQty}}</td>
+                    <tr class="h-8 text-sm border border-gray-400 bg-cyan-50">
+                        <td colspan="4" class="px-2 text-xs text-right border border-gray-300">&nbsp;TOTALS&nbsp;&nbsp;&nbsp;</td>
+                        <td class="px-2 text-center border border-gray-300">{{$total_qty}}</td>
+                        <td class="px-2 text-center border border-gray-300">&nbsp;</td>
+                        <td class="px-2 text-right border border-gray-300">{{$total_taxable}}</td>
+                        <td class="px-2 text-center border border-gray-300">&nbsp;</td>
+                        <td class="px-2 text-right border border-gray-300">{{$total_gst}}</td>
+                        <td class="px-2 text-right border border-gray-300">{{$grandtotalBeforeRound}}</td>
+                        <td class="px-2 text-center border border-gray-300">&nbsp;</td>
                     </tr>
                     </tfoot>
-
                 </table>
 
             </div>
@@ -376,58 +379,6 @@
         <section class="grid grid-cols-2 gap-2 ">
             <section class="w-full">
                 <div class="w-3/4">
-                    <div class="flex flex-col gap-2">
-                        <div class="xl:flex w-full gap-2">
-                            <label for="pincode_name" class="w-[10rem] text-zinc-500 tracking-wide py-2">Transport</label>
-                            <div x-data="{isTyped: @entangle('transportTyped')}" @click.away="isTyped = false" class="w-full">
-                                <div class="relative">
-                                    <input
-                                        id="transport_name"
-                                        type="search"
-                                        wire:model.live="transport_name"
-                                        autocomplete="off"
-                                        placeholder="Transport.."
-                                        @focus="isTyped = true"
-                                        @keydown.escape.window="isTyped = false"
-                                        @keydown.tab.window="isTyped = false"
-                                        @keydown.enter.prevent="isTyped = false"
-                                        wire:keydown.arrow-up="decrementTransport"
-                                        wire:keydown.arrow-down="incrementTransport"
-                                        wire:keydown.enter="enterTransport"
-                                        class="block w-full purple-textbox"
-                                    />
-
-                                    <div x-show="isTyped"
-                                         x-transition:leave="transition ease-in duration-100"
-                                         x-transition:leave-start="opacity-100"
-                                         x-transition:leave-end="opacity-0"
-                                         x-cloak
-                                    >
-                                        <div class="absolute z-20 w-full mt-2">
-                                            <div class="block py-1 shadow-md w-full
-                rounded-lg border-transparent flex-1 appearance-none border
-                                 bg-white text-gray-800 ring-1 ring-purple-600">
-                                                <ul class="overflow-y-scroll h-96">
-                                                    @if($transportCollection)
-                                                        @forelse ($transportCollection as $i => $transport)
-                                                            <li class="cursor-pointer px-3 py-1 hover:font-bold hover:bg-yellow-100 border-b border-gray-300 h-8
-                                                        {{ $highlightTransport === $i ? 'bg-yellow-100' : '' }}"
-                                                                wire:click.prevent="setTransport('{{$transport->vname}}','{{$transport->id}}')"
-                                                                x-on:click="isTyped = false">
-                                                                {{ $transport->vname }}
-                                                            </li>
-                                                        @empty
-                                                            @livewire('controls.model.common.transport-mode',[$transport_name])
-                                                        @endforelse
-                                                    @endif
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="flex flex-col gap-2 pt-5">
                         <div class="xl:flex w-full gap-2">
                             <label for="pincode_name" class="w-[10rem] text-zinc-500 tracking-wide py-2">Ledger</label>
@@ -480,6 +431,59 @@
                             </div>
                         </div>
                     </div>
+                    <div class="flex flex-col gap-2 pt-5">
+                        <div class="xl:flex w-full gap-2">
+                            <label for="pincode_name" class="w-[10rem] text-zinc-500 tracking-wide py-2">Transport</label>
+                            <div x-data="{isTyped: @entangle('transportTyped')}" @click.away="isTyped = false" class="w-full">
+                                <div class="relative">
+                                    <input
+                                        id="transport_name"
+                                        type="search"
+                                        wire:model.live="transport_name"
+                                        autocomplete="off"
+                                        placeholder="Transport.."
+                                        @focus="isTyped = true"
+                                        @keydown.escape.window="isTyped = false"
+                                        @keydown.tab.window="isTyped = false"
+                                        @keydown.enter.prevent="isTyped = false"
+                                        wire:keydown.arrow-up="decrementTransport"
+                                        wire:keydown.arrow-down="incrementTransport"
+                                        wire:keydown.enter="enterTransport"
+                                        class="block w-full purple-textbox"
+                                    />
+
+                                    <div x-show="isTyped"
+                                         x-transition:leave="transition ease-in duration-100"
+                                         x-transition:leave-start="opacity-100"
+                                         x-transition:leave-end="opacity-0"
+                                         x-cloak
+                                    >
+                                        <div class="absolute z-20 w-full mt-2">
+                                            <div class="block py-1 shadow-md w-full
+                rounded-lg border-transparent flex-1 appearance-none border
+                                 bg-white text-gray-800 ring-1 ring-purple-600">
+                                                <ul class="overflow-y-scroll h-96">
+                                                    @if($transportCollection)
+                                                        @forelse ($transportCollection as $i => $transport)
+                                                            <li class="cursor-pointer px-3 py-1 hover:font-bold hover:bg-yellow-100 border-b border-gray-300 h-8
+                                                        {{ $highlightTransport === $i ? 'bg-yellow-100' : '' }}"
+                                                                wire:click.prevent="setTransport('{{$transport->vname}}','{{$transport->id}}')"
+                                                                x-on:click="isTyped = false">
+                                                                {{ $transport->vname }}
+                                                            </li>
+                                                        @empty
+                                                            @livewire('controls.model.common.transport-mode',[$transport_name])
+                                                        @endforelse
+                                                    @endif
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <x-input.model-text wire:model="destination" :label="'Destination'"/>
                     <x-input.model-text wire:model="bundle" :label="'Bundle'"/>
                 </div>
@@ -489,7 +493,12 @@
                 <div class="w-3/4 mr-3 ml-auto ">
 
 
-                    <x-input.model-text wire:model="additional"  wire:change.prevent="gt" :label="'ExtraCharges'"/>
+                    <x-input.model-text wire:model="additional"  wire:change.debounce="calculateTotal" :label="'Additional'"/>
+                    <div class="grid w-full grid-cols-2 pt-6">
+                        <label
+                            class="px-3 pb-2 text-left text-gray-600 text-md">Round off&nbsp;:&nbsp;&nbsp;</label>
+                        <label class="px-3 pb-2 text-right text-gray-800 text-md">{{$round_off}}</label>
+                    </div>
                     <div class="grid w-full grid-cols-2 pt-6">
                         <label
                             class="px-3 pb-2 text-left text-gray-600 text-md">Total Gst&nbsp;:&nbsp;&nbsp;</label>

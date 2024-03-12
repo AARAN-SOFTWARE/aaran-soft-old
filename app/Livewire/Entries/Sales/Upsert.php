@@ -57,6 +57,7 @@ class Upsert extends Component
     public Collection $contactCollection;
     public $highlightContact = 0;
     public $contactTyped = false;
+    public  $grandtotalBeforeRound;
 
     public function decrementContact(): void
     {
@@ -583,6 +584,9 @@ class Upsert extends Component
                         'qty' => $data->qty,
                         'price' => $data->price,
                         'gst_percent' => $data->gst_percent,
+                        'taxable' => $data->qty * $data->price,
+                        'gst_amount' => ($data->qty * $data->price) * ($data->gst_percent)/ 100,
+                        'subtotal' => $data->qty * $data->price + (($data->qty * $data->price) * $data->gst_percent / 100),
                     ];
                 });
             $this->itemList = $data;
@@ -594,6 +598,7 @@ class Upsert extends Component
             $this->additional = 0;
             $this->grand_total = 0;
             $this->total_taxable = 0;
+            $this->round_off = 0;
             $this->total_gst = 0;
             $this->invoice_date = Carbon::now()->format('Y-m-d');
         }
@@ -616,6 +621,9 @@ class Upsert extends Component
                     'qty' => $this->qty,
                     'price' => $this->price,
                     'gst_percent' => $this->gst_percent,
+                    'taxable' => $this->qty * $this->price,
+                    'gst_amount' => ($this->qty * $this->price) * $this->gst_percent / 100,
+                    'subtotal' => $this->qty * $this->price + (($this->qty * $this->price) * $this->gst_percent / 100),
                 ];
             }
         } else {
@@ -629,14 +637,15 @@ class Upsert extends Component
                 'qty' => $this->qty,
                 'price' => $this->price,
                 'gst_percent' => $this->gst_percent,
+                'taxable' => $this->qty * $this->price,
+                'gst_amount' => ($this->qty * $this->price) * $this->gst_percent / 100,
+                'subtotal' => $this->qty * $this->price + (($this->qty * $this->price) * $this->gst_percent / 100),
             ];
 
         }
 
         $this->calculateTotal();
         $this->resetsItems();
-        $this->total_tax();
-        $this->gt();
         $this->render();
     }
 
@@ -682,15 +691,43 @@ class Upsert extends Component
     public function calculateTotal(): void
     {
         if ($this->itemList) {
+
             $this->total_qty = 0;
-            $this->round_off = 0;
+            $this->total_taxable = 0;
             $this->total_gst = 0;
+            $this->grandtotalBeforeRound = 0;
+
             foreach ($this->itemList as $row) {
                 $this->total_qty += round(floatval($row['qty']), 3);
-                $this->round_off += round(floatval($row['price']) * $row['qty'],);
-                $this->total_gst += round(floatval($row['gst_percent']),);
+                $this->total_taxable += round(floatval($row['taxable']), 2);
+                $this->total_gst += round(floatval($row['gst_amount']), 2);
+                $this->grandtotalBeforeRound += round(floatval($row['subtotal']), 2);
             }
+            $this->grand_total = round($this->grandtotalBeforeRound);
+            $this->round_off = $this->grandtotalBeforeRound - $this->grand_total;
+
+            if ($this->grandtotalBeforeRound > $this->grand_total) {
+                $this->round_off = round($this->round_off, 2) * -1;
+            }
+
+            $this->qty = round(floatval($this->qty), 3);
+            $this->total_taxable = round(floatval($this->total_taxable), 2);
+            $this->total_gst = round(floatval($this->total_gst), 2);
+            $this->round_off = round(floatval($this->round_off), 2);
+            $this->grand_total = round((floatval($this->grand_total)) + (floatval($this->additional)), 2);
         }
+
+
+//        if ($this->itemList) {
+//            $this->total_qty = 0;
+//            $this->round_off = 0;
+//            $this->total_gst = 0;
+//            foreach ($this->itemList as $row) {
+//                $this->total_qty += round(floatval($row['qty']), 3);
+//                $this->round_off += round(floatval($row['price']) * $row['qty'],);
+//                $this->total_gst += round(floatval($row['gst_percent']),);
+//            }
+//        }
     }
 
     public function getObj($id)
@@ -733,18 +770,6 @@ class Upsert extends Component
 
         $this->redirect(route('sales'));
     }
-
-    public function gt()
-    {
-        $this->grand_total = round(($this->additional) + ($this->round_off) + ($this->total_taxable));
-    }
-
-    public function total_tax()
-    {
-        $this->total_taxable = round(($this->round_off) * ($this->total_gst) / 100);
-        $this->gt();
-    }
-
 
     public function render()
     {

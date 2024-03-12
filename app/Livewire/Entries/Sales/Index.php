@@ -10,7 +10,7 @@ use Livewire\Component;
 class Index extends Component
 {
     use CommonTrait;
-    public $sortField_1='uniqueno';
+    public $sortField_1='invoice_no';
     public function create(): void
     {
         $this->redirect(route('sales.upsert', ['0']));
