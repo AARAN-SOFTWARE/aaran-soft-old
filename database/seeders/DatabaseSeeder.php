@@ -12,6 +12,8 @@ use Aaran\Common\Database\Seeders\PincodeSeeder;
 use Aaran\Common\Database\Seeders\ReceipttypeSeeder;
 use Aaran\Common\Database\Seeders\SizeSeeder;
 use Aaran\Common\Database\Seeders\StateSeeder;
+use Aaran\Common\Database\Seeders\TransportSeeder;
+use Aaran\Entries\Database\Seeders\SaleSeeder;
 use Aaran\Erp\Database\Seeders\CuttingItemSeeder;
 use Aaran\Erp\Database\Seeders\CuttingSeeder;
 use Aaran\Erp\Database\Seeders\FabricLotSeeder;
@@ -83,6 +85,7 @@ class DatabaseSeeder extends Seeder
         LedgerSeeder::run();
         ReceipttypeSeeder::run();
         SizeSeeder::run();
+        TransportSeeder::run();
 
         CompanySeeder::run();
         DefaultCompanySeeder::run();
@@ -102,6 +105,8 @@ class DatabaseSeeder extends Seeder
         SectionOutwardSeeder::run();
         SectionInwardSeeder::run();
         IroningSeeder::run();
+
+        SaleSeeder::run();
 
 
 
