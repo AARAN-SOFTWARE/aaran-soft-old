@@ -9,3 +9,5 @@
 <x-menu.base.li-menuitem :routes="'departments'" :label="'Department'"/>
 <x-menu.base.li-menuitem :routes="'ledgers'" :label="'Ledger'"/>
 <x-menu.base.li-menuitem :routes="'transports'" :label="'Transport'"/>
+<x-menu.base.li-menuitem :routes="'banks'" :label="'Bank'"/>
+<x-menu.base.li-menuitem :routes="'receipttypes'" :label="'Receipt Type'"/>
