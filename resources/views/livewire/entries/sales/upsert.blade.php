@@ -39,7 +39,7 @@
                                                 @forelse ($contactCollection as $i => $contact)
 
                                                     <li class="cursor-pointer px-3 py-1 hover:font-bold hover:bg-yellow-100 border-b border-gray-300 h-8
-                                                        {{ $highlightSize === $i ? 'bg-yellow-100' : '' }}"
+                                                        {{ $highlightContact === $i ? 'bg-yellow-100' : '' }}"
                                                         wire:click.prevent="setContact('{{$contact->vname}}','{{$contact->id}}')"
                                                         x-on:click="isTyped = false">
                                                         {{ $contact->vname }}
