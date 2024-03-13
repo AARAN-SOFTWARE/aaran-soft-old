@@ -1,4 +1,4 @@
-<nav class="w-auto sticky inset-0 z-10 border-b-2 py-5 bg-blue-100 border-gray-200">
+<nav class="w-auto sticky inset-0 z-10 border-b-2 py-5 bg-gray-100">
     <div class="container w-full flex flex-wrap  rounded justify-between items-center mx-auto ">
         <a href="{{ route('home')}}" class="flex items-center">
             <div class=" p-1 rounded py-2">

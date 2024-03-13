@@ -1,5 +1,5 @@
 <script src="https://cdn.tailwindcss.com"></script>
-<div class="loading w-full flex justify-center h-auto object-cover bg-gradient-to-r from-gray-100 to-blue-100">
+<div class="loading w-full flex justify-center h-auto object-cover bg-white-100">
 <div class="w-full rounded h-full">
 
     {{--    <---Home--->--}}
@@ -9,86 +9,86 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         />
         <div class="w-full">
-        <div class="xl:container w-full mx-auto flex flex-row py-20">
-            <div class="w-full p-5 animate__animated wow animate__fadeInDown bg-gradient-to-r from-gray-50 to-red-100">
+        <div class="xl:container  mx-auto flex flex-row py-20 bg-white">
+            <div class="w-full p-5 animate__animated wow animate__fadeInDown ">
                 <h1 class="pt-20 mb-5 font-extrabold text-3xl">Team management Our application</h1>
                 <p class="mb-8 font-light text-2xl ">Start getting things done together with your team based on CODEXSUN revolutionary team management features</p>
                 <a class="btn-solid-lg hover:bg-emerald-400 rounded gap-3 bordered bg-gray-400 border-gray-500 p-3" href="{{ route('register') }}"><i class="fab fa-apple border-gray-500 hover:underline hover:bg-blue-500 "></i>register</a>
             </div>
-            <div class="w-full flex mx-auto animate__animated wow animate__bounceInRight bg-gradient-to-r from-red-100 to-gray-100">
-                <img class="h-auto rounded ms-auto inline max-w-2xl" src="../../../../images/img1.jpg" alt="image description">
+            <div class="w-full flex mx-auto animate__animated wow animate__bounceInRight bg-gradient-to-r from-white to-gray-50">
+                <img class="h-auto  rounded ms-auto inline max-w-2xl" src="../../../../images/img9.jpg" alt="image description">
             </div>
         </div>
         </div>
     </header>
 
-    <div class="pt-4 pb-14 text-center font-sans animate__animated wow animate__bounce bg-gray-50">
+    <div class="pt-4 pb-14 text-center font-sans animate__animated wow animate__bounce bg-gray-100">
         <div class="container px-4 sm:px-8 xl:px-4 justify-items-center mx-auto  animate__animated animate__backInUp">
             <p class="mb-4 text-gray-800 text-3xl leading-10 lg:max-w-5xl lg:mx-auto"> Team management mobile apps don’t get better than CODEXSUN. It’s probably the best app in the world for this purpose. Don’t hesitate to give it a try today, and you will fall in love with it</p>
         </div>
     </div>
 {{--<---services--->--}}
     <section href="{{ route('service') }}">
-        <div class="w-full bg-gray-50">
-        <div id="services" class="container  mx-auto xl:flex  md:flex-row  sm:flex-row sm:gap-3 pt-4 pb-1.5  text-center bg-gray-50 ">
+        <div class="w-full bg-gray-100">
+        <div id="services" class="container  mx-auto xl:flex  md:flex-row  sm:flex-row sm:gap-3 pt-4 pb-1.5  text-center bg-gray-100">
             <div class=" justify-items-center grid md:grid-cols-3 p-3 gap-3 w-full mx-auto">
 
-            <div class="mb-3.5 lg:grid-cols-1 w-72 h-80 shadow-2xl grid-rows-1 gap-4 border rounded-2xl bg-blue-50  animate__animated wow animate__fadeInLeftBig ">
-                <div class=" mb-1.5 ">
-                    <img class="w-40 h-40 mr-auto ml-auto" src="../../../../images/features-icon-1.svg" alt="alternative" />
+            <div class="mb-3.5 lg:grid-cols-1 w-72 h-80 shadow-2xl grid-rows-1 gap-4 border rounded-2xl bg-white  animate__animated wow animate__fadeInLeftBig ">
+                <div class="mb-5">
+                    <img class="w-16 h-16 mr-auto mt-10 ml-auto" src="../../../../images/features-icon-1.svg" alt="alternative" />
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title font-sans font-bold mb-1.5">Platform Integration</h5>
-                    <p class="mb-4 font-medium">Your sales force can use the app on any smartphone platform without compatibility issues</p>
+                <div class="card-body mx-auto">
+                    <h5 class="card-title mb-7 font-Italic font-bold text-2xl">Platform Integration</h5>
+                    <p class="mb-5 font-medium">Your sales force can use the app on any smartphone platform without compatibility issues</p>
                 </div>
             </div>
 
-            <div class="mb-3.5 w-72 h-80 shadow-2xl grid-rows-2 border lg:grid-cols-2 rounded-2xl bg-blue-50  animate__animated wow animate__fadeInDownBig" >
+            <div class="mb-3.5 w-72 h-80 shadow-2xl grid-rows-2 border lg:grid-cols-2 rounded-2xl bg-white  animate__animated wow animate__fadeInDownBig" >
                 <div class="mb-1.5">
-                    <img class="w-40 h-40 mr-auto ml-auto" src="../../../../images/features-icon-2.svg" alt="alternative" />
+                    <img class="w-16 h-16 mr-auto mt-10 ml-auto" src="../../../../images/features-icon-2.svg" alt="alternative" />
                 </div>
-                <div class="card-body ">
-                    <h5 class="card-title mb-1.5 font-sans font-bold">Easy On Resources</h5>
-                    <p class="mb-4 font-medium">Works smoothly even on older generation hardware due to our optimization efforts</p>
+                <div class="card-body mx-auto">
+                    <h5 class="card-title mb-7 font-Italic font-bold text-2xl">Easy On Resources</h5>
+                    <p class="mb-5 font-medium">Works smoothly even on older generation hardware due to our optimization efforts</p>
                 </div>
             </div>
 
-            <div class="mb-3.5 w-72 h-80 border shadow-2xl grid-rows-3 lg:grid-cols-3 rounded-2xl bg-blue-50  animate__animated wow animate__fadeInRightBig">
+            <div class="mb-3.5 w-72 h-80 border shadow-2xl grid-rows-3 lg:grid-cols-3 rounded-2xl bg-white  animate__animated wow animate__fadeInRightBig">
                 <div class=" mb-1.5">
-                    <img class="w-40 h-40 mr-auto ml-auto" src="../../../../images/features-icon-3.svg" alt="alternative" />
+                    <img class="w-16 h-16 mr-auto mt-10 ml-auto" src="../../../../images/features-icon-3.svg" alt="alternative" />
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title mb-1.5 font-sans font-bold">Great Performance</h5>
+                <div class="card-body mx-auto">
+                    <h5 class="card-title mb-7 font-Italic font-bold text-2xl">Great Performance</h5>
                     <p class="mb-4 font-medium">Optimized code and innovative technology insure no delays and ultra-fast responsiveness</p>
                 </div>
             </div>
 
             <!-- Card -->
-            <div class="mb-3.5 border w-72 h-80 shadow-2xl grid-rows-4 rounded-2xl lg:grid-cols-4 bg-blue-50  animate__animated wow animate__fadeInBottomLeft">
+            <div class="mb-3.5 border w-72 h-80 shadow-2xl grid-rows-4 rounded-2xl lg:grid-cols-4 bg-white  animate__animated wow animate__fadeInBottomLeft">
                 <div class=" mb-1.5">
-                    <img class="w-40 h-40 mr-auto ml-auto" src="../../../../images/features-icon-4.svg" alt="alternative" />
+                    <img class="w-16 h-16 mr-auto mt-10 ml-auto" src="../../../../images/features-icon-4.svg" alt="alternative" />
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title mb-1.5 font-sans font-bold">Multiple Languages</h5>
+                <div class="card-body mx-auto">
+                    <h5 class="card-title mb-7 font-Italic font-bold text-2xl">Multiple Languages</h5>
                     <p class="mb-4 font-medium">Choose from one of the 40 languages that come pre-installed and start selling smarter</p>
                 </div>
             </div>
-            <div class="mb-3.5 border w-72 h-80 shadow-2xl grid-rows-5 rounded-2xl lg:grid-cols-5 bg-blue-50  animate__animated wow animate__fadeInUpBig">
+            <div class="mb-3.5 border w-72 h-80 shadow-2xl grid-rows-5 rounded-2xl lg:grid-cols-5 bg-white  animate__animated wow animate__fadeInUpBig">
                 <div class=" mb-1.5">
-                    <img class="w-40 h-40 mr-auto ml-auto" src="../../../../images/features-icon-5.svg" alt="alternative" />
+                    <img class="w-16 h-16 mr-auto mt-10 ml-auto" src="../../../../images/features-icon-5.svg" alt="alternative" />
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title mb-1.5 font-sans font-bold">Free Updates</h5>
+                    <h5 class="card-title mb-7 font-Italic font-bold text-2xl">Free Updates</h5>
                     <p class="mb-4 font-medium">Don't worry about future costs, pay once and receive all future updates at no extra cost</p>
                 </div>
             </div>
 
-            <div class="mb-3.5 border w-72 h-80 shadow-2xl grid-rows-6 lg:grid-cols-6 rounded-2xl bg-blue-50  animate__animated wow animate__backInUp">
+            <div class="mb-3.5 border w-72 h-80 shadow-2xl grid-rows-6 lg:grid-cols-6 rounded-2xl bg-white  animate__animated wow animate__backInUp">
                 <div class="mb-1.5">
-                    <img class="w-40 h-40 mr-auto ml-auto" src="../../../../images/features-icon-6.svg" alt="alternative" />
+                    <img class="w-16 h-16 mr-auto mt-10 ml-auto" src="../../../../images/features-icon-6.svg" alt="alternative" />
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title mb-1.5 font-sans font-bold">Community Support</h5>
+                    <h5 class="card-title mb-7 font-Italic font-bold text-2xl">Community Support</h5>
                     <p class="mb-4 font-medium">Register the app and get acces to knowledge and ideas from the Pavo online community</p>
                 </div>
             </div>
@@ -96,7 +96,7 @@
     </div>
         </div>
 {{--<---pricing--->--}}
-    <div id="pricing" class="cards-2 relative pt-8 text-center mx-auto bg-gradient-to-r from-gray-300 to-gray-100  ">
+    <div id="pricing" class="cards-2 relative pt-8 text-center mx-auto bg-white">
         <div class="absolute bottom-0.5 h-40 w-full"></div>
 {{--        <div class="">--}}
             <h2 class="mb-2.5 font-semibold grid-rows-1 lg:max-w-xl p-3 lg:mx-auto text-2xl">Pricing options for all budgets</h2>
@@ -105,9 +105,9 @@
 {{--           <---items--->--}}
             <div class="container md:grid-cols-3 flex px-4 pb-px p-5 mx-auto gap-3.5">
             <div class="card relative block rounded  w-80 h-auto md:grid-cols-4 gap-3 flex-col mr-auto mb-6 ml-auto mx-auto shadow-md">
-                <div class="card-body p-8 bg-gradient-to-r from-cyan-200 to-blue-100 animate__animated wow animate__zoomIn">
+                <div class="card-body p-8 bg-gray-50 animate__animated wow animate__zoomIn">
                     <div class="card-title mb-1.5 text-blue-500 font-bold text-center">STANDARD</div>
-                    <div class="price"><span class="currency mr-1.5 text-amber-800 font-light ">$</span><span class="value text-gray-700 font-medium h-5 text-center">29</span></div>
+                    <div class="price"><span class="currency mr-1.5 text-amber-800 font-light ">$</span><span class="value text-gray-700 font-medium h-5 text-center">13999</span></div>
                     <div class="frequency mb-1.5 font-semibold text-center">monthly</div>
                     <p class="mb-1.5 text-left">This basic package covers the marketing needs of small startups</p>
                     <ul class="list mb-7 space-y-2 text-left">
@@ -140,7 +140,7 @@
                         </li>
                     </ul>
                     <div class="button-wrapper absolute pb-1.5 text-center ml-16">
-                        <a class="border rounded-2xl p-2 flex gap-1.5 bg-rose-800  text-center" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <a class="border rounded-2xl p-2 flex gap-1.5 bg-cyan-200  text-center" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
                                 <path fill-rule="evenodd" d="M9.674 2.075a.75.75 0 0 1 .652 0l7.25 3.5A.75.75 0 0 1 17 6.957V16.5h.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H3V6.957a.75.75 0 0 1-.576-1.382l7.25-3.5ZM11 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM7.5 9.75a.75.75 0 0 0-1.5 0v5.5a.75.75 0 0 0 1.5 0v-5.5Zm3.25 0a.75.75 0 0 0-1.5 0v5.5a.75.75 0 0 0 1.5 0v-5.5Zm3.25 0a.75.75 0 0 0-1.5 0v5.5a.75.75 0 0 0 1.5 0v-5.5Z" clip-rule="evenodd" />
                             </svg>
                             Buy Now</a>
@@ -149,9 +149,9 @@
             </div>
 
             <div class="card relative block w-80 h-auto md:grid-cols-5 gap-3 mr-auto mx-auto mb-6 ml-auto border rounded shadow-md">
-                <div class="card-body p-8 bg-gradient-to-r from-cyan-200 to-blue-100 animate__animated wow animate__zoomIn">
+                <div class="card-body p-8 bg-gray-50 animate__animated wow animate__zoomIn">
                     <div class="card-title mb-1.5 text-blue-500 font-bold text-center">ADVANCED</div>
-                    <div class="price"><span class="currency mr-1.5 text-amber-800 font-light">$</span><span class="value text-gray-700 font-medium h-5 text-center">39</span></div>
+                    <div class="price"><span class="currency mr-1.5 text-amber-800 font-light">$</span><span class="value text-gray-700 font-medium h-5 text-center">25999</span></div>
                     <div class="frequency mb-1.5 font-semibold text-center">monthly</div>
                     <p class="mb-1.5 text-left">This is a more advanced package suited for medium companies</p>
                     <ul class="list mb-7 space-y-2 text-left">
@@ -185,7 +185,7 @@
                         </li>
                     </ul>
                     <div class="button-wrapper absolute pb-1.5 justify-items-center mx-auto ml-16 ">
-                        <a class="border rounded-2xl p-2 bg-rose-800 gap-1.5 flex  text-center" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <a class="border rounded-2xl p-2 bg-cyan-200 gap-1.5 flex  text-center" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
                                 <path fill-rule="evenodd" d="M9.674 2.075a.75.75 0 0 1 .652 0l7.25 3.5A.75.75 0 0 1 17 6.957V16.5h.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H3V6.957a.75.75 0 0 1-.576-1.382l7.25-3.5ZM11 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM7.5 9.75a.75.75 0 0 0-1.5 0v5.5a.75.75 0 0 0 1.5 0v-5.5Zm3.25 0a.75.75 0 0 0-1.5 0v5.5a.75.75 0 0 0 1.5 0v-5.5Zm3.25 0a.75.75 0 0 0-1.5 0v5.5a.75.75 0 0 0 1.5 0v-5.5Z" clip-rule="evenodd" />
                             </svg>Buy Now</a>
                     </div>
@@ -193,9 +193,9 @@
             </div>
 
             <div class=" relative block   w-80 h-auto mr-auto grid-cols-6 gap-3 mb-6 ml-auto mx-auto border rounded shadow-md">
-                <div id="progress" class="card-body p-8 bg-gradient-to-r from-cyan-200 to-blue-100 animate__animated wow animate__zoomIn">
+                <div id="progress" class="card-body p-8 bg-gray-50 animate__animated wow animate__zoomIn">
                     <div class="card-title mb-1.5 text-blue-500 font-bold text-center">PREMIUM</div>
-                    <div class="price"><span class="currency mr-1.5 text-amber-800 font-light">$</span><span class="value text-gray-700 font-medium h-5 text-center">49</span></div>
+                    <div class="price"><span class="currency mr-1.5 text-amber-800 font-light">$</span><span class="value text-gray-700 font-medium h-5 text-center">35999</span></div>
                     <div class="frequency mb-1.5 font-semibold text-center">monthly</div>
                     <p class="mb-3 text-left">This is a comprehensive package designed for big organizations</p>
                     <ul class="list mb-7 text-left space-y-2">
@@ -228,7 +228,7 @@
                         </li>
                     </ul>
                     <div class="button-wrapper absolute pb-1.5 text-center ml-16">
-                        <a class="border rounded-2xl p-2 gap-1.5 flex bg-rose-800" href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <a class="border rounded-2xl p-2 gap-1.5 flex bg-cyan-200" href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
                                 <path fill-rule="evenodd" d="M9.674 2.075a.75.75 0 0 1 .652 0l7.25 3.5A.75.75 0 0 1 17 6.957V16.5h.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H3V6.957a.75.75 0 0 1-.576-1.382l7.25-3.5ZM11 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM7.5 9.75a.75.75 0 0 0-1.5 0v5.5a.75.75 0 0 0 1.5 0v-5.5Zm3.25 0a.75.75 0 0 0-1.5 0v5.5a.75.75 0 0 0 1.5 0v-5.5Zm3.25 0a.75.75 0 0 0-1.5 0v5.5a.75.75 0 0 0 1.5 0v-5.5Z" clip-rule="evenodd" />
                             </svg>
                             Buy Now</a>
@@ -240,11 +240,11 @@
 </section>
     {{--<--- Our Team ---->--}}
     <section href="{{ route('about') }}">
-    <div class="team py-32 mx-auto bg-gradient-to-r from-cyan-100 to-purple-200">
+    <div class="team py-32 mx-auto bg-gray-100">
         <div class="container px-4 mx-auto justify-items-center sm:px-8">
             <h2 class="mb-12 text-center font-bold lg:max-w-xl lg:mx-auto">OUR TEAM MEMBERS</h2>
 {{--<---team member--->--}}
-            <div id="progress" class=" slide-from-left  container bg-gradient-to-r from-cyan-100 to-purple-200  grid md:grid-cols-3 mx-auto justify-items-center">
+            <div id="progress" class=" slide-from-left container bg-gray-100 grid md:grid-cols-3 mx-auto justify-items-center">
 
                 <div class="md:grid-cols-1 p-7 gap-4">
                     <div class="entry-thumb portfolio-thumb ">
@@ -290,7 +290,7 @@
                     <div class="entry-thumb portfolio-thumb">
                         <div class="imgoverlay text-light rounded-2xl animate__animated wow animate__backInUp">
                             <a href="../../../../images/adam.jpg" >
-                                <img w-80 src="../../../../images/adam.jpg"  alt="image">
+                                <img class="w-80" src="../../../../images/adam.jpg"  alt="image">
                                 <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>adam wathan</h6></div></div>
                             </a>
                         </div>
@@ -310,7 +310,7 @@
         </div>
     </div>
 {{--<---counter--->--}}
-    <div class="counter w-full xl:flex sm:flex bg-gray-100">
+    <div class="counter w-full xl:flex sm:flex bg-white">
         <div class="container flex mx-auto mt-8 py-4 px-4 sm:px-8 ">
 
             <div class="grid md:grid-cols-5  mx-auto items-center gap-10 text-center animate__animated wow animate__zoomInDown">
@@ -340,7 +340,7 @@
     </section>
 {{--<----contact---->--}}
     <section href="{{ route('contact') }}">
-    <div class="contact  relative mx-auto justify-items-center h-full p-10 bg-gradient-to-r from-violet-200 to-blue-300" id="contact">
+    <div class="contact  relative mx-auto justify-items-center h-full p-10 bg-gray-50" id="contact">
         <div class="container justify-items-center mx-auto ">
             <div class="section-header  justify-items-center animate__animated wow animate__fadeInTopLeft">
                 <h3 class="text-center font-sans font-bold text-3xl">Contact Us</h3>
@@ -376,11 +376,12 @@
                                 </label>
                             </div>
                             <div class="p-3 self-center flex-1 text-center">
-                                <button id="msg" type="Send message" class="bg-indigo-600 shadow-xl hover:bg-indigo-500 text-white font-bold rounded-full p-4 mx-auto md:w-60">Send message</button>
+                                <button id="msg" type="Send message" class="bg-indigo-400 shadow-xl hover:bg-indigo-500 text-white font-bold rounded-full p-4 mx-auto md:w-60">Send message</button>
                             </div>
                         </form>
                     </div>
                 </div>
+
                 <div class=" w-full h-full md:w-auto md:h-auto p-5 justify-items-center mx-auto animate__animated wow animate__fadeInRightBig">
                     <div class="contact-info md:grid-cols-2  md:h-full md:w-full p-5 grid-rows-2">
                         <div class="h-full bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
@@ -409,6 +410,119 @@
                 </div>
             </div>
     </div>
+
+        <section id="last ">
+            <div class="footer-newsletter mx-auto justify-items-center">
+                <div class="container mx-auto justify-items-center">
+                    <div class="row mx-auto justify-items-center ml-32 flex p-10">
+                        <div class="col-lg-6">
+                            <h4>Join Our Newsletter</h4>
+                            <p> Making your business vision come true with our deep operational & implementation expertise.
+                                We've got the solutions to take your business to the next level</p>
+                            <form class="w-full" action="" method="post">
+                                <input class="w-3/4 ml-20 p-2 focus:border-none rounded-3xl" type="email" name="email">
+                                <input class="rounded-3xl  border-gray-900 absolute bg-blue-400 mr-40" type="submit" value="Subscribe">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-top">
+                <div class="container mx-auto justify-items-center">
+                    <div class="row grid grid-cols-4 ">
+
+                        <div class="grid-cols-1 footer-contact">
+                            <h3>Aaran Soft</h3>
+                            <p>
+                                10-A Venkatappa Gounder Street<br>
+                                Tiruppur,-641654.<br>
+                                TamilNadu <br><br>
+                                <strong>Phone:</strong>+91 9655227738<br>
+                                <strong>Email:</strong> aaranassociates@email.com<br>
+                            </p>
+                        </div>
+
+                        <div class="grid-cols-2 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                    </svg>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                    </svg>
+                                    <a href="#">About us</a>
+                                </li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                    </svg>
+                                    <a href="#">Services</a>
+                                </li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                    </svg>
+                                    <a href="#">Terms of service</a>
+                                </li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                    </svg>
+                                    <a href="#">Privacy policy</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="grid-cols-3  footer-links">
+                            <h4>Our Services</h4>
+                            <ul>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                    </svg>
+                                    <a href="#">Web Design</a>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                    </svg>
+                                    <a href="#">Web Development</a>
+                                </li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                    </svg>
+                                    <a href="#">Product Management</a>
+                                </li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                    </svg>
+                                    <a href="#">Marketing</a>
+                                </li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                    </svg>
+                                    <a href="#">Graphic Design</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="grid-cols-4  footer-links">
+                            <h4>Our Social Networks</h4>
+                            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+                            <div class="social-links mt-3">
+                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
     <div class="w-full bg-gray-300 ">
     <div class="container xl:flex sm:flex  w-full h-auto px-5 py-6 mx-auto flex items-center sm:flex-row flex-col bg-gray-300 ">
         <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">

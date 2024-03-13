@@ -136,7 +136,7 @@
         </section>
 {{--        purchaseitems table Details--}}
         <section class="text-2xl font-bold">
-            Sales Item
+            Purchase Item
         </section>
         <section class="flex flex-row w-full gap-0.5">
             <div class="w-full">
