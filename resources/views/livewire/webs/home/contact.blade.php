@@ -1,6 +1,128 @@
 <div>
     <section href="{{ route('contact') }}">
-        <link
+
+{{--            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />--}}
+
+{{--            <!-- Demo styles -->--}}
+{{--            <style>--}}
+{{--                html,--}}
+{{--                body {--}}
+{{--                    position: relative;--}}
+{{--                    height: 100%;--}}
+{{--                }--}}
+
+{{--                body {--}}
+{{--                    background: #eee;--}}
+{{--                    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;--}}
+{{--                    font-size: 14px;--}}
+{{--                    color: #000;--}}
+{{--                    margin: 0;--}}
+{{--                    padding: 0;--}}
+{{--                }--}}
+
+{{--                .swiper {--}}
+{{--                    width: 100%;--}}
+{{--                    height: 100%;--}}
+{{--                }--}}
+
+{{--                .swiper-slide {--}}
+{{--                    text-align: center;--}}
+{{--                    font-size: 18px;--}}
+{{--                    background: #fff;--}}
+{{--                    display: flex;--}}
+{{--                    justify-content: center;--}}
+{{--                    align-items: center;--}}
+{{--                }--}}
+
+{{--                @media (max-width: 760px) {--}}
+{{--                    .swiper-button-next {--}}
+{{--                        right: 20px;--}}
+{{--                        transform: rotate(90deg);--}}
+{{--                    }--}}
+
+{{--                    .swiper-button-prev {--}}
+{{--                        left: 20px;--}}
+{{--                        transform: rotate(90deg);--}}
+{{--                    }--}}
+{{--                }--}}
+{{--            </style>--}}
+
+{{--        <body>--}}
+{{--        <!-- Swiper -->--}}
+{{--        <div class="swiper">--}}
+{{--            <div class="swiper-wrapper">--}}
+{{--                <div class="swiper-slide">--}}
+{{--                    <a href="../../../../images/rasmus%20.jpg" >--}}
+{{--                        <img src="../../../../images/rasmus%20.jpg" alt="image">--}}
+{{--                        <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>Rasmus Lerdorf</h6></div></div>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide">--}}
+{{--                    <a href="../../../../images/rasmus%20.jpg" >--}}
+{{--                        <img src="../../../../images/rasmus%20.jpg" alt="image">--}}
+{{--                        <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>Rasmus Lerdorf</h6></div></div>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide">--}}
+{{--                    <a href="../../../../images/rasmus%20.jpg" >--}}
+{{--                        <img src="../../../../images/rasmus%20.jpg" alt="image">--}}
+{{--                        <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>Rasmus Lerdorf</h6></div></div>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide">--}}
+{{--                    <a href="../../../../images/rasmus%20.jpg" >--}}
+{{--                        <img src="../../../../images/rasmus%20.jpg" alt="image">--}}
+{{--                        <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>Rasmus Lerdorf</h6></div></div>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide">--}}
+{{--                    <a href="../../../../images/rasmus%20.jpg" >--}}
+{{--                        <img src="../../../../images/rasmus%20.jpg" alt="image">--}}
+{{--                        <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>Rasmus Lerdorf</h6></div></div>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide">--}}
+{{--                    <a href="../../../../images/rasmus%20.jpg" >--}}
+{{--                        <img src="../../../../images/rasmus%20.jpg" alt="image">--}}
+{{--                        <div class="overlay"><span class="overlaycolor"></span><div class="overlayinfo" style="margin-top: -11px;"><h6>Rasmus Lerdorf</h6></div></div>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide">Resize me!</div>--}}
+
+{{--            </div>--}}
+{{--            <div class="swiper-button-next"></div>--}}
+{{--            <div class="swiper-button-prev"></div>--}}
+{{--        </div>--}}
+
+{{--        <!-- Swiper JS -->--}}
+{{--        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>--}}
+
+{{--        <!-- Initialize Swiper -->--}}
+{{--        <script>--}}
+{{--            var swiper = new Swiper('.swiper', {--}}
+{{--                slidesPerView: 3,--}}
+{{--                direction: getDirection(),--}}
+{{--                navigation: {--}}
+{{--                    nextEl: '.swiper-button-next',--}}
+{{--                    prevEl: '.swiper-button-prev',--}}
+{{--                },--}}
+{{--                on: {--}}
+{{--                    resize: function () {--}}
+{{--                        swiper.changeDirection(getDirection());--}}
+{{--                    },--}}
+{{--                },--}}
+{{--            });--}}
+
+{{--            function getDirection() {--}}
+{{--                var windowWidth = window.innerWidth;--}}
+{{--                var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';--}}
+
+{{--                return direction;--}}
+{{--            }--}}
+{{--        </script>--}}
+{{--        </body>--}}
+
+                <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         />
@@ -40,7 +162,7 @@
                                 </label>
                             </div>
                             <div class="p-3 self-center flex-1 text-center">
-                                <button id="button" type="Send message" class="bg-indigo-600 shadow-xl hover:bg-indigo-500 text-white font-bold rounded-full p-4 mx-auto md:w-60">Send message</button>
+                                <button id="msg" type="Send message" class="bg-indigo-600 shadow-xl hover:bg-indigo-500 text-white font-bold rounded-full p-4 mx-auto md:w-60">Send message</button>
                             </div>
                         </form>
                     </div>
