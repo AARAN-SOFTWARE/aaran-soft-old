@@ -17,6 +17,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Rule;
 use Livewire\Component;
 
 class Upsert extends Component
@@ -52,6 +53,7 @@ class Upsert extends Component
     public string $colour;
     public string $size;
 
+    #[Rule('required')]
     public $contact_id = '';
     public $contact_name = '';
     public Collection $contactCollection;
@@ -113,6 +115,7 @@ class Upsert extends Component
     }
 
 
+    #[Rule('required')]
     public $order_id = '';
     public $order_name = '';
     public Collection $orderCollection;
@@ -171,6 +174,7 @@ class Upsert extends Component
             ->get() : Order::all();
     }
 
+    #[Rule('required')]
     public $transport_id = '';
     public $transport_name = '';
     public Collection $transportCollection;
@@ -229,6 +233,7 @@ class Upsert extends Component
             ->get() : Transport::all();
     }
 
+    #[Rule('required')]
     public $ledger_id = '';
     public $ledger_name = '';
     public Collection $ledgerCollection;
@@ -464,6 +469,7 @@ class Upsert extends Component
 
     public function save(): string
     {
+        $this->validate();
         if ($this->uniqueno != '') {
             if ($this->vid == "") {
                 $obj = Sale::create([

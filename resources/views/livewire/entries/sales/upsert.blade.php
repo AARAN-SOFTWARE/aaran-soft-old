@@ -23,6 +23,9 @@
                                 wire:keydown.enter="enterContact"
                                 class="block w-full purple-textbox "
                             />
+                            @error('contact_id')
+                            <span class="text-red-500">{{'The Party Name is Required.'}}</span>
+                            @enderror
 
                             <div x-show="isTyped"
                                  x-transition:leave="transition ease-in duration-100"
@@ -76,6 +79,9 @@
                                     wire:keydown.enter="enterOrder"
                                     class="block w-full purple-textbox"
                                 />
+                                @error('order_id')
+                                <span class="text-red-500">{{'The Order is Required.'}}</span>
+                                @enderror
 
                                 <div x-show="isTyped"
                                      x-transition:leave="transition ease-in duration-100"
@@ -399,6 +405,9 @@
                                         wire:keydown.enter="enterLedger"
                                         class="block w-full purple-textbox"
                                     />
+                                    @error('ledger_id')
+                                    <span class="text-red-500">{{'The Ledger is Required.'}}</span>
+                                    @enderror
 
                                     <div x-show="isTyped"
                                          x-transition:leave="transition ease-in duration-100"
@@ -451,6 +460,9 @@
                                         wire:keydown.enter="enterTransport"
                                         class="block w-full purple-textbox"
                                     />
+                                    @error('transport_id')
+                                    <span class="text-red-500">{{'The Transport is Required.'}}</span>
+                                    @enderror
 
                                     <div x-show="isTyped"
                                          x-transition:leave="transition ease-in duration-100"
