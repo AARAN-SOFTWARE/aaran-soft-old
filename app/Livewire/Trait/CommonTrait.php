@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Trait;
 
+use Livewire\Attributes\Rule;
 use Livewire\WithPagination;
 
 trait CommonTrait
@@ -17,6 +18,7 @@ trait CommonTrait
 
     public string $searches = "";
     public string $vid = "";
+    #[Rule('required')]
     public string $vname = '';
     public bool $active_id = false;
     public string $sortField = 'vname';

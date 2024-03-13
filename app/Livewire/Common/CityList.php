@@ -13,6 +13,7 @@ class CityList extends Component
 
     public function getSave(): string
     {
+        $this->validate(['vname'=>'required|unique:cities,vname']);
         if ($this->vname != '') {
             if ($this->vid == "") {
                 City::create([
