@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Kolkata',
 
     /*
     |--------------------------------------------------------------------------
@@ -175,6 +175,7 @@ return [
         Aaran\Entries\Providers\EntriesServiceProvider::class,
         Aaran\Erp\Providers\ErpServiceProvider::class,
         Aaran\Orders\Providers\OrderServiceProvider::class,
+        Aaran\Attendance\Providers\AttendanceServiceProvider::class,
 
 
 
